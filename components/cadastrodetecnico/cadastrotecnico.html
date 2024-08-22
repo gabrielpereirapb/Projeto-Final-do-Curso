@@ -8,15 +8,22 @@
 </head>
 <body>
     <header>
-        <div class="interface flex">
-            <img src="logo.png" alt="Logo" class="logo">
-            <nav>
+        <div class="interface">
+            <div class="logo">
+                <a ><img src=""> </img>
+                    
+                </a>
+            </div><!--logo-->
+
+            <nav class="menu">
                 <ul>
-                    <li><a href="menu.html">Página Inicial</a></li>
-                    <li><a href="#">Histórico de manutenção</a></li>
+                    <li> <a href="../home/home.html">Página Inicial</a></li>
+                    <li> <a href="">Histórico de Manutenção</a></li>
+                    
                 </ul>
             </nav>
-        </div>
+            
+        </div><!--interface-->
     </header>
 
     <section class="topo-do-site">
@@ -36,27 +43,32 @@
             <input type="text" id="telefone" name="telefone" placeholder="Insira seu telefone">
 
             <div class="botoes">
-                <button type="button" class="cancelar">Cancelar</button>
+                <button type="button" class="cancelar">Cancelar
+                    <a href="cadastrotecnico.html"></a>
+                </button>
                 <button type="submit" class="confirmar">Confirmar</button>
             </div>
         </form>
         <p class="campos-obrigatorios">*Campos obrigatórios.</p>
     </section>
+ 
 
-    <footer class="footer-rodapé">
-        <div class="footer-left">
-            <p>Sobre</p>
-            <p>Há mais de 65 anos. A tradição que não parou no tempo.</p>
+    <footer>
+        <div class="footer-rodapé">
+            <div class="sobre">
+                <h3>Sobre</h3>
+                <p2>Há mais de 65 anos. A tradição que não parou no tempo.  </p2>
+            </div><!--footer-left-->
             <div class="redes-sociais">
-                <i class="icon-instagram"></i>
-                <i class="icon-whatsapp"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-whatsapp"></i>
+            </div><!--redes-sociais-->
+            
+            <div class="informacoes">
+                <h3>Informações de Contato</h3>
+                <p2>R. Nossa Sra. de Lourdes, 193 - <br> Jardim Tavares, Campina Grande - PB<br>58402-045 <br> 83 3182-3600</p2>
             </div>
-        </div>
-        <div class="footer-right">
-            <p>Informações de Contato</p>
-            <p>R. Nossa Sra. de Lourdes, 193 - Jardim Tavares, Campina Grande - PB, 58402-045</p>
-            <p>83 3182-3600</p>
-        </div>
+    
     </footer>
 </body>
 </html>
