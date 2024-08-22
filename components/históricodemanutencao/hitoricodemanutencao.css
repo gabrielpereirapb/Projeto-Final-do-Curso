@@ -1,0 +1,121 @@
+/* Estilo Geral*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #e7e3e3;
+    height: 100vh;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.interface{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+}
+/*Comprimento e cor da faixa do menu*/
+header{
+    width: 100%;
+    background-color: #064C8C;  
+    padding: 2px 10%; /* Ajuste da largura da faixa */  
+    height: 148px;
+    flex-shrink: 0;
+    flex-shrink: 0;
+}   
+
+/*Largura da faixa do menu*/
+header{
+    padding: 2px 10%;
+}
+/*Estrutura e tamanho da letra do menu*/
+header > .interface{
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    font-style: normal;
+    padding: 55px;
+    font-weight: 200;
+    margin-right: 100px;
+    list-style-type:none;
+    
+}
+
+/*Estilo menu*/
+header a{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+header nav ul{
+    list-style-type:none;
+}
+
+header nav ul li{
+    display: inline-block;
+    padding: 0 40px; /*Redução do espaçamento da logo e dos nomes no menu */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Estrutura do rodapé*/
+.footer-rodapé{
+    width: 100%;
+    background-color:#064C8C; 
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 40px; /*Espaço entre o rodapé e o card*/
+}
+.footer-left{
+    max-width: 600px;
+    display: contents;
+}
+.footer-left h3{
+    flex: 1;
+    margin: 10px;
+    margin-top: 100;
+    align-items: end;
+    padding: 2px 4%;
+    color: white;
+}
+.sobre{
+    flex: 1;
+    margin: 10px;
+    margin: 40px 4;
+    padding: 2px 4%;
+    color: white;
+}
+
+.redes-sociais{
+    flex: 1;
+    margin: 10px;
+    padding: 2px 4%;
+    color: white;
+}
+
+.informacoes{
+    flex: 1;
+    margin: 10px;
+    padding: 2px 4%;
+    color:white;
+    text-align: right;
+}
