@@ -8,6 +8,7 @@
 body{
     background-color: #e7e3e3;
     height: 100vh;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 .interface{
@@ -87,13 +88,13 @@ secton.topo-do-site.flex{
     align-items: center;
 }
 
-section.cards-do-site .cards-1{
+.cards-1{
     width:400px; /*Comprimento do card */
     height: 300px; /*Largura do card */
 }
 
 /*letras dos cards*/
-.cards-do-site .cards-1{
+.cards-1{
 background-color: #fff;
  color: black;
  padding: 60px; /* Tamanho das caixas dos cards */
@@ -174,7 +175,6 @@ margin-top: 10px;
 .informacoes{
     flex: 1;
     margin: 10px;
-    padding: 10px;
     padding: 2px 4%;
     color:white;
     text-align: right;
