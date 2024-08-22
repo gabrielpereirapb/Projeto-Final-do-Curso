@@ -1,182 +1,114 @@
-/* Estilo Geral*/
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    background-color: #e7e3e3;
-    height: 100vh;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-}
-
-.interface{
-    max-width: 1280px;
-    margin: 0 auto;
-}
-
-.flex{
-    display: flex;
-}
-/*Comprimento e cor da faixa do menu*/
-header{
-    width: 100%;
-    background-color: #064C8C;  
-    padding: 2px 10%; /* Ajuste da largura da faixa */  
-    height: 148px;
-    flex-shrink: 0;
-    flex-shrink: 0;
-}   
-
-/*Largura da faixa do menu*/
-header{
-    padding: 2px 10%;
-}
-/*Estrutura e tamanho da letra do menu*/
-header > .interface{
-    display:flex;
-    align-items:center;
-    justify-content:space-around;
-    font-style: normal;
-    padding: 55px;
-    font-weight: 200;
-    margin-right: 100px;
-    list-style-type:none;
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-}
-
-/*Estilo menu*/
-header a{
-    color: aliceblue;
-    text-decoration: none;
-}
-
-header nav ul{
-    list-style-type:none;
-}
-
-header nav ul li{
-    display: inline-block;
-    padding: 0 40px; /*Redução do espaçamento da logo e dos nomes no menu */
-}
-
-/*ESTILO DO TOPO DO SITE*/
-section.topo-do-site{
-    padding: 40px 4%;
-}
-
-secton.topo-do-site.flex{
-    align-items: center;
-    justify-content: center;
-}
-
-.topo-do-site h1{
-    color: black;
-    font-size: 25px;
-}
-
-/*Estilo dos cards*/
-.cards{
-    padding:100px 4%;
-    background-color: #e7e3e3; /*Fundo dos cards */
-    margin: 0px auto;
-    display: flex;
-    justify-content: space-evenly;
-    column-gap: 0px;
-    flex-wrap:wrap;
-    align-items: center;
-}
-
-.cards-1{
-    width:400px; /*Comprimento do card */
-    height: 300px; /*Largura do card */
-}
-
-/*letras dos cards*/
-.cards-1{
-background-color: #fff;
- color: black;
- padding: 60px; /* Tamanho das caixas dos cards */
- border-radius: 10px;
- border: 2px solid transparent;
- transition: transform 0.3s, box-shadow 0.3s;
- text-align: center;
- box-shadow: 0 4px 8px rgb(0, 0 ,0, 0.1);
- justify-content: center;
-}
-
-
-.cards.cards-1:hover{
-    transform: translateY(-5px); /*Efeito de elevação */
-    box-shadow: 0 0 8px 16px rgb(0, 0 ,0, 0.1); /*Sombra mais pronunciada */
-    border: 2px solid rgba(6, 6, 119, 0.897); /*Borda azul na caixa do card */
+    <!--BOOTSTRAP ICONS--> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!--FIM BO0TSTRAP ICONS-->
+    <link rel="stylesheet" href="home.css">
+    <title>Manutenção Corretiva</title>
+</head>
+<body>
     
-}
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a ><img src=""> </img>
+                    
+                </a>
+            </div><!--logo-->
 
-/*icones dos cards*/
-.cards-do-site .cards-1 i{
- font-size: 50px; /*Tamanho dos ícones nos cards */
- color: #064C8C;
-margin-bottom: 15px;
-}
+            <nav class="menu">
+                <ul>
+                    <li> <a href="home.html">Página Inicial</a></li>
+                    <li> <a href="../históricodemanutencao/historicodemanutencao.html">Histórico de Manutenção</a></li>
+                    
+                </ul>
+            </nav>
+            
+        </div><!--interface-->
+    </header>  
 
-/*paragrafo dos cards*/
-.cards-do-site .cards-1 p{
-color: rgb(99, 92, 92);
-font-size: 16px;
-margin-top: 10px;
-}
+<main>
+    <section class="topo-do-site">
+        <div class="interface">
+            <div class="flex">
+                <div class="txt topo site">
+                    <h1>PÁGINA INICIAL</h1>
+                    <p>Bem vindos ao Sistema de Manutenção Escolar</p>
+                </div><!--txt topo site-->
+            </div><!--flex-->
+        </div><!--interface-->
+    </section><!--topo-do-site-->
 
-/*títulos dos cards*/
-.cards-do-site .cards-1 h2{
-    color:black;
-    font-size: 21px;
-    margin: 15px 0;
-    font-weight: bold;
-    }
+    <section class="cards-do-site">
+        <div class="cards">
+            <button>
+                <a href="../relatarproblema/relatarproblema.html">
+                    <div class="cards-1">
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                        <h2>Relatar Problema</h2>
+                        <p>Relatar problema para a equipe de manutenção</p>
+                     </div><!--cards-1--> 
+                </a>
+            </button>
+            <button>
+                <a href="../cadastrodetecnico/cadastrotecnico.html">
+                     <div class="cards-1">
+                    <i class="bi bi-person-plus-fill"></i>
+                    <h2>Cadastro de Técnico</h2>
+                    <p>Cadastrar técnico para executar manutenções</p>
+                </div><!--cards-2-->
+                </a>
+            </button>
+            </div>
+            
+                <div class="cards">
+                <button>
+                    <a href="../cadastrodemanutencao/cadastrodemanutentencao.html">
+                    <div class="cards-1">
+                        <i class="bi bi-tools"></i>
+                        <h2>Cadastro de Manutenção</h2>
+                        <p>Cadastrar manutenção executada</p>
+                     </div><!--cards-3-->
+                    </a>
+                </button>
+                <button>
+                    <a href="../históricodemanutencao/historicodemanutencao.html">
+                     <div class="cards-1">
+                        <i class="bi bi-graph-up"></i>
+                        <h2>Histórico de Manutenção</h2>
+                        <p>Atividades das manutenções executadas</p>
+                     </div><!--cards-4-->
+                    </a>
+                </button>
+                    
+                </div>
+
+    </section>  <!--card-->          
+</main>
+
+<footer>
+    <div class="footer-rodapé">
+        <div class="sobre">
+            <h3>Sobre</h3>
+            <p2>Há mais de 65 anos. A tradição que não parou no tempo.  </p2>
+        </div><!--footer-left-->
+        <div class="redes-sociais">
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-whatsapp"></i>
+        </div><!--redes-sociais-->
+        
+        <div class="informacoes">
+            <h3>Informações de Contato</h3>
+            <p2>R. Nossa Sra. de Lourdes, 193 - <br> Jardim Tavares, Campina Grande - PB<br>58402-045 <br> 83 3182-3600</p2>
+        </div>
+
+</footer>
 
 
-/*Estrutura do rodapé*/
-.footer-rodapé{
-    width: 100%;
-    background-color:#064C8C; 
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-top: 40px; /*Espaço entre o rodapé e o card*/
-}
-.footer-left{
-    max-width: 600px;
-    display: contents;
-}
-.footer-left h3{
-    flex: 1;
-    margin: 10px;
-    margin-top: 100;
-    align-items: end;
-    padding: 2px 4%;
-    color: white;
-}
-.sobre{
-    flex: 1;
-    margin: 10px;
-    margin: 40px 4;
-    padding: 2px 4%;
-    color: white;
-}
 
-.redes-sociais{
-    flex: 1;
-    margin: 10px;
-    padding: 2px 4%;
-    color: white;
-}
-
-.informacoes{
-    flex: 1;
-    margin: 10px;
-    padding: 2px 4%;
-    color:white;
-    text-align: right;
-}
-
+</body>
+</html> 
