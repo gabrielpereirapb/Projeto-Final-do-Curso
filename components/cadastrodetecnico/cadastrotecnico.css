@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: beige;
+    background-color:  #e7e3e3;
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -20,10 +20,30 @@ body {
 }
 
 /* Comprimento e cor da faixa do menu */
-header {
+header{
     width: 100%;
-    background-color: rgba(6, 6, 119, 0.897);
-    padding: 10px 10%;
+    background-color: #064C8C;  
+    padding: 2px 10%; /* Ajuste da largura da faixa */  
+    height: 148px;
+    flex-shrink: 0;
+    flex-shrink: 0;
+}   
+
+header > .interface{
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    font-style: normal;
+    padding: 55px;
+    font-weight: 200;
+    margin-right: 100px;
+    list-style-type:none;
+    
+}
+
+header a{
+    color: aliceblue;
+    text-decoration: none;
 }
 
 .logo {
@@ -57,7 +77,7 @@ header nav ul li {
 /* Estilo do topo do site */
 section.topo-do-site {
     padding: 40px 4%;
-    background-color: beige;
+    background-color: #e7e3e3;
     color: black;
     text-align: center;
 }
@@ -70,9 +90,9 @@ section.topo-do-site {
 
 /* Estilo do formulário */
 section.formulario {
-    padding: 20px 4%;
-    background-color: beige;
-    text-align: center;
+    padding: 30px 4%;
+    background-color: #e7e3e3;
+    text-align:left;
 }
 
 form {
@@ -133,34 +153,46 @@ form span {
 }
 
 /* Estilo do rodapé */
-.footer-rodapé {
+
+.footer-rodapé{
     width: 100%;
-    background-color: rgba(6, 6, 119, 0.897);
+    background-color:#064C8C; 
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 40px; /*Espaço entre o rodapé e o card*/
+}
+.footer-left{
+    max-width: 600px;
+    display: contents;
+}
+.footer-left h3{
+    flex: 1;
+    margin: 10px;
+    margin-top: 100;
+    align-items: end;
+    padding: 2px 4%;
     color: white;
-    padding: 20px 4%;
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+}
+.sobre{
+    flex: 1;
+    margin: 10px;
+    margin: 40px 4;
+    padding: 2px 4%;
+    color: white;
 }
 
-.footer-left {
+.redes-sociais{
     flex: 1;
-    text-align: left;
+    margin: 10px;
+    padding: 2px 4%;
+    color: white;
 }
 
-.footer-right {
+.informacoes{
     flex: 1;
+    margin: 10px;
+    padding: 5px;
+    padding: 2px 4%;
+    color:white;
     text-align: right;
-}
-
-.redes-sociais i {
-    font-size: 24px;
-    margin-right: 10px;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.redes-sociais i:hover {
-    color: #ddd;
 }
