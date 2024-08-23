@@ -26,15 +26,56 @@
         </div><!--interface-->
     </header>  
 
+    <section class="topo-do-site">
+        <h1>Relatar problema</h1>
+        <p>Relatar problema existente</p>
+    </section>
 
+    <section class="formulario">
 
-
-
-
-
-
-
-
+                <form action="#" method="post">         
+                    <label for="local">Local:<span>*</span></label>
+                    <select id="local" name="local">
+                        <option value="sala1">Sala 1</option>
+                        <option value="sala2">Sala 2</option>
+                        <option value="sala3">Sala 3</option>
+                        <option value="banheirosmasculinos">Banheiros Masculinos</option>
+                        <option value="banheirosfemininos">Banheiros Femininos</option>
+                    </select>
+                </form>
+                <form action="#" method="post">           
+                    <label for="tipomanutencao">Tipo de Manutenção:<span>*</span></label>
+                    <select id="tipomanutencao" name="tipomanutencao">
+                        <option value="hidaulica">Hidráulica</option>
+                        <option value="eletrica">Elétrica</option>
+                        <option value="estrutural">Estrutural</option>
+                    </select>
+                </form>
+                <form action="#" method="post">           
+                    <label for="urgencia">Urgência da Manutenção:<span>*</span></label>
+                    <select id="urgencia" name="urgencia">
+                        <option value="baixa">Baixa</option>
+                        <option value="media">Média</option>
+                        <option value="alta">Alta</option>
+                    </select>
+            </form>
+                <form>
+                <label for="mensagem">Mensagem:<span>*</span></label>
+                <textarea id="mensagem" name="mensagem" rows="4" placeholder="Insira uma mensagem sobre o problema a ser resolvido" required minlength="10" maxlength="5000"></textarea>
+            </form>
+    </select>
+            
+            
+    <p class="campos-obrigatorios">*Campos obrigatórios.</p>
+            <div class="botoes">
+                <button type="button" class="cancelar">Cancelar
+                    <a href="relatarproblema.html"></a>
+                </button>
+                <button type="submit" class="confirmar">Confirmar</button>
+            </div>
+            
+        </form>
+    </section>
 
 
     <footer>
