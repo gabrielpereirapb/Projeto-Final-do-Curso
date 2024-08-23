@@ -61,20 +61,68 @@ header nav ul li{
     padding: 0 40px; /*Redução do espaçamento da logo e dos nomes no menu */
 }
 
+section.topo-do-site {
+    padding: 40px 4%;
+    background-color: #e7e3e3;
+    color: black;
+    text-align: center;
+}
 
+.topo-do-site h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
 
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
+.filters {
+    margin-bottom: 20px;
+}
 
+.filters label {
+    margin-right: 10px;
+}
 
+.filters input {
+    margin-right: 20px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
 
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
 
+th {
+    background-color: #064c8c;
+    color: #fff;
+}
 
+tr:hover {
+    background-color: #f1f1f1;
+}
 
-
-
-
-
+thead th {
+    position: sticky;
+    top: 0;
+}
 
 
 /*Estrutura do rodapé*/
@@ -83,7 +131,7 @@ header nav ul li{
     background-color:#064C8C; 
     padding-top: 15px;
     padding-bottom: 15px;
-    margin-top: 40px; /*Espaço entre o rodapé e o card*/
+    margin-top: 400px; /*Espaço entre o rodapé e o card*/
 }
 .footer-left{
     max-width: 600px;
