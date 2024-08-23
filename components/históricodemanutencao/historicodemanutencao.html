@@ -26,7 +26,60 @@
         </div><!--interface-->
     </header> 
 
+    <section class="topo-do-site">
+        <h1>Histórico de Manutenção</h1>
+        <p>Histórico de manutenções realizadas</p>
+    </section>
 
+
+    <div class="container">
+        <div class="filters">
+            <label for="data-filter">Data:</label>
+            <input type="text" id="data-filter" placeholder="Filtrar por data">
+
+            <label for="local-filter">Local:</label>
+            <input type="text" id="local-filter" placeholder="Filtrar por local">
+
+            <label for="tipo-filter">Tipo de Manutenção:</label>
+            <input type="text" id="tipo-filter" placeholder="Filtrar por tipo">
+
+            <label for="tecnico-filter">Técnico Responsável:</label>
+            <input type="text" id="tecnico-filter" placeholder="Filtrar por técnico">
+        </div>
+
+        <table id="manutencao-table">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Local</th>
+                    <th>Tipo de Manutenção</th>
+                    <th>Técnico Responsável</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>22-08-2024</td>
+                    <td>Banheiro Masculino</td>
+                    <td>Preventiva</td>
+                    <td>João Silva</td>
+                </tr>
+                <tr>
+                    <td>23-08-2024</td>
+                    <td>Sala 2</td>
+                    <td>Corretiva</td>
+                    <td>Maria Oliveira</td>
+                </tr>
+                <tr>
+                    <td>24-08-2024</td>
+                    <td>Banheiro Feminino</td>
+                    <td>Preventiva</td>
+                    <td>Pedro Santos</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+        
 
 
 
