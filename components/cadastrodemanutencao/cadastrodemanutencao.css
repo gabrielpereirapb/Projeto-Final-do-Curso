@@ -46,6 +46,14 @@ header > .interface{
     
 }
 
+.logo{
+    display: flex;
+    align-items: center;
+    padding: none;
+    height: 40px;
+    width: 50px;
+}
+
 /*Estilo menu*/
 header a{
     color: aliceblue;
@@ -61,7 +69,10 @@ header nav ul li{
     padding: 0 40px; /*Redução do espaçamento da logo e dos nomes no menu */
 }
 
-
+/*ESTILO DO TOPO DO SITE*/
+section.topo-do-site{
+    padding: 40px 4%;
+}
 
 /*Estrutura do rodapé*/
 .footer-rodapé{
