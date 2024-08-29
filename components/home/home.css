@@ -46,6 +46,14 @@ header > .interface{
     
 }
 
+.logo{
+    display: flex;
+    align-items: center;
+    padding: none;
+    height: 40px;
+    width: 50px;
+}
+
 /*Estilo menu*/
 header a{
     color: aliceblue;
@@ -77,6 +85,17 @@ secton.topo-do-site.flex{
 }
 
 /*Estilo dos cards*/
+a{
+    text-decoration: none;
+
+}
+
+.cards-1:hover{
+    background-color: #cecfd8; /* Cor de fundo quando o mouse passa */
+    border: 2px solid #064C8C; /* Borda quando o mouse passa */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais forte quando o mouse passa */
+}
+
 .cards{
     padding:100px 4%;
     background-color: #e7e3e3; /*Fundo dos cards */
@@ -87,6 +106,7 @@ secton.topo-do-site.flex{
     flex-wrap:wrap;
     align-items: center;
 }
+
 
 .cards-1{
     width:400px; /*Comprimento do card */
@@ -138,30 +158,42 @@ margin-top: 10px;
 
 
 /*Estrutura do rodapé*/
+
+.footer {
+    display: flex;
+    justify-content: space-between; /* Espaça os itens para as extremidades */
+    align-items: center; /* Alinha verticalmente os itens no centro */
+    background-color: #064C8C;
+    color: white;
+    padding: 10px 20px; /* Espaçamento interno */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-content {
+    text-align: center; /* Alinha o texto ao centro dentro do footer */
+}
+
 .footer-rodapé{
     width: 100%;
     background-color:#064C8C; 
-    padding-top: 15px;
+    padding-top: 20px;
     padding-bottom: 15px;
     margin-top: 40px; /*Espaço entre o rodapé e o card*/
 }
-.footer-left{
-    max-width: 600px;
-    display: contents;
+
+.texto-esquerda{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
-.footer-left h3{
-    flex: 1;
-    margin: 10px;
-    margin-top: 100;
-    align-items: end;
-    padding: 2px 4%;
-    color: white;
-}
+
 .sobre{
     flex: 1;
-    margin: 10px;
-    margin: 40px 4;
-    padding: 2px 4%;
+    margin: 10px;  
+    padding: 5px 4%;
     color: white;
 }
 
