@@ -1,100 +1,229 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="relatarproblema.css">
-    <title>Relatar problema</title>
-</head>
-<body>
-    <header>
-        <div class="interface">
-            <div class="logo">
-                <a ><img src="../../assets/Imagens/logo.png"> </img>
-                    
-                </a>
-            </div><!--logo-->
+/* Estilo Geral*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-            <nav class="menu">
-                <ul>
-                    <li> <a href="../home/home.html">Página Inicial</a></li>
-                    <li> <a href="../históricodemanutencao/historicodemanutencao.html">Histórico de Manutenção</a></li>
-                    
-                </ul>
-            </nav>
-            
-        </div><!--interface-->
-    </header>  
+body{
+    background-color: #e7e3e3;
+    height: 100vh;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
 
-    <section class="topo-do-site">
-        <h1>Relatar problema</h1>
-        <p>Relatar problema existente</p>
-    </section>
+.interface{
+    max-width: 1280px;
+    margin: 0 auto;
+}
 
-    <section class="formulario">
+.flex{
+    display: flex;
+}
+/*Comprimento e cor da faixa do menu*/
+header{
+    width: 100%;
+    background-color: #064C8C;  
+    padding: 2px 10%; /* Ajuste da largura da faixa */  
+    height: 148px;
+    flex-shrink: 0;
+    flex-shrink: 0;
+}   
 
-                <form action="#" method="post">         
-                    <label for="local">Local:<span>*</span></label>
-                    <select id="local" name="local">
-                        <option value="sala1">Sala 1</option>
-                        <option value="sala2">Sala 2</option>
-                        <option value="sala3">Sala 3</option>
-                        <option value="banheirosmasculinos">Banheiros Masculinos</option>
-                        <option value="banheirosfemininos">Banheiros Femininos</option>
-                    </select>
-                </form>
-                <form action="#" method="post">           
-                    <label for="tipomanutencao">Tipo de Manutenção:<span>*</span></label>
-                    <select id="tipomanutencao" name="tipomanutencao">
-                        <option value="hidaulica">Hidráulica</option>
-                        <option value="eletrica">Elétrica</option>
-                        <option value="estrutural">Estrutural</option>
-                    </select>
-                </form>
-                <form action="#" method="post">           
-                    <label for="urgencia">Urgência da Manutenção:<span>*</span></label>
-                    <select id="urgencia" name="urgencia">
-                        <option value="baixa">Baixa</option>
-                        <option value="media">Média</option>
-                        <option value="alta">Alta</option>
-                    </select>
-            </form>
-                <form>
-                <label for="mensagem">Mensagem:<span>*</span></label>
-                <textarea id="mensagem" name="mensagem" rows="4" placeholder="Insira uma mensagem sobre o problema a ser resolvido" required minlength="10" maxlength="5000"></textarea>
-            </form>
-    </select>
-            
-            
-    <p class="campos-obrigatorios">*Campos obrigatórios.</p>
-            <div class="botoes">
-                <button type="button" class="cancelar">Cancelar
-                    <a href="relatarproblema.html"></a>
-                </button>
-                <button type="button" class="confirmar" onclick="confirmar()">Confirmar</button>
-            </div>
-            
-        </form>
-    </section>
-
-
-
-    <footer>
-        <div class="footer-rodapé">
-            <div class="sobre">
-                <h3>Sobre</h3>
-                <p2>Há mais de 65 anos. A tradição que não parou no tempo.  </p2>
-            </div><!--footer-left-->
-            <div class="redes-sociais">
-                <i class="bi bi-instagram"></i>
-                <i class="bi bi-whatsapp"></i>
-            </div><!--redes-sociais-->
-            
-            <div class="informacoes">
-                <h3>Informações de Contato</h3>
-                <p2>R. Nossa Sra. de Lourdes, 193 - <br> Jardim Tavares, Campina Grande - PB<br>58402-045 <br> 83 3182-3600</p2>
-            </div>
+/*Largura da faixa do menu*/
+header{
+    padding: 2px 10%;
+}
+/*Estrutura e tamanho da letra do menu*/
+header > .interface{
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    font-style: normal;
+    padding: 55px;
+    font-weight: 200;
+    margin-right: 100px;
+    list-style-type:none;
     
-    </footer>
-</body>
-</html>
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    padding: none;
+    height: 40px;
+    width: 50px;
+}
+
+/*Estilo menu*/
+header a{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+header nav ul{
+    list-style-type:none;
+}
+
+header nav ul li{
+    display: inline-block;
+    padding: 0 40px; /*Redução do espaçamento da logo e dos nomes no menu */
+}
+
+
+section.topo-do-site {
+    padding: 40px 4%;
+    background-color: #e7e3e3;
+    color: black;
+    text-align: center;
+}
+
+.topo-do-site h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+
+/* Estilo do formulário */
+.formulario {
+    width: 80%; /* Defina a largura do container */
+    max-width: 700px; /* Opcional: largura máxima do container */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 30px 4%; /* Adiciona espaçamento interno */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    background-color: #fff; /* Cor de fundo opcional */
+    border-radius: 8px; /* Bordas arredondadas opcionais */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+textarea {
+    resize: vertical; /* Permite que o usuário redimensione verticalmente */
+}
+
+form{
+    margin: 0 auto;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    width: 100%;
+    height: 15px;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form textarea{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form select{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form span {
+    color: red;
+}
+
+.botoes {
+    display: flex;
+    justify-content:left;
+}
+
+.botoes button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cancelar {
+    background-color: lightgray;
+    color: black;
+}
+
+.confirmar {
+    background-color: #064C8C;
+    color: white;
+}
+
+.campos-obrigatorios {
+    color: red;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 10px;
+}
+
+
+
+
+/*Estrutura do rodapé*/
+.footer-rodapé{
+    width: 100%;
+    background-color:#064C8C; 
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 40px; /*Espaço entre o rodapé e o card*/
+}
+.footer-left{
+    max-width: 600px;
+    display: contents;
+}
+.footer-left h3{
+    flex: 1;
+    margin: 10px;
+    margin-top: 100;
+    align-items: end;
+    padding: 2px 4%;
+    color: white;
+}
+.sobre{
+    flex: 1;
+    margin: 10px;
+    margin: 40px 4;
+    padding: 2px 4%;
+    color: white;
+}
+
+.redes-sociais{
+    flex: 1;
+    margin: 10px;
+    padding: 2px 4%;
+    color: white;
+}
+
+.informacoes{
+    flex: 1;
+    margin: 10px;
+    padding: 2px 4%;
+    color:white;
+    text-align: right;
+}
