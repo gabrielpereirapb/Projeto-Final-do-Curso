@@ -7,6 +7,7 @@
 
 body {
     background-color:  #e7e3e3;
+    height: 100vh;
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -41,37 +42,32 @@ header > .interface{
     
 }
 
+.logo{
+    display: flex;
+    align-items: center;
+    padding: none;
+    height: 40px;
+    width: 50px;
+}
+
 header a{
     color: aliceblue;
     text-decoration: none;
 }
 
-.logo {
-    width: 50px;
-    height: auto;
-}
-
-/* Estrutura e tamanho da letra do menu */
-header .interface {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-weight: 200;
-    list-style-type: none;
-}
 
 header a {
     color: aliceblue;
     text-decoration: none;
 }
 
-header nav ul {
-    list-style-type: none;
-    display: flex;
+header nav ul{
+    list-style-type:none;
 }
 
 header nav ul li {
-    padding: 0 20px;
+    display: inline-block;
+    padding: 0 40px; /*Redução do espaçamento da logo e dos nomes no menu */
 }
 
 /* Estilo do topo do site */
