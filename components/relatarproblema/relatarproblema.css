@@ -46,6 +46,14 @@ header > .interface{
     
 }
 
+.logo{
+    display: flex;
+    align-items: center;
+    padding: none;
+    height: 40px;
+    width: 50px;
+}
+
 /*Estilo menu*/
 header a{
     color: aliceblue;
@@ -146,7 +154,7 @@ form span {
 
 .botoes {
     display: flex;
-    justify-content:left;
+    justify-content:space-between;
 }
 
 .botoes button {
