@@ -33,28 +33,18 @@
 
     <section class="formulario">
 
-<form id="form">
-    <div class="grupodoform">
-      <label for="idmanutencão">idmanutenção:</label>
-        <input type="text"id="idmanutencão" name="idmanutencão" placeholder="insira o id da manutancão"required>     
-    </div>
-    <div class="grupodoform">
-        <label for="técnicoresponsavel"></label>
-          <input type="text"id="técnicoresponsavel"name="técnicoresponsavel" placeholder="insira o nome do técnico responsavel" required>     
-      </div>
-    
-      <div class="grupodoform">
-        <label for="mensagem"> </label>
-          <input type="text"id="mensagem"neme="mensagem" placeholder="insira uma mensagem" required>   
-          <textarea id="mensagem" name="mensagem" required></textarea>  
-      </div>
-      <div>
-        <button type="submit">enviar</button>
-      </div>
-<div class="container"></div>
+<form >
+        
+    <label for="idmanutencao">Id da manutenção:<span>*</span></label>
+    <input type="text" id="idmanutencao" name="idmanutencao" class="select-like" placeholder="Selecione o Id da manutenção">
 
 
-<p1 class="campos-obrigatorios">*Campos obrigatórios.</p1>
+        <label for="tecnico responsavel">Técnico responsável:<span>*</span></label>
+        <input type="text" id="tecnicoresponsavel" name="tecnicoresponsavel" class="select-like" placeholder="Insira o técnico responsável pela manutenção">
+
+        <label for="mensagem">Mensagem:<span>*</span></label>
+        <textarea id="mensagem" name="mensagem" placeholder="Insira uma mensagem sobre a manutenção realizada"></textarea>
+    <p class="campos-obrigatorios">*Campos obrigatórios.</p>
 
 
             <div class="botoes">
@@ -70,6 +60,7 @@
                 <h3>Sobre</h3>
                 <p2>Há mais de 65 anos. A tradição que não parou no tempo.  </p2>
             </div><!--footer-left-->
+
             <div class="redes-sociais">
                 <i class="bi bi-instagram"></i>
                 <i class="bi bi-whatsapp"></i>
