@@ -72,13 +72,16 @@ header nav ul li{
 /*ESTILO DO TOPO DO SITE*/
 section.topo-do-site{
     padding: 40px 4%;
+    text-align: center;
 }
 
 .topo-do-site h1 {
     font-size: 34px;
     margin-right: 14px;
+    margin-top: 12px ;
     margin-bottom: 10px;
     font-weight: bold;
+    
 }
 
 .topo-do-site p {
@@ -87,10 +90,9 @@ section.topo-do-site{
     margin-top: 12px;
     margin-bottom: 2px;
     font-weight:lighter;
-    align-items: center;
 }
 
-/*ESTILO DO FORMULÁRIO*/  
+/*ESTILO DO FORMULÁRIO*/ 
 
 section.formulario {
     padding: 30px 4%;
@@ -158,6 +160,30 @@ form span {
     color: white;
 }
 
+/*ESTILO PARA OS CAMPOS DE TEXTO COM SETA*/
+input.select-like {
+    appearance: none; /* Remove o estilo padrão do navegador */
+    background: white url('data:image/svg+xml;utf8,<svg fill="%23000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+    padding-right: 30px; /* Espaçamento para a seta */
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* ESTILO PARA O CAMPO DA MENSAGEM (textarea) */
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 150px; /* Altura mínima */
+    font-size: 16px;
+}
 
 /*Estrutura do rodapé*/
 .footer-rodapé{
