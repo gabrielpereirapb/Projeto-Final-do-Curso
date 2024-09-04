@@ -10,10 +10,24 @@
     <!--FIM BO0TSTRAP ICONS-->
 </head>
 <body>
-    <!-- Conteúdo existente -->
     <header>
-        <!-- Seu conteúdo de cabeçalho -->
-    </header>
+        <div class="interface">
+            <div class="logo">
+                <a ><img src="../../assets/Imagens/logo.png">  </img>
+                    
+                </a>
+            </div><!--logo-->
+
+            <nav class="menu">
+                <ul>
+                    <li> <a href="home.html">Página Inicial</a></li>
+                    <li> <a href="../históricodemanutencao/historicodemanutencao.html">Histórico de Manutenção</a></li>
+                    
+                </ul>
+            </nav>
+            
+        </div><!--interface-->
+    </header>  
 
     <section class="topo-do-site">
         <h1>Histórico de Manutenção</h1>
@@ -66,10 +80,10 @@
             <h2>Filtrar Manutenções</h2>
         </div>
 
-        <label for="data-sidebar">Data:</label>
+        <label class="mensagem-filtro" for="data-sidebar">Data:</label>
         <input type="date" id="data-sidebar">
 
-        <label for="local-sidebar">Local:</label>
+        <label class="mensagem-filtro" for="local-sidebar">Local:</label>
         <select id="local-sidebar">
             <option value="">Selecione</option>
             <option value="Banheiro Masculino">Banheiro Masculino</option>
@@ -78,7 +92,7 @@
             <!-- Adicione mais opções conforme necessário -->
         </select>
 
-        <label for="tipo-sidebar">Tipo de Manutenção:</label>
+        <label class="mensagem-filtro" for="tipo-sidebar">Tipo de Manutenção:</label>
         <select id="tipo-sidebar">
             <option value="">Selecione</option>
             <option value="Preventiva">Preventiva</option>
@@ -86,7 +100,7 @@
             <!-- Adicione mais opções conforme necessário -->
         </select>
 
-        <label for="tecnico-sidebar">Técnico Responsável:</label>
+        <label class="mensagem-filtro" for="tecnico-sidebar">Técnico Responsável:</label>
         <select id="tecnico-sidebar">
             <option value="">Selecione</option>
             <option value="João Silva">João Silva</option>
@@ -96,8 +110,8 @@
         </select>
 
         <div class="sidebar-buttons">
-            <button id="confirmBtn">Confirmar</button>
             <button id="cancelBtn">Cancelar</button>
+            <button id="confirmBtn">Confirmar</button>
         </div>
     </div>
 
