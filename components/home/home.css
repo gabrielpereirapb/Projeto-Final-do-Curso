@@ -125,24 +125,40 @@ a{
 }
 
 /*letras dos cards*/
-.cards-1{
-background-color: #fff;
- color: black;
- padding: 60px; /* Tamanho das caixas dos cards */
- border-radius: 10px;
- border: 2px solid transparent;
- transition: transform 0.3s, box-shadow 0.3s;
- text-align: center;
- box-shadow: 0 4px 8px rgb(0, 0 ,0, 0.1);
- justify-content: center;
- transition: 1s;
+.cards-1 {
+    width: 400px; /* Comprimento do card */
+    height: 300px; /* Altura do card */
+    background-color: #fff; /* Fundo dos cards */
+    color: black;
+    padding: 60px; /* Tamanho das caixas dos cards */
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra padrão dos cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.cards-1:hover{
-    transform: scale(1.05);/*Efeito de elevação */
-    box-shadow: 0 0 8px 16px rgb(0, 0 ,0, 0.1); /*Sombra mais pronunciada */
-    border: 2px solid rgba(6, 6, 119, 0.897); /*Borda azul na caixa do card */
-    
+.cards-1{
+    background-color: #fff;
+     color: black;
+     padding: 60px; /* Tamanho das caixas dos cards */
+     border-radius: 10px;
+     border: 2px solid transparent;
+     transition: transform 0.3s, box-shadow 0.3s;
+     text-align: center;
+     box-shadow: 0 4px 8px rgb(0, 0 ,0, 0.1);
+     justify-content: center;
+     transition: 0.5s;
+    }
+
+ .cards-1:hover{
+        transform: scale(1.05);/*Efeito de elevação */
+        box-shadow: 0 0 8px 16px rgb(0, 0 ,0, 0.1); /*Sombra mais pronunciada */
+        border: 2px solid #064C8C; /*Borda azul na caixa do card */
+        
 }
 
 /*icones dos cards*/
@@ -223,4 +239,11 @@ margin-top: 10px;
     font-size: 20px; /* Ajuste o tamanho dos ícones conforme necessário */
     margin: 0 4px; /* Espaçamento entre os ícones */
     text-align: end;
+}
+
+
+/* Remove bordas da section e dos elementos filhos */
+.cards-do-site, .cards-do-site * {
+    border: transparent; /* Remove qualquer borda */
+    outline: transparent; /* Remove contornos */
 }
