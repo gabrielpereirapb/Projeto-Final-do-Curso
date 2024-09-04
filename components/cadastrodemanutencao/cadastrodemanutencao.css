@@ -74,6 +74,91 @@ section.topo-do-site{
     padding: 40px 4%;
 }
 
+.topo-do-site h1 {
+    font-size: 34px;
+    margin-right: 14px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.topo-do-site p {
+    font-size: 18px;
+    margin-right: 14px;
+    margin-top: 12px;
+    margin-bottom: 2px;
+    font-weight:lighter;
+    align-items: center;
+}
+
+/*ESTILO DO FORMULÁRIO*/  
+
+section.formulario {
+    padding: 30px 4%;
+    background-color: #e7e3e3;
+    text-align:left;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form span {
+    color: red;
+}
+
+.botoes {
+    display: flex;
+    justify-content:left;
+    margin-left: 4px;
+}
+
+.botoes button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.campos-obrigatorios {
+    color: red;
+    font-size: 13px;
+    text-align: left;
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.cancelar {
+    background-color: lightgray;
+    color: black;
+}
+
+.confirmar {
+    background-color: #064C8C; 
+    color: white;
+}
+
+
 /*Estrutura do rodapé*/
 .footer-rodapé{
     width: 100%;
