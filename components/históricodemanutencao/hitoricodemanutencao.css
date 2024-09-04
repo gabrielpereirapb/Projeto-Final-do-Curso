@@ -132,6 +132,86 @@ thead th {
     top: 0;
 }
 
+/*Filtro
+/* Estilo do botão de abrir a sidebar */
+.open-sidebar-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #064C8C;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Estilo da sidebar */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #064C8C;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 999;
+}
+
+.sidebar-header {
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+.sidebar label, .sidebar input, .sidebar select {
+    display: block;
+    margin: 15px;
+    color: black;
+}
+
+.sidebar input, .sidebar select {
+    width: 80%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.sidebar-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.sidebar-buttons button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#confirmBtn {
+    background-color: #064C8C;
+    color: white;
+}
+
+#cancelBtn {
+    background-color: lightgray;
+    color: black;
+}
+
+/* Exibição da sidebar */
+.sidebar.active {
+    width: 300px;
+}
+
+/* Ajustando o conteúdo para não ser afetado pela sidebar */
+.container {
+    margin-right: 320px; /* Deixa espaço para a sidebar se necessário */
+}
+
 
 /*Estrutura do rodapé*/
 .footer-rodapé{
