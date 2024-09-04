@@ -157,6 +157,10 @@ thead th {
     z-index: 1000;
 }
 
+.open-sidebar-btn:hover{
+    filter: drop-shadow(5px -3px 7px #000000);
+}
+
 /* Estilo da sidebar */
 .sidebar {
     height: 100%;
