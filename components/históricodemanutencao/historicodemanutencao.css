@@ -168,7 +168,7 @@ thead th {
     position: fixed;
     top: 0;
     right: 0;
-    background-color: #064C8C;
+    background-color: rgba(6, 76, 140, 0.8); /* Cor azul com opacidade de 90% */
     overflow-x: hidden;
     transition: width 0.5s ease; /* Suaviza a transição */
     padding-top: 60px;
@@ -208,7 +208,7 @@ thead th {
 }
 
 #confirmBtn {
-    background-color: #02396d;
+    background-color: #064c8c;
     color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
