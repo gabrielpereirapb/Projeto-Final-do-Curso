@@ -188,10 +188,14 @@ form span {
 /*Estrutura do rodapé*/
 .footer-rodapé{
     width: 100%;
-    background-color:#064C8C; 
-    padding-top: 15px;
+    background-color: #064C8C; 
+    padding-top: 20px;
     padding-bottom: 15px;
-    margin-top: 40px; /*Espaço entre o rodapé e o card*/
+    display: flex; /* Alinha os itens horizontalmente */
+    justify-content: space-between; /* Espaça os itens */
+    color: white;
+    align-items: flex-start; /* Alinha os itens ao topo */
+    margin-top: 100px; /*Espaço entre o rodapé e o card*/
 }
 .footer-left{
     max-width: 600px;
