@@ -217,10 +217,3 @@ form span {
     margin: 0 4px; /* Espaçamento entre os ícones */
     text-align: end;
 }
-
-
-/* Remove bordas da section e dos elementos filhos */
-.cards-do-site, .cards-do-site * {
-    border: transparent; /* Remove qualquer borda */
-    outline: transparent; /* Remove contornos */
-}
