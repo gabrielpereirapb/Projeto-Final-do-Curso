@@ -160,47 +160,67 @@ form span {
     margin-bottom: 12px;
 }
 
-/* Estilo do rodapé */
+/*Estrutura do rodapé*/
 
-.footer-rodapé{
+.footer {
+    display: flex;
+    justify-content: space-between; /* Espaça os itens para as extremidades */
+    align-items: center; /* Alinha verticalmente os itens no centro */
+    background-color: #064C8C;
+    color: white;
+    padding: 10px 20px; /* Espaçamento interno */
+    position: fixed;
     width: 100%;
-    background-color:#064C8C; 
-    padding-top: 15px;
+    bottom: 0;
+}
+
+.footer-content {
+    text-align: center; /* Alinha o texto ao centro dentro do footer */
+}
+
+.footer-rodapé {
+    width: 100%;
+    background-color: #064C8C; 
+    padding-top: 20px;
     padding-bottom: 15px;
-    margin-top: 40px; /*Espaço entre o rodapé e o card*/
-}
-.footer-left{
-    max-width: 600px;
-    display: contents;
-}
-.footer-left h3{
-    flex: 1;
-    margin: 10px;
-    margin-top: 100;
-    align-items: end;
-    padding: 2px 4%;
+    display: flex; /* Alinha os itens horizontalmente */
+    justify-content: space-between; /* Espaça os itens */
     color: white;
-}
-.sobre{
-    flex: 1;
-    margin: 10px;
-    margin: 40px 4;
-    padding: 2px 4%;
-    color: white;
+    align-items: flex-start; /* Alinha os itens ao topo */
 }
 
-.redes-sociais{
-    flex: 1;
-    margin: 10px;
-    padding: 2px 4%;
-    color: white;
+/* Estilo dos itens do rodapé */
+.sobre, .informacoes, .redes-sociais {
+    flex: 1; /* Faz com que todos os itens ocupem a mesma quantidade de espaço */
+    margin: 0 10px; /* Espaçamento entre os itens */
+    padding: 0 10px; /* Adiciona padding interno para melhor espaçamento */
 }
 
-.informacoes{
-    flex: 1;
-    margin: 10px;
-    padding: 5px;
-    padding: 2px 4%;
-    color:white;
-    text-align: right;
+/* Ajustes adicionais */
+.sobre {
+    text-align: left;
+}
+
+.informacoes {
+    text-align: left; /* Alinha o texto à esquerda */
+    padding-left: 300px;
+}
+
+.redes-sociais {
+    text-align: center;
+    display: flex;
+}
+
+/* Estilo adicional para os ícones sociais */
+.redes-sociais i {
+    font-size: 20px; /* Ajuste o tamanho dos ícones conforme necessário */
+    margin: 0 4px; /* Espaçamento entre os ícones */
+    text-align: end;
+}
+
+
+/* Remove bordas da section e dos elementos filhos */
+.cards-do-site, .cards-do-site * {
+    border: transparent; /* Remove qualquer borda */
+    outline: transparent; /* Remove contornos */
 }
