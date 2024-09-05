@@ -93,14 +93,20 @@ section.topo-do-site {
     font-weight:lighter;
 }
 
-/* Estilo do formulário */
-section.formulario {
-    padding: 30px 4%;
-    background-color: #e7e3e3;
-    text-align:left;
+.formulario {
+    width: 80%; /* Defina a largura do container */
+    max-width: 700px; /* Opcional: largura máxima do container */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 30px 4%; /* Adiciona espaçamento interno */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    background-color: #fff; /* Cor de fundo opcional */
+    border-radius: 8px; /* Bordas arredondadas opcionais */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra opcional */
 }
 
 form {
+    display: flex;
+    flex-direction: column;
     max-width: 600px;
     margin: 0 auto;
     background-color: white;
@@ -108,7 +114,6 @@ form {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 form label {
     display: block;
     font-weight: bold;
@@ -187,6 +192,7 @@ form span {
     justify-content: space-between; /* Espaça os itens */
     color: white;
     align-items: flex-start; /* Alinha os itens ao topo */
+    margin-top: 100px; /*Espaço entre o rodapé e o card*/
 }
 
 /* Estilo dos itens do rodapé */
