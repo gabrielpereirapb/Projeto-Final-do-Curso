@@ -92,15 +92,21 @@ section.topo-do-site{
     font-weight:lighter;
 }
 
-/*ESTILO DO FORMULÁRIO*/ 
-
-section.formulario {
-    padding: 30px 4%;
-    background-color: #e7e3e3;
-    text-align:left;
+/* Estilo do formulário */
+.formulario {
+    width: 80%; /* Defina a largura do container */
+    max-width: 700px; /* Opcional: largura máxima do container */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 30px 4%; /* Adiciona espaçamento interno */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    background-color: #fff; /* Cor de fundo opcional */
+    border-radius: 8px; /* Bordas arredondadas opcionais */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra opcional */
 }
 
 form {
+    display: flex;
+    flex-direction: column;
     max-width: 600px;
     margin: 0 auto;
     background-color: white;
@@ -109,13 +115,40 @@ form {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+textarea {
+    resize: vertical; /* Permite que o usuário redimensione verticalmente */
+}
+
+form{
+    margin: 0 auto;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 form label {
+    width: 100%;
+    height: 15px;
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-form input {
+form textarea{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form select{
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -129,8 +162,7 @@ form span {
 
 .botoes {
     display: flex;
-    justify-content:left;
-    margin-left: 4px;
+    justify-content:space-between;
 }
 
 .botoes button {
@@ -139,15 +171,6 @@ form span {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    margin: 10px;
-}
-
-.campos-obrigatorios {
-    color: red;
-    font-size: 13px;
-    text-align: left;
-    margin-top: 8px;
-    margin-bottom: 12px;
 }
 
 .cancelar {
@@ -156,42 +179,29 @@ form span {
 }
 
 .confirmar {
-    background-color: #064C8C; 
+    background-color: #064C8C;
     color: white;
 }
 
-/*ESTILO PARA OS CAMPOS DE TEXTO COM SETA*/
-input.select-like {
-    appearance: none; /* Remove o estilo padrão do navegador */
-    background: white url('data:image/svg+xml;utf8,<svg fill="%23000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
-    padding-right: 30px; /* Espaçamento para a seta */
-    font-size: 16px;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.campos-obrigatorios {
+    color: red;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 10px;
 }
 
-/* ESTILO PARA O CAMPO DA MENSAGEM (textarea) */
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: vertical; /* Permite redimensionar verticalmente */
-    min-height: 150px; /* Altura mínima */
-    font-size: 16px;
-}
 
 /*Estrutura do rodapé*/
 .footer-rodapé{
     width: 100%;
-    background-color:#064C8C; 
-    padding-top: 15px;
+    background-color: #064C8C; 
+    padding-top: 20px;
     padding-bottom: 15px;
-    margin-top: 40px; /*Espaço entre o rodapé e o card*/
+    display: flex; /* Alinha os itens horizontalmente */
+    justify-content: space-between; /* Espaça os itens */
+    color: white;
+    align-items: flex-start; /* Alinha os itens ao topo */
+    margin-top: 100px; /*Espaço entre o rodapé e o card*/
 }
 .footer-left{
     max-width: 600px;
