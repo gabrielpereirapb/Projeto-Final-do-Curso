@@ -9,13 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
         mySidebar.classList.toggle('active');
     });
 
+    function formatDate(dateString) {
+        const [year, month, day] = dateString.split("-");
+        return day+'-'+month+'-'+year;
+    }
+
     // Confirmar a filtragem
     confirmBtn.addEventListener('click', () => {
-        const dataValue = document.getElementById('data-sidebar').value;
+        const dataValue = formatDate(document.getElementById('data-sidebar').value);
         const localValue = document.getElementById('local-sidebar').value.toLowerCase();
         const tipoValue = document.getElementById('tipo-sidebar').value.toLowerCase();
         const tecnicoValue = document.getElementById('tecnico-sidebar').value.toLowerCase();
-
+        console.log(formatDate(dataValue))
         const table = document.getElementById('maintenance-table');
         const rows = table.querySelectorAll('tbody tr');
 
@@ -25,6 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const local = cells[1].textContent.toLowerCase();
             const tipo = cells[2].textContent.toLowerCase();
             const tecnico = cells[3].textContent.toLowerCase();
+
+            console.log(data)
 
             const isVisible =
                 (data.includes(dataValue) || !dataValue) &&
