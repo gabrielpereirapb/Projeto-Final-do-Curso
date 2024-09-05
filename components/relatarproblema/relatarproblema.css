@@ -154,7 +154,8 @@ form span {
 
 .botoes {
     display: flex;
-    justify-content:space-between;
+    justify-content:left;
+    margin-left: 4px;;
 }
 
 .botoes button {
@@ -163,6 +164,7 @@ form span {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    margin: 10px;
 }
 
 .cancelar {
