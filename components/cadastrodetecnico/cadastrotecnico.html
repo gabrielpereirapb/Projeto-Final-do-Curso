@@ -10,22 +10,17 @@
     <header>
         <div class="interface">
             <div class="logo">
-                <a ><img src="../../assets/Imagens/logo.png"> </img>
-                    
-                </a>
+                <a href="#"><img src="../../assets/Imagens/logo.png" alt="Logo"></a>
             </div><!--logo-->
 
             <nav class="menu">
                 <ul>
-                    <li> <a href="../home/home.html">Página Inicial</a></li>
-                    <li> <a href="../chamados/chamados.html">Chamados</a></li>
-                    
+                    <li><a href="../home/home.html">Página Inicial</a></li>
+                    <li><a href="../chamados/chamados.html">Chamados</a></li>
                 </ul>
             </nav>
-            
         </div><!--interface-->
     </header>  
-
 
     <section class="topo-do-site">
         <h1>Cadastro de técnico</h1>
@@ -33,46 +28,54 @@
     </section>
 
     <section class="formulario">
-        <form>
+        <form id="cadastroForm">
             <label for="nome">Nome:<span>*</span></label>
-            <input type="text" id="nome" name="nome" placeholder="Nome completo">
+            <input type="text" id="nome" name="nome" placeholder="Nome completo" required>
 
             <label for="cpf">CPF:<span>*</span></label>
-            <input type="text" id="cpf" name="cpf" placeholder="Insira seu CPF">
+            <input type="text" id="cpf" name="cpf" placeholder="Insira seu CPF" required>
 
             <label for="telefone">Telefone:<span>*</span></label>
-            <input type="text" id="telefone" name="telefone" placeholder="Insira seu telefone">
+            <input type="text" id="telefone" name="telefone" placeholder="Insira seu telefone" required>
 
             <p class="campos-obrigatorios">*Campos obrigatórios.</p>
 
-
             <div class="botoes">
-                <button type="button" class="cancelar">Cancelar
-                    <a href="cadastrotecnico.html"></a>
-                </button>
+                <button type="button" class="cancelar" onclick="window.location.href='../home/home.html'">Cancelar</button>
                 <button type="submit" class="confirmar">Confirmar</button>
             </div>
         </form>
-     
     </section>
- 
 
     <footer>
         <div class="footer-rodapé">
             <div class="sobre">
                 <h3>Sobre</h3>
-                <p2>Há mais de 65 anos. A tradição que não parou no tempo.  </p2>
+                <p>Há mais de 65 anos. A tradição que não parou no tempo.</p>
             </div><!--footer-left-->
+
             <div class="redes-sociais">
                 <i class="bi bi-instagram"></i>
                 <i class="bi bi-whatsapp"></i>
             </div><!--redes-sociais-->
-            
+
             <div class="informacoes">
                 <h3>Informações de Contato</h3>
-                <p2>R. Nossa Sra. de Lourdes, 193 - <br> Jardim Tavares, Campina Grande - PB<br>58402-045 <br> 83 3182-3600</p2>
+                <p>R. Nossa Sra. de Lourdes, 193 - <br> Jardim Tavares, Campina Grande - PB<br>58402-045<br>83 3182-3600</p>
             </div>
-    
+        </div>
     </footer>
+
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio real do formulário
+
+            // Exibe uma mensagem de confirmação
+            alert('Técnico cadastrado com sucesso!');
+
+            // Você pode redirecionar o usuário ou realizar outra ação após a confirmação
+            // window.location.href = 'pagina-de-destino.html';
+        });
+    </script>
 </body>
 </html>
