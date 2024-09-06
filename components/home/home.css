@@ -18,6 +18,7 @@ body{
 
 .flex{
     display: flex;
+    justify-content: center;
 }
 /*Comprimento e cor da faixa do menu*/
 header{
@@ -72,6 +73,10 @@ header nav ul li{
 /*ESTILO DO TOPO DO SITE*/
 section.topo-do-site{
     padding: 40px 4%;
+}
+
+.titulo-pagina {
+    text-align: center;
 }
 
 section.topo-do-site.flex{
@@ -141,7 +146,7 @@ a{
     justify-content: center;
 }
 
-.cards-1{
+.cards-1 {
     background-color: #fff;
      color: black;
      padding: 60px; /* Tamanho das caixas dos cards */
@@ -161,12 +166,27 @@ a{
         
 }
 
+.cards-do-site {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.cards-line {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
 /*icones dos cards*/
 .cards-do-site .cards-1 i{
  font-size: 50px; /*Tamanho dos ícones nos cards */
  color: #064C8C;
  margin-bottom: 15px;
 }
+
+
 
 /*paragrafo dos cards*/
 .cards-do-site .cards-1 p{
@@ -204,6 +224,7 @@ margin-top: 10px;
 
 .footer-rodapé {
     width: 100%;
+    margin-top: 40px;
     background-color: #064C8C; 
     padding-top: 20px;
     padding-bottom: 15px;
