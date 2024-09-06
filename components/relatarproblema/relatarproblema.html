@@ -31,52 +31,70 @@
         <p>Relatar problema existente</p>
     </section>
 
-    <section class="formulario">
-        <form>
-            <label for="titulochamado">Título do chamado:<span>*</span></label>
-            <input type="text" id="titulochamado" name="titulochamado" placeholder="Insira o título do chamado">
-        </form>
+    <script>
+        function validarFormulario() {
+            // Obtém os valores dos campos
+            let tituloChamado = document.getElementById('titulochamado').value.trim();
+            let local = document.getElementById('local').value;
+            let tipoManutencao = document.getElementById('tipomanutencao').value;
+            let urgencia = document.getElementById('urgencia').value;
+            let mensagem = document.getElementById('mensagem').value.trim();
 
-                <form action="#" method="post">         
-                    <label for="local">Local:<span>*</span></label>
-                    <select id="local" name="local">
-                        <option value="sala1">Sala 1</option>
-                        <option value="sala2">Sala 2</option>
-                        <option value="sala3">Sala 3</option>
-                        <option value="banheirosmasculinos">Banheiros Masculinos</option>
-                        <option value="banheirosfemininos">Banheiros Femininos</option>
-                    </select>
-                </form>
-                <form action="#" method="post">           
-                    <label for="tipomanutencao">Tipo de Manutenção:<span>*</span></label>
-                    <select id="tipomanutencao" name="tipomanutencao">
-                        <option value="hidaulica">Hidráulica</option>
-                        <option value="eletrica">Elétrica</option>
-                        <option value="estrutural">Estrutural</option>
-                    </select>
-                </form>
-                <form action="#" method="post">           
-                    <label for="urgencia">Urgência da Manutenção:<span>*</span></label>
-                    <select id="urgencia" name="urgencia">
-                        <option value="baixa">Baixa</option>
-                        <option value="media">Média</option>
-                        <option value="alta">Alta</option>
-                    </select>
-            </form>
-                <form>
-                <label for="mensagem">Mensagem:<span>*</span></label>
-                <textarea id="mensagem" name="mensagem" rows="4" placeholder="Insira uma mensagem sobre o problema a ser resolvido" required minlength="10" maxlength="5000"></textarea>
-            </form>
-    </select>
-            
-            
-    <p class="campos-obrigatorios">*Campos obrigatórios.</p>
+            // Verifica se todos os campos estão preenchidos
+            if (tituloChamado === "" || local === "" || tipoManutencao === "" || urgencia === "" || mensagem === "") {
+                alert("Por favor, preencha todos os campos obrigatórios.");
+            } else {
+                alert("Cadastro realizado com sucesso!");
+                window.location.href = "../home/home.html"; // Redireciona para a página de confirmação
+            }
+        }
+
+        function cancelar() {
+            window.location.href = "../home/home.html"; // Redireciona ao cancelar
+        }
+    </script>
+</head>
+<body>
+    <section class="formulario">
+        <form id="formChamado">
+            <label for="titulochamado">Título do chamado:<span>*</span></label>
+            <input type="text" id="titulochamado" name="titulochamado" placeholder="Insira o título do chamado"><br>
+
+            <label for="local">Local:<span>*</span></label>
+            <select id="local" name="local">
+                <option value="">Selecione o local</option>
+                <option value="sala1">Sala 1</option>
+                <option value="sala2">Sala 2</option>
+                <option value="sala3">Sala 3</option>
+                <option value="banheirosmasculinos">Banheiros Masculinos</option>
+                <option value="banheirosfemininos">Banheiros Femininos</option>
+            </select><br>
+
+            <label for="tipomanutencao">Tipo de Manutenção:<span>*</span></label>
+            <select id="tipomanutencao" name="tipomanutencao">
+                <option value="">Selecione o tipo</option>
+                <option value="hidraulica">Hidráulica</option>
+                <option value="eletrica">Elétrica</option>
+                <option value="estrutural">Estrutural</option>
+            </select><br>
+
+            <label for="urgencia">Urgência da Manutenção:<span>*</span></label>
+            <select id="urgencia" name="urgencia">
+                <option value="">Selecione a urgência</option>
+                <option value="baixa">Baixa</option>
+                <option value="media">Média</option>
+                <option value="alta">Alta</option>
+            </select><br>
+
+            <label for="mensagem">Mensagem:<span>*</span></label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Insira uma mensagem sobre o problema a ser resolvido" required minlength="10" maxlength="5000"></textarea><br>
+
+            <p class="campos-obrigatorios">*Campos obrigatórios.</p>
+
             <div class="botoes">
-                <button type="button" class="cancelar">Cancelar</button>
-                
-                <button type="button" class="confirmar" onclick="confirmar()">Confirmar</button>
+                <button type="button" class="cancelar" onclick="cancelar()">Cancelar</button>
+                <button type="button" class="confirmar" onclick="validarFormulario()">Confirmar</button>
             </div>
-            
         </form>
     </section>
 
