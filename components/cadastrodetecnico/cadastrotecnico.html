@@ -27,6 +27,50 @@
         <p>Cadastrar novo técnico</p>
     </section>
 
+    <script>
+        // Função para formatar o CPF (xxx.xxx.xxx-xx)
+        function formatarCPF(cpf) {
+            cpf.value = cpf.value
+                .replace(/\D/g, '')             // Remove tudo que não for dígito
+                .replace(/(\d{3})(\d)/, '$1.$2') // Coloca o ponto após o terceiro dígito
+                .replace(/(\d{3})(\d)/, '$1.$2') // Coloca o ponto após o sexto dígito
+                .replace(/(\d{3})(\d{1,2})/, '$1-$2') // Coloca o hífen após o nono dígito
+                .replace(/(-\d{2})\d+?$/, '$1'); // Limita a entrada aos 11 dígitos do CPF
+        }
+
+        // Função para formatar o telefone (xx) xxxxx-xxxx
+        function formatarTelefone(telefone) {
+            telefone.value = telefone.value
+                .replace(/\D/g, '')                // Remove tudo que não for dígito
+                .replace(/(\d{2})(\d)/, '($1) $2') // Coloca os parênteses no código de área
+                .replace(/(\d{5})(\d)/, '$1-$2')   // Coloca o hífen após os primeiros 5 dígitos
+                .replace(/(-\d{4})\d+?$/, '$1');   // Limita a entrada ao formato (xx) xxxxx-xxxx
+        }
+
+        // Função para validar o formulário antes do envio
+        function validarFormulario(event) {
+            event.preventDefault(); // Previne o envio automático do formulário
+
+            let nome = document.getElementById('nome').value.trim();
+            let cpf = document.getElementById('cpf').value.trim();
+            let telefone = document.getElementById('telefone').value.trim();
+
+            // Verifica se todos os campos estão preenchidos
+            if (nome === "" || cpf === "" || telefone === "") {
+                alert("Por favor, preencha todos os campos obrigatórios.");
+            } else {
+                alert("Cadastro realizado com sucesso!");
+                window.location.href = "../home/home.html"; // Redireciona para a página de confirmação
+            }
+        }
+
+        window.onload = function() {
+            // Adiciona o evento de submit ao formulário
+            document.getElementById('cadastroForm').addEventListener('submit', validarFormulario);
+        }
+    </script>
+</head>
+<body>
     <section class="formulario">
         <form id="cadastroForm">
             <label for="nome">Nome:<span>*</span></label>
