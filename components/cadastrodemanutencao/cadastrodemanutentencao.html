@@ -32,40 +32,57 @@
         <p>Cadastrar manutenção realizada</p>
     </section>
 
-    <section class="formulario">
+    <script>
+        function validarFormulario() {
+            // Obtém os valores dos campos
+            let tituloChamado = document.getElementById('titulochamado').value;
+            let tecnicoResponsavel = document.getElementById('tecnico-responsavel').value;
+            let mensagem = document.getElementById('mensagem').value.trim();
 
-        <form action="#" method="post">         
+            // Verifica se todos os campos estão preenchidos
+            if (tituloChamado === "" || tecnicoResponsavel === "" || mensagem === "") {
+                alert("Por favor, preencha todos os campos obrigatórios.");
+            } else {
+                alert("Cadastro realizado com sucesso!");
+                window.location.href = "../home/home.html"; // Redireciona para a página de confirmação
+            }
+        }
+
+        function cancelar() {
+            window.location.href = "../home/home.html"; // Redireciona ao cancelar
+        }
+    </script>
+</head>
+<body>
+    <section class="formulario">
+        <form id="formChamado">
             <label for="titulochamado">Título do chamado:<span>*</span></label>
             <select id="titulochamado" name="titulochamado">
+                <option value="">Selecione o chamado</option>
                 <option value="titulochamado1">Lâmpada queimada</option>
                 <option value="titulochamado2">Torneira com vazamento</option>
                 <option value="titulochamado3">Rachadura na parede</option>
-            </select>
-        </form>
-        <form action="#" method="post">           
+            </select><br>
+
             <label for="tecnico-responsavel">Técnico Responsável:<span>*</span></label>
             <select id="tecnico-responsavel" name="tecnico-responsavel">
+                <option value="">Selecione o técnico</option>
                 <option value="joao-pimenta">João Pimenta</option>
                 <option value="ze-colmeia">Zé Colmeia</option>
                 <option value="zetti">Zetti</option>
-            </select>
+            </select><br>
+
+            <label for="mensagem">Mensagem:<span>*</span></label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Insira uma mensagem sobre a manutenção realizada" required minlength="10" maxlength="5000"></textarea><br>
+
+            <p class="campos-obrigatorios">*Campos obrigatórios.</p>
+
+            <div class="botoes">
+                <button type="button" class="cancelar" onclick="cancelar()">Cancelar</button>
+                <button type="button" class="confirmar" onclick="validarFormulario()">Confirmar</button>
+            </div>
         </form>
-    </form>
-        <form>
-        <label for="mensagem">Mensagem:<span>*</span></label>
-        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Insira uma mensagem sobre a manutenção realizada" required minlength="10" maxlength="5000"></textarea>
-    </form>
-</select>
-    
-    
-<p class="campos-obrigatorios">*Campos obrigatórios.</p>
-    <div class="botoes">
-        <button type="button" class="cancelar">Cancelar</button> 
-        <button type="button" class="confirmar">Confirmar</button>
-    </div>
-    
-</form>
-</section>
+    </section>
         <footer>
             <div class="footer-rodapé">
             <div class="texto-direita">
