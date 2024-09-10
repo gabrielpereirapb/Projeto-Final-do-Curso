@@ -3,32 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Técnico</title>
+    <title>Histórico de Manutenção</title>
     <link rel="stylesheet" href="historicodemanutencao.css">
     <!--BOOTSTRAP ICONS--> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!--FIM BO0TSTRAP ICONS-->
+    <!--FIM BOOTSTRAP ICONS-->
 </head>
 <body>
     <header>
         <div class="interface">
             <div class="logo">
-                <a ><img src="../../assets/Imagens/logo.png"> </img>
-                    
-                </a>
+                <a><img src="../../assets/Imagens/logo.png"></a>
             </div><!--logo-->
 
             <nav class="menu">
                 <ul>
-                    <li> <a href="../home/home.html">Página Inicial</a></li>
-                    <li> <a href="../chamados/chamados.html">Chamados</a></li>
-                    
+                    <li><a href="../home/home.html">Página Inicial</a></li>
+                    <li><a href="../chamados/chamados.html">Chamados</a></li>
                 </ul>
             </nav>
-            
         </div><!--interface-->
     </header>  
-
 
     <section class="topo-do-site">
         <h1>Histórico de Manutenção</h1>
@@ -36,49 +31,47 @@
     </section>
 
     <div class="container">
-        <button id="openSidebarBtn" class="open-sidebar-btn"><i class="bi bi-search"></i></button>
-
         <!-- Tabela de manutenção -->
-        <div class="filters">
-            <!-- Filtros existentes (pode ser removido se a sidebar substituir esta funcionalidade) -->
+        <div class="table-container">
+            <table id="maintenance-table">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Local</th>
+                        <th>Tipo de Manutenção</th>
+                        <th>Técnico Responsável</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>22-08-2024</td>
+                        <td>Banheiro Masculino</td>
+                        <td>Preventiva</td>
+                        <td>João Silva</td>
+                    </tr>
+                    <tr>
+                        <td>23-08-2024</td>
+                        <td>Sala 2</td>
+                        <td>Corretiva</td>
+                        <td>Maria Oliveira</td>
+                    </tr>
+                    <tr>
+                        <td>24-08-2024</td>
+                        <td>Banheiro Feminino</td>
+                        <td>Preventiva</td>
+                        <td>Pedro Santos</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="openSidebarBtn" class="open-sidebar-btn"><i class="bi bi-search"></i></button>
         </div>
-
-        <table id="maintenance-table">
-            <thead>
-                <tr>
-                    <th>Data</th>
-                    <th>Local</th>
-                    <th>Tipo de Manutenção</th>
-                    <th>Técnico Responsável</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>22-08-2024</td>
-                    <td>Banheiro Masculino</td>
-                    <td>Preventiva</td>
-                    <td>João Silva</td>
-                </tr>
-                <tr>
-                    <td>23-08-2024</td>
-                    <td>Sala 2</td>
-                    <td>Corretiva</td>
-                    <td>Maria Oliveira</td>
-                </tr>
-                <tr>
-                    <td>24-08-2024</td>
-                    <td>Banheiro Feminino</td>
-                    <td>Preventiva</td>
-                    <td>Pedro Santos</td>
-                </tr>
-            </tbody>
-        </table>
     </div>
 
     <!-- Sidebar -->
     <div id="mySidebar" class="sidebar">
         <div class="sidebar-header">
             <h2>Filtrar Manutenções</h2>
+            <button id="closeSidebarBtn" class="close-sidebar-btn">&times;</button> <!-- Botão de "X" -->
         </div>
 
         <label class="mensagem-filtro" for="data-sidebar">Data:</label>
@@ -90,7 +83,6 @@
             <option value="Banheiro Masculino">Banheiro Masculino</option>
             <option value="Sala 2">Sala 2</option>
             <option value="Banheiro Feminino">Banheiro Feminino</option>
-            <!-- Adicione mais opções conforme necessário -->
         </select>
 
         <label class="mensagem-filtro" for="tipo-sidebar">Tipo de Manutenção:</label>
@@ -98,7 +90,6 @@
             <option value="">Selecione</option>
             <option value="Preventiva">Preventiva</option>
             <option value="Corretiva">Corretiva</option>
-            <!-- Adicione mais opções conforme necessário -->
         </select>
 
         <label class="mensagem-filtro" for="tecnico-sidebar">Técnico Responsável:</label>
@@ -107,19 +98,13 @@
             <option value="João Silva">João Silva</option>
             <option value="Maria Oliveira">Maria Oliveira</option>
             <option value="Pedro Santos">Pedro Santos</option>
-            <!-- Adicione mais opções conforme necessário -->
         </select>
 
         <div class="sidebar-buttons">
-            <button id="cancelBtn">Cancelar</button>
+            <button id="clearBtn">Limpar Filtros</button> <!-- Botão de limpar filtros -->
             <button id="confirmBtn">Confirmar</button>
         </div>
     </div>
-
-    <!-- Seu rodapé -->
-    <footer>
-        <!-- Seu conteúdo de rodapé -->
-    </footer>
 
     <script src="historicodemanutencao.js"></script>
 </body>
