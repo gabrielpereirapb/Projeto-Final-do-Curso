@@ -1,18 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
     const openSidebarBtn = document.getElementById('openSidebarBtn');
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn'); // Botão de "X"
     const mySidebar = document.getElementById('mySidebar');
     const confirmBtn = document.getElementById('confirmBtn');
-    const cancelBtn = document.getElementById('cancelBtn');
+    const clearBtn = document.getElementById('clearBtn'); // Botão de Limpar Filtros
 
     // Abrir a sidebar
     openSidebarBtn.addEventListener('click', () => {
         mySidebar.classList.toggle('active');
     });
 
-    function formatDate(dateString) {
-        const [year, month, day] = dateString.split("-");
-        return day+'-'+month+'-'+year;
-    }
+    // Fechar a sidebar com o "X"
+    closeSidebarBtn.addEventListener('click', () => {
+        mySidebar.classList.remove('active');
+    });
+
+    // Função de limpar filtros
+    clearBtn.addEventListener('click', () => {
+        document.getElementById('data-sidebar').value = '';
+        document.getElementById('local-sidebar').value = '';
+        document.getElementById('tipo-sidebar').value = '';
+        document.getElementById('tecnico-sidebar').value = '';
+
+        // Mostra todas as linhas da tabela novamente
+        const rows = document.querySelectorAll('#maintenance-table tbody tr');
+        rows.forEach(row => {
+            row.style.display = '';
+        });
+    });
 
     // Confirmar a filtragem
     confirmBtn.addEventListener('click', () => {
@@ -20,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const localValue = document.getElementById('local-sidebar').value.toLowerCase();
         const tipoValue = document.getElementById('tipo-sidebar').value.toLowerCase();
         const tecnicoValue = document.getElementById('tecnico-sidebar').value.toLowerCase();
-        console.log(formatDate(dataValue))
+
         const table = document.getElementById('maintenance-table');
         const rows = table.querySelectorAll('tbody tr');
 
@@ -30,8 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const local = cells[1].textContent.toLowerCase();
             const tipo = cells[2].textContent.toLowerCase();
             const tecnico = cells[3].textContent.toLowerCase();
-
-            console.log(data)
 
             const isVisible =
                 (data.includes(dataValue) || !dataValue) &&
@@ -43,10 +56,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         mySidebar.classList.remove('active'); // Fecha a sidebar após a filtragem
-    });
-
-    // Cancelar a filtragem e fechar a sidebar
-    cancelBtn.addEventListener('click', () => {
-        mySidebar.classList.remove('active');
     });
 });
