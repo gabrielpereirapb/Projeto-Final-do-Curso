@@ -11,9 +11,22 @@ body{
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
+section.interface1{
+    max-width: 1280px;
+    margin: 0 auto;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex; /* Aplica o layout flexível */
+    justify-content:space-between; /* Distribui os itens uniformemente */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha se necessário */
+    gap: 50px; /* Espaçamento entre os itens */
+    }
+
 .interface{
     max-width: 1280px;
     margin: 0 auto;
+    
 }
 
 .flex{
@@ -38,7 +51,7 @@ header{
 header > .interface{
     display:flex;
     align-items:center;
-    justify-content:space-around;
+    justify-content:space-between;
     font-style: normal;
     padding: 55px;
     font-weight: 200;
@@ -47,27 +60,41 @@ header > .interface{
     
 }
 
+
 .logo{
     display: flex;
     align-items: center;
     padding: none;
-    height: 40px;
-    width: 50px;
+    height: 20px;
+    width: 5px;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
 }
 
 /*Estilo menu*/
-header a{
+header nav ul {
+    display: flex; /* Alinha os itens horizontalmente */
+    justify-content: space-between; /* Espaçamento automático entre os itens */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    padding: 0 20px; /* Espaçamento horizontal mais controlado */
+}
+
+header nav ul li a {
     color: aliceblue;
+    font-size: 15px; /* Tamanho da fonte dos itens do menu */
     text-decoration: none;
+    display:contents;
+    justify-items: center;
+    padding: 10px; /* Adiciona padding ao redor dos links para aumentar a área clicável */
 }
 
-header nav ul{
-    list-style-type:none;
-}
-
-header nav ul li{
-    display: inline-block;
-    padding: 0 40px; /*Redução do espaçamento da logo e dos nomes no menu */
+header nav ul li a:hover {
+    text-decoration: underline; /* Estilo de hover para os links */
 }
 
 /*ESTILO DO TOPO DO SITE*/
