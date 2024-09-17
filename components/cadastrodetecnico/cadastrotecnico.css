@@ -95,9 +95,9 @@ section.topo-do-site {
 
 .formulario {
     width: 80%; /* Defina a largura do container */
-    max-width: 700px; /* Opcional: largura máxima do container */
+    max-width: 600px; /* Opcional: largura máxima do container */
     margin: 0 auto; /* Centraliza horizontalmente */
-    padding: 30px 4%; /* Adiciona espaçamento interno */
+    padding: 0; /* Adiciona espaçamento interno */
     box-sizing: border-box; /* Inclui padding e border na largura total */
     background-color: #fff; /* Cor de fundo opcional */
     border-radius: 8px; /* Bordas arredondadas opcionais */
