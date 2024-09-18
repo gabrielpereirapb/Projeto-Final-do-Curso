@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novos Chamados</title>
+    <link rel="stylesheet" href="chamados.css">
+</head>
+<body>
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="../home/home.html">
+                    <img src="../../assets/Imagens/logo.png" alt="Logo">
+                </a>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="../home/home.html">Pagina Inicial</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>   
+
+    <section class="topo-do-site">
+        <h1>CHAMADOS</h1>
+    </section>
+
+    <!-- Tabela de Chamados -->
+    <div class="container">
+        <h2>Novos Chamados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Data</th>
+                    <th>Técnico</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody id="chamados-tabela">
+                <!-- Linhas de chamados geradas via JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal para exibir detalhes do chamado -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="fechar">&times;</span>
+            <h2>Detalhes do Chamado</h2>
+            <p><strong>ID:</strong> <span id="modal-id"></span></p>
+            <p><strong>Data:</strong> <span id="modal-data"></span></p>
+            <p><strong>Técnico:</strong> <span id="modal-tecnico"></span></p>
+            <p><strong>Descrição:</strong> <span id="modal-descricao"></span></p>
+        </div>
+    </div>
+
+    <script src="chamados.js"></script>
+</body>
+</html>
+

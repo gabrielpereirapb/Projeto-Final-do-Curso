@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="relatarproblema.css">
+    <title>Relatar problema</title>
+</head>
+<body>
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a ><img src="../../assets/Imagens/logo.png"> </img>
+                    
+                </a>
+            </div><!--logo-->
+
+            <nav class="menu">
+                <ul>
+                    <li> <a href="../home/home.html">Página Inicial</a></li>
+                    <li> <a href="../chamados/chamados.html">Chamados</a></li>
+                    
+                </ul>
+            </nav>
+            
+        </div><!--interface-->
+    </header>  
+
+    <section class="topo-do-site">
+        <h1>Relatar problema</h1>
+        <p>Relatar problema existente</p>
+    </section>
+
+    <script>
+        function validarFormulario() {
+            // Obtém os valores dos campos
+            let tituloChamado = document.getElementById('titulochamado').value.trim();
+            let local = document.getElementById('local').value;
+            let tipoManutencao = document.getElementById('tipomanutencao').value;
+            let urgencia = document.getElementById('urgencia').value;
+            let mensagem = document.getElementById('mensagem').value.trim();
+
+            // Verifica se todos os campos estão preenchidos
+            if (tituloChamado === "" || local === "" || tipoManutencao === "" || urgencia === "" || mensagem === "") {
+                alert("Por favor, preencha todos os campos obrigatórios.");
+            } else {
+                alert("Cadastro realizado com sucesso!");
+                window.location.href = "../home/home.html"; // Redireciona para a página de confirmação
+            }
+        }
+
+        function cancelar() {
+            window.location.href = "../home/home.html"; // Redireciona ao cancelar
+        }
+    </script>
+</head>
+<body>
+    <section class="formulario">
+        <form id="formChamado">
+            <label for="titulochamado">Título do chamado:<span>*</span></label>
+            <input type="text" id="titulochamado" name="titulochamado" placeholder="Insira o título do chamado"><br>
+
+            <label for="local">Local:<span>*</span></label>
+            <select id="local" name="local">
+                <option value="">Selecione o local</option>
+                <option value="sala1">Sala 1</option>
+                <option value="sala2">Sala 2</option>
+                <option value="sala3">Sala 3</option>
+                <option value="banheirosmasculinos">Banheiros Masculinos</option>
+                <option value="banheirosfemininos">Banheiros Femininos</option>
+            </select><br>
+
+            <label for="tipomanutencao">Tipo de Manutenção:<span>*</span></label>
+            <select id="tipomanutencao" name="tipomanutencao">
+                <option value="">Selecione o tipo</option>
+                <option value="hidraulica">Hidráulica</option>
+                <option value="eletrica">Elétrica</option>
+                <option value="estrutural">Estrutural</option>
+            </select><br>
+
+            <label for="urgencia">Urgência da Manutenção:<span>*</span></label>
+            <select id="urgencia" name="urgencia">
+                <option value="">Selecione a urgência</option>
+                <option value="baixa">Baixa</option>
+                <option value="media">Média</option>
+                <option value="alta">Alta</option>
+            </select><br>
+
+            <label for="mensagem">Mensagem:<span>*</span></label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Insira uma mensagem sobre o problema a ser resolvido" required minlength="10" maxlength="5000"></textarea><br>
+
+            <p class="campos-obrigatorios">*Campos obrigatórios.</p>
+
+            <div class="botoes">
+                <button type="button" class="cancelar" onclick="cancelar()">Cancelar</button>
+                <button type="button" class="confirmar" onclick="validarFormulario()">Confirmar</button>
+            </div>
+        </form>
+    </section>
+
+
+
+
+
+
+    <footer>
+        <div class="footer-rodapé">
+            <div class="sobre">
+                <h3>Sobre</h3>
+                <p2>Há mais de 65 anos. A tradição que não parou no tempo.  </p2>
+            </div><!--footer-left-->
+            <div class="redes-sociais">
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-whatsapp"></i>
+            </div><!--redes-sociais-->
+            
+            <div class="informacoes">
+                <h3>Informações de Contato</h3>
+                <p2>R. Nossa Sra. de Lourdes, 193 - <br> Jardim Tavares, Campina Grande - PB<br>58402-045 <br> 83 3182-3600</p2>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

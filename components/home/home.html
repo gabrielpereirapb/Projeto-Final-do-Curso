@@ -4,95 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!--BOOTSTRAP ICONS--> 
+    <!-- BOOTSTRAP ICONS --> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!--FIM BO0TSTRAP ICONS-->
+    <!-- FIM BOOTSTRAP ICONS -->
     <link rel="stylesheet" href="home.css">
-    <title>Manutenção Corretiva</title>
+    <title>Página Inicial</title>
 </head>
 <body>
-    
     <header>
-        <div class="interface">
+        <section class="interface1">
             <div class="logo">
-                <a ><img src="/assets/Imagens/logo.png"> </img>
-                    
+                <a>
+                    <img src="../../assets/Imagens/logo.png" alt="Logo">
                 </a>
-            </div><!--logo-->
+            </div><!-- logo -->
 
             <nav class="menu">
                 <ul>
-                    <li> <a href="home.html">Página Inicial</a></li>
-                    <li> <a href="#historicodemanutencao">Histórico de Manutenção</a></li>
-                    
+                    <li><a href="../home/home.html">PÁGINA INICIAL</a></li>
+                    <li><a href="../relatarproblema/relatarproblema.html">RELATAR PROBLEMA</a></li>
+                    <li><a href="../cadastrodetecnico/cadastrotecnico.html">CADASTRO DE TÉCNICO</a></li>
+                    <li><a href="../cadastrodemanutencao/cadastrodemanutentencao.html">CADASTRO DE MANUTENÇÃO</a></li>
+                    <li><a href="../históricodemanutencao/historicodemanutencao.html">HISTÓRICO DE MANUTENÇÃO</a></li>
+                    <li><a href="../chamados/chamados.html">CHAMADOS</a></li>
                 </ul>
             </nav>
-            
-        </div><!--interface-->
+        </section><!-- interface -->
     </header>  
 
-<main>
-    <section class="topo-do-site">
-        <div class="interface">
-            <div class="flex">
-                <div class="txt topo site">
-                    <h1>PÁGINA INICIAL</h1>
-                    <p>Bem vindos ao Sistema de Manutenção Escolar</p>
-                </div><!--txt topo site-->
-            </div><!--flex-->
-        </div><!--interface-->
-    </section><!--topo-do-site-->
+    <main>
+        <section class="topo-do-site">
+            <div class="interface">
+                <div class="flex">
+                    <div class="titulo-pagina">
+                        <h1>PÁGINA INICIAL</h1>
+                        <p>Bem-vindos ao Sistema de Manutenção Escolar</p>
+                    </div><!-- txt topo site -->
+                </div><!-- flex -->
+            </div><!-- interface -->
+        </section><!-- topo-do-site -->
 
-    <section class="cards-do-site">
-        <div class="cards">
-                    <div class="cards-1">
-                        <i class="bi bi-exclamation-triangle-fill"></i>
-                        <h2>Relatar Problema</h2>
-                        <p>Relatar problema para a equipe de manutenção</p>
-                     </div><!--cards-1--> 
-
-                     <div class="cards-1">
-                        <i class="bi bi-person-plus-fill"></i>
-                    <h2>Cadastro de Técnico</h2>
-                    <p>Cadastrar técnico para executar manutenções</p>
-                </div><!--cards-2-->
+        <section class="cards-do-site">
+            <div class="cards-line"> 
+                <button>
+                    <a href="../relatarproblema/relatarproblema.html">
+                        <div class="cards-1">
+                            <i class="bi bi-exclamation-triangle-fill"></i>
+                            <h2>Relatar Problema</h2>
+                            <p>Relatar problema para a equipe de manutenção</p>
+                        </div>
+                    </a>
+                </button>
+                <button>
+                    <a href="../chamados/chamados.html">
+                        <div class="cards-1">
+                            <i class="bi bi-telephone-fill"></i>
+                            <h2>Chamados</h2>
+                            <p>Visualizar chamados pendentes</p>
+                        </div>
+                </button>
             </div>
-                <div class="cards">
-                    <div class="cards-1">
-                        <i class="bi bi-tools"></i>
-                        <h2>Cadastro de Manutenção</h2>
-                        <p>Cadastrar manutenção executada</p>
-                     </div><!--cards-3-->
-        
-                     <div class="cards-1">
-                        <i class="bi bi-graph-up"></i>
-                        <h2>Histórico de Manutenção</h2>
-                        <p>Atividades das manutenções executadas</p>
-                     </div><!--cards-4-->
-                    
+            <div class="cards-line"> 
+                <button>
+                    <a href="../cadastrodemanutencao/cadastrodemanutentencao.html">
+                        <div class="cards-1">
+                            <i class="bi bi-tools"></i>
+                            <h2>Cadastro de Manutenção</h2>
+                            <p>Cadastrar manutenção executada</p>
+                        </div>
+                    </a>
+                </button>
+                <button>
+                    <a href="../históricodemanutencao/historicodemanutencao.html">
+                        <div class="cards-1">
+                            <i class="bi bi-graph-up"></i>
+                            <h2>Histórico de Manutenção</h2>
+                            <p>Atividades das manutenções executadas</p>
+                        </div>
+                    </a>
+                </button>
+            </div>
+        </section><!-- cards-do-site -->          
+    </main>
+
+    <footer>
+        <div class="footer-rodapé">
+            <div class="texto-direita">
+                <div class="sobre">
+                    <h3>Sobre</h3>
+                    <p>Há mais de 65 anos. A tradição que não parou no tempo.</p>
                 </div>
+                <div class="redes-sociais">
+                    <a class="icones-footer" href="https://www.instagram.com/lourdinascg/" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a class="icones-footer" href="https://api.whatsapp.com/send?phone=558331823600&text=Ol%C3%A1,%20desejo%20mais%20informa%C3%A7%C3%B5es%20sobre%20matr%C3%ADculas%202024." target="_blank"><i class="bi bi-whatsapp"></i></a>
+                    <a class="icones-footer" href="" target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a class="icones-footer" href="https://www.youtube.com/user/evlcg" target="_blank"><i class="bi bi-youtube"></i></a>
+                    <a class="icones-footer" href="https://www.google.com/maps/place/Col%C3%A9gio+Nossa+Senhora+de+Lourdes/@-7.211834,-35.8748341,15z/data=!4m6!3m5!1s0x7ac1fabb95c42ef:0x6c80cb4b44fe60b!8m2!3d-7.2121889!4d-35.8751523!16s%2Fg%2F1ydkbdd2g?entry=ttu&g_ep=EgoyMDI0MDkxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank"><i class="bi bi-geo-alt-fill"></i></a>
+                </div><!-- redes-sociais -->
+            </div>
 
-    </section>  <!--card-->          
-</main>
-
-<footer>
-    <div class="footer-rodapé">
-        <div class="sobre">
-            <h3>Sobre</h3>
-            <p2>Há mais de 65 anos. A tradição que não parou no tempo.  </p2>
-        </div><!--footer-left-->
-        <div class="redes-sociais">
-            <i class="bi bi-instagram"></i>
-            <i class="bi bi-whatsapp"></i>
-        </div><!--redes-sociais-->
-        
-        <div class="informacoes">
-            <h4>Informações de Contato</h4>
-            <p3>R. Nossa Sra. de Lourdes, 193 - <br> Jardim Tavares, Campina Grande - PB<br>, 58402-045 <br> 83 3182-3600</p3>
-
-</footer>
-
-
-
+            <div class="texto-esquerda">          
+                <div class="informacoes">
+                    <h3>Informações de Contato</h3>
+                    <p>R. Nossa Sra. de Lourdes, 193 - <br> Jardim Tavares, Campina Grande - PB<br>58402-045 <br> 83 3182-3600</p>
+                </div>
+            </div>
+        </div><!-- footer-rodapé -->
+    </footer>
 </body>
-</html> 
+</html>

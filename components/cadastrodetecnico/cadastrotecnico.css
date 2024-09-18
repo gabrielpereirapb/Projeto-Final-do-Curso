@@ -6,7 +6,8 @@
 }
 
 body {
-    background-color: beige;
+    background-color:  #e7e3e3;
+    height: 100vh;
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -20,62 +21,92 @@ body {
 }
 
 /* Comprimento e cor da faixa do menu */
-header {
+header{
     width: 100%;
-    background-color: rgba(6, 6, 119, 0.897);
-    padding: 10px 10%;
+    background-color: #064C8C;  
+    padding: 2px 10%; /* Ajuste da largura da faixa */  
+    height: 148px;
+    flex-shrink: 0;
+    flex-shrink: 0;
+}   
+
+header > .interface{
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    font-style: normal;
+    padding: 55px;
+    font-weight: 200;
+    margin-right: 100px;
+    list-style-type:none;
+    
 }
 
-.logo {
-    width: 50px;
-    height: auto;
-}
-
-/* Estrutura e tamanho da letra do menu */
-header .interface {
+.logo{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    font-weight: 200;
-    list-style-type: none;
+    padding: none;
+    height: 40px;
+    width: 50px;
 }
+
+header a{
+    color: aliceblue;
+    text-decoration: none;
+}
+
 
 header a {
     color: aliceblue;
     text-decoration: none;
 }
 
-header nav ul {
-    list-style-type: none;
-    display: flex;
+header nav ul{
+    list-style-type:none;
 }
 
 header nav ul li {
-    padding: 0 20px;
+    display: inline-block;
+    padding: 0 40px; /*Redução do espaçamento da logo e dos nomes no menu */
 }
 
 /* Estilo do topo do site */
 section.topo-do-site {
     padding: 40px 4%;
-    background-color: beige;
+    background-color: #e7e3e3;
     color: black;
     text-align: center;
 }
 
 .topo-do-site h1 {
-    font-size: 36px;
+    font-size: 34px;
+    margin-right: 14px;
     margin-bottom: 10px;
     font-weight: bold;
 }
 
-/* Estilo do formulário */
-section.formulario {
-    padding: 20px 4%;
-    background-color: beige;
-    text-align: center;
+.topo-do-site p {
+    font-size: 18px;
+    margin-right: 14px;
+    margin-top: 12px;
+    margin-bottom: 2px;
+    font-weight:lighter;
+}
+
+.formulario {
+    width: 80%; /* Defina a largura do container */
+    max-width: 600px; /* Opcional: largura máxima do container */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 0; /* Adiciona espaçamento interno */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    background-color: #fff; /* Cor de fundo opcional */
+    border-radius: 8px; /* Bordas arredondadas opcionais */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra opcional */
 }
 
 form {
+    display: flex;
+    flex-direction: column;
     max-width: 600px;
     margin: 0 auto;
     background-color: white;
@@ -83,7 +114,6 @@ form {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 form label {
     display: block;
     font-weight: bold;
@@ -104,7 +134,8 @@ form span {
 
 .botoes {
     display: flex;
-    justify-content: space-between;
+    justify-content:left;
+    margin-left: 4px;
 }
 
 .botoes button {
@@ -113,6 +144,7 @@ form span {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    margin: 10px;
 }
 
 .cancelar {
@@ -121,46 +153,73 @@ form span {
 }
 
 .confirmar {
-    background-color: rgba(6, 6, 119, 0.897);
+    background-color: #064C8C; 
     color: white;
 }
 
 .campos-obrigatorios {
     color: red;
-    font-size: 14px;
+    font-size: 13px;
     text-align: left;
-    margin-top: 10px;
+    margin-top: 8px;
+    margin-bottom: 12px;
 }
 
-/* Estilo do rodapé */
+/*Estrutura do rodapé*/
+
+.footer {
+    display: flex;
+    justify-content: space-between; /* Espaça os itens para as extremidades */
+    align-items: center; /* Alinha verticalmente os itens no centro */
+    background-color: #064C8C;
+    color: white;
+    padding: 10px 20px; /* Espaçamento interno */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-content {
+    text-align: center; /* Alinha o texto ao centro dentro do footer */
+}
+
 .footer-rodapé {
     width: 100%;
-    background-color: rgba(6, 6, 119, 0.897);
+    background-color: #064C8C; 
+    padding-top: 20px;
+    padding-bottom: 15px;
+    display: flex; /* Alinha os itens horizontalmente */
+    justify-content: space-between; /* Espaça os itens */
     color: white;
-    padding: 20px 4%;
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: flex-start; /* Alinha os itens ao topo */
+    margin-top: 100px; /*Espaço entre o rodapé e o card*/
 }
 
-.footer-left {
-    flex: 1;
+/* Estilo dos itens do rodapé */
+.sobre, .informacoes, .redes-sociais {
+    flex: 1; /* Faz com que todos os itens ocupem a mesma quantidade de espaço */
+    margin: 0 10px; /* Espaçamento entre os itens */
+    padding: 0 10px; /* Adiciona padding interno para melhor espaçamento */
+}
+
+/* Ajustes adicionais */
+.sobre {
     text-align: left;
 }
 
-.footer-right {
-    flex: 1;
-    text-align: right;
+.informacoes {
+    text-align: left; /* Alinha o texto à esquerda */
+    padding-left: 300px;
 }
 
+.redes-sociais {
+    text-align: center;
+    display: flex;
+}
+
+/* Estilo adicional para os ícones sociais */
 .redes-sociais i {
-    font-size: 24px;
-    margin-right: 10px;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.redes-sociais i:hover {
-    color: #ddd;
+    font-size: 20px; /* Ajuste o tamanho dos ícones conforme necessário */
+    margin: 0 4px; /* Espaçamento entre os ícones */
+    text-align: end;
 }

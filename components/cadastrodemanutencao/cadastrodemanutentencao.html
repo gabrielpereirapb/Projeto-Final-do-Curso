@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastrodemanutencao.css">
+    <title>Cadastro de Manutenção</title>
+</head>
+<body>
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a ><img src="../../assets/Imagens/logo.png"> </img>
+                    
+                </a>
+            </div><!--logo-->
+
+            <nav class="menu">
+                <ul>
+                    <li> <a href="../home/home.html">Página Inicial</a></li>
+                    <li> <a href="../chamados/chamados.html">Chamados</a></li>
+                    
+                </ul>
+            </nav>
+            
+        </div><!--interface-->
+    </header>  
+
+
+    <section class="topo-do-site">
+        <h1>Cadastro de Manutenção</h1>
+        <p>Cadastrar manutenção realizada</p>
+    </section>
+
+    <script>
+        function validarFormulario() {
+            // Obtém os valores dos campos
+            let tituloChamado = document.getElementById('titulochamado').value;
+            let tecnicoResponsavel = document.getElementById('tecnico-responsavel').value;
+            let mensagem = document.getElementById('mensagem').value.trim();
+
+            // Verifica se todos os campos estão preenchidos
+            if (tituloChamado === "" || tecnicoResponsavel === "" || mensagem === "") {
+                alert("Por favor, preencha todos os campos obrigatórios.");
+            } else {
+                alert("Cadastro realizado com sucesso!");
+                window.location.href = "../home/home.html"; // Redireciona para a página de confirmação
+            }
+        }
+
+        function cancelar() {
+            window.location.href = "../home/home.html"; // Redireciona ao cancelar
+        }
+    </script>
+</head>
+<body>
+    <section class="formulario">
+        <form id="formChamado">
+            <label for="titulochamado">Título do chamado:<span>*</span></label>
+            <select id="titulochamado" name="titulochamado">
+                <option value="">Selecione o chamado</option>
+                <option value="titulochamado1">Lâmpada queimada</option>
+                <option value="titulochamado2">Torneira com vazamento</option>
+                <option value="titulochamado3">Rachadura na parede</option>
+            </select><br>
+
+            <label for="tecnico-responsavel">Técnico Responsável:<span>*</span></label>
+            <select id="tecnico-responsavel" name="tecnico-responsavel">
+                <option value="">Selecione o técnico</option>
+                <option value="joao-pimenta">João Pimenta</option>
+                <option value="ze-colmeia">Zé Colmeia</option>
+                <option value="zetti">Zetti</option>
+            </select><br>
+
+            <label for="mensagem">Mensagem:<span>*</span></label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Insira uma mensagem sobre a manutenção realizada" required minlength="10" maxlength="5000"></textarea><br>
+
+            <p class="campos-obrigatorios">*Campos obrigatórios.</p>
+
+            <div class="botoes">
+                <button type="button" class="cancelar" onclick="cancelar()">Cancelar</button>
+                <button type="button" class="confirmar" onclick="validarFormulario()">Confirmar</button>
+            </div>
+        </form>
+    </section>
+        <footer>
+            <div class="footer-rodapé">
+            <div class="texto-direita">
+                <div class="sobre">
+                    <h3>Sobre</h3>
+                    <p2>Há mais de 65 anos. A tradição que não parou no tempo.  </p2>
+                </div>
+                <div class="redes-sociais">
+                    <i class="bi bi-instagram"></i>
+                    <i class="bi bi-whatsapp"></i>
+                </div><!--redes-sociais-->
+            </div>
+
+            <div class="texto-esquerda">          
+                <div class="informacoes">
+                    <h3>Informações de Contato</h3>
+                    <p2>R. Nossa Sra. de Lourdes, 193 - <br> Jardim Tavares, Campina Grande - PB<br>58402-045 <br> 83 3182-3600</p2>
+                </div>
+            </div>
+            </div>
+        </footer>
+</body>
+</html>
