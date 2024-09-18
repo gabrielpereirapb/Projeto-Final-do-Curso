@@ -14,13 +14,11 @@ body{
 section.interface1{
     max-width: 1280px;
     margin: 0 auto;
-    max-width: 1280px;
-    margin: 0 auto;
     display: flex; /* Aplica o layout flexível */
     justify-content:space-between; /* Distribui os itens uniformemente */
     align-items: center; /* Alinha os itens verticalmente ao centro */
     flex-wrap: wrap; /* Permite que os itens quebrem linha se necessário */
-    gap: 50px; /* Espaçamento entre os itens */
+    gap: 30px; /* Espaçamento entre os itens */
     }
 
 .interface{
@@ -57,15 +55,13 @@ header > .interface{
     font-weight: 200;
     margin-right: 100px;
     list-style-type:none;
-    
 }
-
 
 .logo{
     display: flex;
     align-items: center;
     padding: none;
-    height: 20px;
+    height: 25px;
     width: 5px;
     flex-direction: row-reverse;
     flex-wrap: wrap;
@@ -78,6 +74,9 @@ header nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    margin-left: 40px;
+    gap: 5px;
+    white-space: nowrap;
 }
 
 header nav ul li {
@@ -86,12 +85,13 @@ header nav ul li {
 
 header nav ul li a {
     color: aliceblue;
-    font-size: 15px; /* Tamanho da fonte dos itens do menu */
+    font-size: 12px; /* Novo tamanho da fonte dos itens do menu */
     text-decoration: none;
-    display:contents;
+    display: contents;
     justify-items: center;
-    padding: 10px; /* Adiciona padding ao redor dos links para aumentar a área clicável */
+    padding: 10px;
 }
+
 
 header nav ul li a:hover {
     text-decoration: underline; /* Estilo de hover para os links */
