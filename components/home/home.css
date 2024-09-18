@@ -289,6 +289,10 @@ margin-top: 10px;
     text-align: end;
 }
 
+.icones-footer {
+    color: #ffffff; /* Substitua pelo código da cor desejada */
+    text-decoration: none; /* Remove o sublinhado dos links, se houver */
+}
 
 /* Remove bordas da section e dos elementos filhos */
 .cards-do-site, .cards-do-site * {
