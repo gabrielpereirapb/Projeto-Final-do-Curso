@@ -1,48 +1,48 @@
-const chamados = [
-    {
-        id: 101,
-        data: "2024-09-01T14:30:00",
-        tecnico: "Carlos Silva",
-        descricao: "Problema no servidor de banco de dados. Requer reinicialização e análise de logs."
-    },
-    {
-        id: 102,
-        data: "2024-09-03T09:15:00",
-        tecnico: "Ana Pereira",
-        descricao: "Configuração de novos roteadores para a rede interna do escritório."
-    }
-];
-
-// Número máximo de caracteres que será exibido na tabela
+// Constante para limitar o tamanho da descrição
 const MAX_DESC_LENGTH = 50;
 
-// Função para atualizar os chamados
-function atualizarChamados() {
+// Função para buscar os chamados do servidor
+async function buscarChamados() {
+    try {
+        const response = await fetch('http://localhost:3000/api/novoChamado'); // URL do seu back-end
+
+        if (!response.ok) {
+            throw new Error('Erro ao buscar chamados');
+        }
+        const data = await response.json();
+
+        atualizarChamados(data); // Atualiza a tabela com os dados do back-end
+    } catch (error) {
+        console.error('Erro:', error);
+    }
+}
+
+// Atualiza os chamados no DOM com os dados recebidos do back-end
+function atualizarChamados(chamados) {
     const tabelaChamados = document.getElementById('chamados-tabela');
     tabelaChamados.innerHTML = ''; // Limpa a tabela antes de atualizar
 
     chamados.forEach(chamado => {
         const row = document.createElement('tr');
-        
-        const dataFormatada = new Date(chamado.data).toLocaleDateString('pt-BR');
+        const dataFormatada = new Date(chamado.data_abertura).toLocaleDateString('pt-BR');
 
         // Limita a descrição para ser exibida na tabela
-        const descricaoResumida = chamado.descricao.length > MAX_DESC_LENGTH 
-            ? chamado.descricao.substring(0, MAX_DESC_LENGTH) + '...' 
-            : chamado.descricao;
+        const descricaoResumida = chamado.mensagem.length > MAX_DESC_LENGTH 
+            ? chamado.mensagem.substring(0, MAX_DESC_LENGTH) + '...' 
+            : chamado.mensagem;
 
         row.innerHTML = `
             <td>${chamado.id}</td>
             <td>${dataFormatada}</td>
-            <td>${chamado.tecnico}</td>
+            <td>${chamado.tipo_manutencao}</td>
             <td>${descricaoResumida}</td>
         `;
         
         row.classList.add('chamado');
         row.dataset.id = chamado.id;
         row.dataset.data = dataFormatada;
-        row.dataset.tecnico = chamado.tecnico;
-        row.dataset.descricao = chamado.descricao;
+        row.dataset.tecnico = chamado.tipo_manutencao;
+        row.dataset.descricao = chamado.mensagem;
 
         tabelaChamados.appendChild(row);
 
@@ -57,9 +57,9 @@ function atualizarChamados() {
 function abrirModal(chamado) {
     const modal = document.getElementById('modal');
     document.getElementById('modal-id').textContent = chamado.id;
-    document.getElementById('modal-data').textContent = new Date(chamado.data).toLocaleDateString('pt-BR');
-    document.getElementById('modal-tecnico').textContent = chamado.tecnico;
-    document.getElementById('modal-descricao').textContent = chamado.descricao;
+    document.getElementById('modal-data').textContent = new Date(chamado.chamado.data_abertura).toLocaleDateString('pt-BR');
+    document.getElementById('modal-tecnico').textContent = chamado.tipo_manutencao;
+    document.getElementById('modal-descricao').textContent = chamado.mensagem;
     modal.classList.add('show');
 }
 
@@ -77,6 +77,5 @@ window.addEventListener('click', function(event) {
     }
 });
 
-// Atualiza os chamados simulados ao carregar a página
-window.onload = atualizarChamados;
-
+// Atualiza os chamados do servidor ao carregar a página
+window.onload = buscarChamados;
