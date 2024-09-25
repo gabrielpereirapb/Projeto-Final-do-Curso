@@ -11,15 +11,13 @@ body{
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-section.interface1{
-    max-width: 1280px;
-    margin: 0 auto;
-    display: flex; /* Aplica o layout flexível */
-    justify-content:space-between; /* Distribui os itens uniformemente */
-    align-items: center; /* Alinha os itens verticalmente ao centro */
-    flex-wrap: wrap; /* Permite que os itens quebrem linha se necessário */
-    gap: 30px; /* Espaçamento entre os itens */
-    }
+.interface1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #064C8D;
+    padding: 16px 24px 16px 24px;
+}
 
 .interface{
     max-width: 1280px;
@@ -30,41 +28,6 @@ section.interface1{
 .flex{
     display: flex;
     justify-content: center;
-}
-/*Comprimento e cor da faixa do menu*/
-header{
-    width: 100%;
-    background-color: #064C8C;  
-    padding: 2px 10%; /* Ajuste da largura da faixa */  
-    height: 148px;
-    flex-shrink: 0;
-    flex-shrink: 0;
-}   
-
-/*Largura da faixa do menu*/
-header{
-    padding: 2px 10%;
-}
-/*Estrutura e tamanho da letra do menu*/
-header > .interface{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    font-style: normal;
-    padding: 55px;
-    font-weight: 200;
-    margin-right: 100px;
-    list-style-type:none;
-}
-
-.logo{
-    display: flex;
-    align-items: center;
-    padding: none;
-    height: 25px;
-    width: 5px;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
 }
 
 /*Estilo menu*/
