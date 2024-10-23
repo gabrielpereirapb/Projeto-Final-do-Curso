@@ -86,30 +86,31 @@ section.topo-do-site {
 
 .formulario {
     width: 80%; /* Defina a largura do container */
-    max-width: 700px; /* Opcional: largura máxima do container */
+    max-width: 700px; /* Largura máxima do container */
     margin: 0 auto; /* Centraliza horizontalmente */
     padding: 30px 4%; /* Adiciona espaçamento interno */
     box-sizing: border-box; /* Inclui padding e border na largura total */
-    background-color: #fff; /* Cor de fundo opcional */
-    border-radius: 8px; /* Bordas arredondadas opcionais */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+    background-color: #fff; /* Cor de fundo do container principal */
+    border-radius: 8px; /* Bordas arredondadas do container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra do container */
 }
 
 form {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
     margin: 0 auto;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0; /* Remove o padding interno do formulário */
+    background-color: transparent; /* Remove o fundo branco */
+    box-shadow: none; /* Remove a sombra interna */
+    border-radius: 0; /* Remove bordas arredondadas */
 }
+
 form label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
 }
+
 
 form input {
     width: 100%;
