@@ -1,217 +1,119 @@
-/* Estilo Geral */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Técnico</title>
+    <link rel="stylesheet" href="cadastrotecnico.css">
+</head>
+<body>
+    <header class="interface1">
+        <div>
+            <img src="../../assets/Imagens/logo.png" alt="Logo" width="80px">
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="../home/home.html">PÁGINA INICIAL</a></li>
+                <li><a href="../relatarproblema/relatarproblema.html">RELATAR PROBLEMA</a></li>
+                <li><a href="../cadastrodetecnico/cadastrotecnico.html">CADASTRO DE TÉCNICO</a></li>
+                <li><a href="../cadastrodemanutencao/cadastrodemanutentencao.html">CADASTRO DE MANUTENÇÃO</a></li>
+                <li><a href="../históricodemanutencao/historicodemanutencao.html">HISTÓRICO DE MANUTENÇÃO</a></li>
+                <li><a href="../chamados/chamados.html">CHAMADOS</a></li>
+            </ul>
+        </nav>
+    </header>  
 
-body {
-    background-color:  #e7e3e3;
-    height: 100vh;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-}
+    <section class="topo-do-site">
+        <h1>Cadastro de técnico</h1>
+        <p>Cadastrar novo técnico</p>
+    </section>
 
-.interface1{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #064C8D;
-    padding: 16px 24px 16px 24px;
-}
+    <script>
+        // Função para formatar o CPF (xxx.xxx.xxx-xx)
+        function formatarCPF(cpf) {
+            cpf.value = cpf.value
+                .replace(/\D/g, '')             // Remove tudo que não for dígito
+                .replace(/(\d{3})(\d)/, '$1.$2') // Coloca o ponto após o terceiro dígito
+                .replace(/(\d{3})(\d)/, '$1.$2') // Coloca o ponto após o sexto dígito
+                .replace(/(\d{3})(\d{1,2})/, '$1-$2') // Coloca o hífen após o nono dígito
+                .replace(/(-\d{2})\d+?$/, '$1'); // Limita a entrada aos 11 dígitos do CPF
+        }
 
-.interface{
-    max-width: 1280px;
-    margin: 0 auto;
+        // Função para formatar o telefone (xx) xxxxx-xxxx
+        function formatarTelefone(telefone) {
+            telefone.value = telefone.value
+                .replace(/\D/g, '')                // Remove tudo que não for dígito
+                .replace(/(\d{2})(\d)/, '($1) $2') // Coloca os parênteses no código de área
+                .replace(/(\d{5})(\d)/, '$1-$2')   // Coloca o hífen após os primeiros 5 dígitos
+                .replace(/(-\d{4})\d+?$/, '$1');   // Limita a entrada ao formato (xx) xxxxx-xxxx
+        }
+
+        // Função para validar o formulário antes do envio
+        function validarFormulario(event) {
+            event.preventDefault(); // Previne o envio automático do formulário
+
+            let nome = document.getElementById('nome').value.trim();
+            let cpf = document.getElementById('cpf').value.trim();
+            let telefone = document.getElementById('telefone').value.trim();
+
+            // Verifica se todos os campos estão preenchidos
+            if (nome === "" || cpf === "" || telefone === "") {
+                alert("Por favor, preencha todos os campos obrigatórios.");
+            } else {
+                alert("Cadastro realizado com sucesso!");
+                window.location.href = "../home/home.html"; // Redireciona para a página de confirmação
+            }
+        }
+
+        window.onload = function() {
+            // Adiciona o evento de submit ao formulário
+            document.getElementById('cadastroForm').addEventListener('submit', validarFormulario);
+        }
+    </script>
+</head>
+<body>
+    <section class="formulario">
+        <form id="cadastroForm">
+            <label for="nome">Nome:<span>*</span></label>
+            <input type="text" id="nome" name="nome" placeholder="Nome completo" required>
+
+            <label for="cpf">CPF:<span>*</span></label>
+            <input type="text" id="cpf" name="cpf" placeholder="Insira seu CPF" required maxlength="14" oninput="formatarCPF(this)">
+
+            <label for="telefone">Telefone:<span>*</span></label>
+            <input type="text" id="telefone" name="telefone" placeholder="Insira seu telefone" required maxlength="15" oninput="formatarTelefone(this)">
+
+            <p class="campos-obrigatorios">*Campos obrigatórios.</p>
+
+            <div class="botoes">
+                <button type="button" class="cancelar" onclick="window.location.href='../home/home.html'">Cancelar</button>
+                <button type="submit" class="confirmar">Confirmar</button>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-rodapé">
+            <div class="sobre">
+                <h3>Sobre</h3>
+                <p>Há mais de 65 anos. A tradição que não parou no tempo.</p>
+            </div><!--footer-left-->
+
+            <div class="redes-sociais">
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-whatsapp"></i>
+            </div><!--redes-sociais-->
+
+            <div class="informacoes">
+                <h3>Informações de Contato</h3>
+                <p>R. Nossa Sra. de Lourdes, 193 - <br> Jardim Tavares, Campina Grande - PB<br>58402-045<br>83 3182-3600</p>
+            </div>
+        </div>
+    </footer>
+
+        <script src="cadastrodetecnico.js"></script> 
+
+        
     
-}
-
-.flex{
-    display: flex;
-    justify-content: center;
-}
-
-/*Estilo menu*/
-header nav ul {
-    display: flex; /* Alinha os itens horizontalmente */
-    justify-content: space-between; /* Espaçamento automático entre os itens */
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    margin-left: 40px;
-    gap: 5px;
-    white-space: nowrap;
-}
-
-header nav ul li {
-    padding: 0 20px; /* Espaçamento horizontal mais controlado */
-}
-
-header nav ul li a {
-    color: aliceblue;
-    font-size: 12px; /* Novo tamanho da fonte dos itens do menu */
-    text-decoration: none;
-    display: contents;
-    justify-items: center;
-    padding: 10px;
-}
-
-
-header nav ul li a:hover {
-    text-decoration: underline; /* Estilo de hover para os links */
-}
-
-
-/* Estilo do topo do site */
-section.topo-do-site {
-    padding: 40px 4%;
-    background-color: #e7e3e3;
-    color: black;
-    text-align: center;
-}
-
-.topo-do-site h1 {
-    font-size: 34px;
-    margin-right: 14px;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.topo-do-site p {
-    font-size: 18px;
-    margin-right: 14px;
-    margin-top: 12px;
-    margin-bottom: 2px;
-    font-weight:lighter;
-}
-
-.formulario {
-    width: 80%; /* Defina a largura do container */
-    max-width: 700px; /* Largura máxima do container */
-    margin: 0 auto; /* Centraliza horizontalmente */
-    padding: 30px 4%; /* Adiciona espaçamento interno */
-    box-sizing: border-box; /* Inclui padding e border na largura total */
-    background-color: #fff; /* Cor de fundo do container principal */
-    border-radius: 8px; /* Bordas arredondadas do container */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra do container */
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    padding: 0; /* Remove o padding interno do formulário */
-    background-color: transparent; /* Remove o fundo branco */
-    box-shadow: none; /* Remove a sombra interna */
-    border-radius: 0; /* Remove bordas arredondadas */
-}
-
-form label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-
-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form span {
-    color: red;
-}
-
-.botoes {
-    display: flex;
-    justify-content:left;
-    margin-left: 4px;
-}
-
-.botoes button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    margin: 10px;
-}
-
-.cancelar {
-    background-color: lightgray;
-    color: black;
-}
-
-.confirmar {
-    background-color: #064C8C; 
-    color: white;
-}
-
-.campos-obrigatorios {
-    color: red;
-    font-size: 13px;
-    text-align: left;
-    margin-top: 8px;
-    margin-bottom: 12px;
-}
-
-/*Estrutura do rodapé*/
-
-.footer {
-    display: flex;
-    justify-content: space-between; /* Espaça os itens para as extremidades */
-    align-items: center; /* Alinha verticalmente os itens no centro */
-    background-color: #064C8C;
-    color: white;
-    padding: 10px 20px; /* Espaçamento interno */
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-.footer-content {
-    text-align: center; /* Alinha o texto ao centro dentro do footer */
-}
-
-.footer-rodapé {
-    width: 100%;
-    background-color: #064C8C; 
-    padding-top: 20px;
-    padding-bottom: 15px;
-    display: flex; /* Alinha os itens horizontalmente */
-    justify-content: space-between; /* Espaça os itens */
-    color: white;
-    align-items: flex-start; /* Alinha os itens ao topo */
-    margin-top: 100px; /*Espaço entre o rodapé e o card*/
-}
-
-/* Estilo dos itens do rodapé */
-.sobre, .informacoes, .redes-sociais {
-    flex: 1; /* Faz com que todos os itens ocupem a mesma quantidade de espaço */
-    margin: 0 10px; /* Espaçamento entre os itens */
-    padding: 0 10px; /* Adiciona padding interno para melhor espaçamento */
-}
-
-/* Ajustes adicionais */
-.sobre {
-    text-align: left;
-}
-
-.informacoes {
-    text-align: left; /* Alinha o texto à esquerda */
-    padding-left: 300px;
-}
-
-.redes-sociais {
-    text-align: center;
-    display: flex;
-}
-
-/* Estilo adicional para os ícones sociais */
-.redes-sociais i {
-    font-size: 20px; /* Ajuste o tamanho dos ícones conforme necessário */
-    margin: 0 4px; /* Espaçamento entre os ícones */
-    text-align: end;
-}
+</body>
+</html>
