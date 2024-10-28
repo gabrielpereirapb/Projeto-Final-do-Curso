@@ -1,50 +1,69 @@
 // Função para validar e capturar os dados do formulário
 function validarFormulario() {
     // Obtém os valores dos campos
-    let tituloChamado = document.getElementById('titulochamado').value.trim();
+    let titulo_do_chamado = document.getElementById('titulo_do_chamado').value.trim();
     let local = document.getElementById('local').value;
-    let tipoManutencao = document.getElementById('tipomanutencao').value;
+    let tipo_manutencao = document.getElementById('tipo_manutencao').value;
     let urgencia = document.getElementById('urgencia').value;
-    let mensagem = document.getElementById('mensagem').value.trim();
+    let mensagem_problema = document.getElementById('mensagem_problema').value.trim();
 
     // Verifica se todos os campos obrigatórios estão preenchidos
-    if (tituloChamado === "" || local === "" || tipoManutencao === "" || urgencia === "" || mensagem === "") {
-        alert("Por favor, preencha todos os campos obrigatórios.");
+    if (!titulo_do_chamado) {
+        alert("O campo 'Título do Chamado' é obrigatório.");
+        return false;
+    }
+    if (!local) {
+        alert("O campo 'Local' é obrigatório.");
+        return false;
+    }
+    if (!tipo_manutencao) {
+        alert("O campo 'Tipo de Manutenção' é obrigatório.");
+        return false;
+    }
+    if (!urgencia) {
+        alert("O campo 'Urgência' é obrigatório.");
+        return false;
+    }
+    if (!mensagem_problema) {
+        alert("O campo 'Mensagem do Problema' é obrigatório.");
         return false;
     }
 
     // Cria um objeto com os dados capturados
-    const dadosChamado = {
-        tituloChamado: tituloChamado,
+    const dadoschamado = {
+        titulo_do_Chamado: titulo_do_chamado,
         local: local,
-        tipoManutencao: tipoManutencao,
+        tipo_manutencao: tipo_manutencao,
         urgencia: urgencia,
-        mensagem: mensagem
+        mensagem_problema: mensagem_problema
     };
 
     // Exibe os dados no console (para verificação)
-    console.log(dadosChamado);
+    console.log(dadoschamado);
 
     // Envia os dados para o servidor
-    enviarDados(dadosChamado);
+    enviarDados(dadoschamado);
 }
 
 // Função para enviar os dados via fetch (AJAX)
-function enviarDados(dadosChamado) {
+function enviarDados(dadoschamado) {
     const url = 'http://localhost:3000/api/relatarProblema'; 
+
+
 
     fetch(url, {
         method: 'POST', // Método HTTP
         headers: {
             'Content-Type': 'application/json' // Tipo de conteúdo JSON
         },
-        body: JSON.stringify(dadosChamado) // Envia os dados como JSON
+        body: JSON.stringify(dadoschamado) // Envia os dados como JSON
     })
     .then(response => {
         if (response.ok) {
             return response.json();
         }
-        throw new Error('Erro na requisição');
+        // Se não for OK, lança um erro com o status
+        throw new Error('Erro na requisição: ' + response.status);
     })
     .then(data => {
         console.log('Sucesso:', data);
