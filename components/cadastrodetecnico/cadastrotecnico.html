@@ -18,58 +18,16 @@
                 <li><a href="../cadastrodetecnico/cadastrotecnico.html">CADASTRO DE TÉCNICO</a></li>
                 <li><a href="../cadastrodemanutencao/cadastrodemanutencao.html">CADASTRO DE MANUTENÇÃO</a></li>
                 <li><a href="../históricodemanutencao/historicodemanutencao.html">HISTÓRICO DE MANUTENÇÃO</a></li>
-                <li><a href="../chamados/chamados.html">CHAMADOS PENDENTES</a></li>
+                <li><a href="../chamados/chamados.html">CHAMADOS</a></li>
             </ul>
         </nav>
     </header>  
 
     <section class="topo-do-site">
-        <h1>CADASTRO DE TÉCNICO</h1>
+        <h1>Cadastro de técnico</h1>
         <p>Cadastrar novo técnico</p>
     </section>
 
-    <script>
-        // Função para formatar o CPF (xxx.xxx.xxx-xx)
-        function formatarCPF(cpf) {
-            cpf.value = cpf.value
-                .replace(/\D/g, '')             // Remove tudo que não for dígito
-                .replace(/(\d{3})(\d)/, '$1.$2') // Coloca o ponto após o terceiro dígito
-                .replace(/(\d{3})(\d)/, '$1.$2') // Coloca o ponto após o sexto dígito
-                .replace(/(\d{3})(\d{1,2})/, '$1-$2') // Coloca o hífen após o nono dígito
-                .replace(/(-\d{2})\d+?$/, '$1'); // Limita a entrada aos 11 dígitos do CPF
-        }
-
-        // Função para formatar o telefone (xx) xxxxx-xxxx
-        function formatarTelefone(telefone) {
-            telefone.value = telefone.value
-                .replace(/\D/g, '')                // Remove tudo que não for dígito
-                .replace(/(\d{2})(\d)/, '($1) $2') // Coloca os parênteses no código de área
-                .replace(/(\d{5})(\d)/, '$1-$2')   // Coloca o hífen após os primeiros 5 dígitos
-                .replace(/(-\d{4})\d+?$/, '$1');   // Limita a entrada ao formato (xx) xxxxx-xxxx
-        }
-
-        // Função para validar o formulário antes do envio
-        function validarFormulario(event) {
-            event.preventDefault(); // Previne o envio automático do formulário
-
-            let nome = document.getElementById('nome').value.trim();
-            let cpf = document.getElementById('cpf').value.trim();
-            let telefone = document.getElementById('telefone').value.trim();
-
-            // Verifica se todos os campos estão preenchidos
-            if (nome === "" || cpf === "" || telefone === "") {
-                alert("Por favor, preencha todos os campos obrigatórios.");
-            } else {
-                alert("Cadastro realizado com sucesso!");
-                window.location.href = "../home/home.html"; // Redireciona para a página de confirmação
-            }
-        }
-
-        window.onload = function() {
-            // Adiciona o evento de submit ao formulário
-            document.getElementById('cadastroForm').addEventListener('submit', validarFormulario);
-        }
-    </script>
 </head>
 <body>
     <section class="formulario">
@@ -100,22 +58,19 @@
             </div><!--footer-left-->
 
             <div class="redes-sociais">
-                <a class="icones-footer" href="https://www.instagram.com/lourdinascg/" target="_blank"><i class="bi bi-instagram"></i></a>
-                <a class="icones-footer" href="https://api.whatsapp.com/send?phone=558331823600&text=Ol%C3%A1,%20desejo%20mais%20informa%C3%A7%C3%B5es%20sobre%20matr%C3%ADculas%202024." target="_blank"><i class="bi bi-whatsapp"></i></a>
-                <a class="icones-footer" href="" target="_blank"><i class="bi bi-facebook"></i></a>
-                <a class="icones-footer" href="https://www.youtube.com/user/evlcg" target="_blank"><i class="bi bi-youtube"></i></a>
-                <a class="icones-footer" href="https://www.google.com/maps/place/Col%C3%A9gio+Nossa+Senhora+de+Lourdes/@-7.211834,-35.8748341,15z/data=!4m6!3m5!1s0x7ac1fabb95c42ef:0x6c80cb4b44fe60b!8m2!3d-7.2121889!4d-35.8751523!16s%2Fg%2F1ydkbdd2g?entry=ttu&g_ep=EgoyMDI0MDkxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank"><i class="bi bi-geo-alt-fill"></i></a>
-            </div><!-- redes-sociais -->
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-whatsapp"></i>
+            </div><!--redes-sociais-->
 
             <div class="informacoes">
                 <h3>Informações de Contato</h3>
                 <p>R. Nossa Sra. de Lourdes, 193 - <br> Jardim Tavares, Campina Grande - PB<br>58402-045<br>83 3182-3600</p>
             </div>
-
         </div>
     </footer>
 
-        <script src="cadastrodetecnico.js"></script> 
-  
+        <script src="cadastrotecnico.js"></script> 
+
+    
 </body>
 </html>
