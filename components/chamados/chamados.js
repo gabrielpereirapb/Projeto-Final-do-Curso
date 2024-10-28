@@ -24,25 +24,25 @@ function atualizarChamados(chamados) {
 
     chamados.forEach(chamado => {
         const row = document.createElement('tr');
-        const dataFormatada = new Date(chamado.data_abertura).toLocaleDateString('pt-BR');
+        const dataFormatada = new Date(chamado.data).toLocaleDateString('pt-BR');
 
         // Limita a descrição para ser exibida na tabela
-        const descricaoResumida = chamado.mensagem.length > MAX_DESC_LENGTH 
-            ? chamado.mensagem.substring(0, MAX_DESC_LENGTH) + '...' 
-            : chamado.mensagem;
+        const descricaoResumida = chamado.mensagem_problema.length > MAX_DESC_LENGTH 
+            ? chamado.mensagem_problema.substring(0, MAX_DESC_LENGTH) + '...' 
+            : chamado.mensagem_problema;
 
         row.innerHTML = `
-            <td>${chamado.id}</td>
+            <td>${chamado.chamado_id}</td>
             <td>${dataFormatada}</td>
             <td>${chamado.tipo_manutencao}</td>
             <td>${descricaoResumida}</td>
         `;
         
         row.classList.add('chamado');
-        row.dataset.id = chamado.id;
+        row.dataset.id = chamado.chamado_id;
         row.dataset.data = dataFormatada;
         row.dataset.tecnico = chamado.tipo_manutencao;
-        row.dataset.descricao = chamado.mensagem;
+        row.dataset.descricao = chamado.mensagem_problema;
 
         tabelaChamados.appendChild(row);
 
@@ -56,12 +56,13 @@ function atualizarChamados(chamados) {
 // Função para abrir o modal
 function abrirModal(chamado) {
     const modal = document.getElementById('modal');
-    document.getElementById('modal-id').textContent = chamado.id;
-    document.getElementById('modal-data').textContent = new Date(chamado.chamado.data_abertura).toLocaleDateString('pt-BR');
+    document.getElementById('modal-id').textContent = chamado.chamado_id;
+    document.getElementById('modal-data').textContent = new Date(chamado.data_abertura).toLocaleDateString('pt-BR');
     document.getElementById('modal-tecnico').textContent = chamado.tipo_manutencao;
-    document.getElementById('modal-descricao').textContent = chamado.mensagem;
+    document.getElementById('modal-descricao').textContent = chamado.mensagem_problema;
     modal.classList.add('show');
 }
+
 
 // Função para fechar o modal
 document.querySelector('.fechar').addEventListener('click', function() {
