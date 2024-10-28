@@ -18,62 +18,36 @@
                 <li><a href="../cadastrodetecnico/cadastrotecnico.html">CADASTRO DE TÉCNICO</a></li>
                 <li><a href="../cadastrodemanutencao/cadastrodemanutencao.html">CADASTRO DE MANUTENÇÃO</a></li>
                 <li><a href="../históricodemanutencao/historicodemanutencao.html">HISTÓRICO DE MANUTENÇÃO</a></li>
-                <li><a href="../chamados/chamados.html">CHAMADOS PENDENTES</a></li>
+                <li><a href="../chamados/chamados.html">CHAMADOS</a></li>
             </ul>
         </nav>
     </header>  
 
 
     <section class="topo-do-site">
-        <h1>CADASTRO DE MANUTENÇÃO</h1>
+        <h1>Cadastro de Manutenção</h1>
         <p>Cadastrar manutenção realizada</p>
     </section>
 
-    <script>
-        function validarFormulario() {
-            // Obtém os valores dos campos
-            let tituloChamado = document.getElementById('titulochamado').value;
-            let tecnicoResponsavel = document.getElementById('tecnico-responsavel').value;
-            let mensagem = document.getElementById('mensagem').value.trim();
-
-            // Verifica se todos os campos estão preenchidos
-            if (tituloChamado === "" || tecnicoResponsavel === "" || mensagem === "") {
-                alert("Por favor, preencha todos os campos obrigatórios.");
-            } else {
-                alert("Cadastro realizado com sucesso!");
-                window.location.href = "../home/home.html"; // Redireciona para a página de confirmação
-            }
-        }
-
-        function cancelar() {
-            window.location.href = "../home/home.html"; // Redireciona ao cancelar
-        }
-    </script>
 </head>
 <body>
     <section class="formulario">
         <form id="formChamado">
-            <label for="titulochamado">Título do chamado:<span>*</span></label>
-            <select id="titulochamado" name="titulochamado">
+            <label for="titulo_do_chamado">Título do chamado:<span>*</span></label>
+            <select id="titulo_do_chamado" name="titulo_do_chamado">
                 <option value="">Selecione o chamado</option>
-                <option value="titulochamado1">Lâmpada queimada</option>
-                <option value="titulochamado2">Torneira com vazamento</option>
-                <option value="titulochamado3">Rachadura na parede</option>
             </select><br>
-
-            <label for="tecnico-responsavel">Técnico Responsável:<span>*</span></label>
-            <select id="tecnico-responsavel" name="tecnico-responsavel">
+    
+            <label for="tecnico_responsavel">Técnico Responsável:<span>*</span></label>
+            <select id="tecnico_responsavel" name="tecnico_responsavel">
                 <option value="">Selecione o técnico</option>
-                <option value="joao-pimenta">João Pimenta</option>
-                <option value="ze-colmeia">Zé Colmeia</option>
-                <option value="zetti">Zetti</option>
             </select><br>
-
-            <label for="mensagem">Mensagem:<span>*</span></label>
-            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Insira uma mensagem sobre a manutenção realizada" required minlength="10" maxlength="5000"></textarea><br>
-
+    
+            <label for="mensagem_solucao">Mensagem:<span>*</span></label>
+            <textarea id="mensagem_solucao" name="mensagem_solucao" rows="4" placeholder="Insira uma mensagem sobre a manutenção realizada" required minlength="10" maxlength="5000"></textarea><br>
+    
             <p class="campos-obrigatorios">*Campos obrigatórios.</p>
-
+    
             <div class="botoes">
                 <button type="button" class="cancelar" onclick="cancelar()">Cancelar</button>
                 <button type="button" class="confirmar" onclick="validarFormulario()">Confirmar</button>
@@ -101,5 +75,7 @@
             </div>
             </div>
         </footer>
+
+        <script src="cadastrodemanutencao.js"></script>
 </body>
 </html>
