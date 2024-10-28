@@ -32,12 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
         manutencoes.forEach(manutencao => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${formatDate(manutencao.data_abertura)}</td>
+                <td>${formatDate(manutencao.data)}</td>
                 <td>${manutencao.local}</td>
                 <td>${manutencao.tipo_manutencao}</td>
-                <td>${manutencao.nome}</td>
+                <td>${manutencao.tecnico_responsavel}</td>
                 <td>${manutencao.mensagem_problema}</td>
-                <td>${manutencao.mensagem_manutencao}</td>
+                <td>${manutencao.mensagem_solucao}</td>
             `;
             tableBody.appendChild(row);
         });
@@ -65,20 +65,27 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(data => {
                 dadosChamados = data;
+                console.log(dadosChamados)
                 preencherTabela(data);
             })
             .catch(err => console.error('Erro ao carregar dados:', err));
     }
 
     function fetchChamadosFiltrados() {
+        const data = document.getElementById('data-sidebar').value;
         const local = document.getElementById('local-sidebar').value;
         const tipo = document.getElementById('tipo-sidebar').value;
         const tecnico = document.getElementById('tecnico-sidebar').value;
+
+        console.log(data)
+        console.log()
+
         
         let dadosFiltrados = dadosChamados.filter(manutencao => {
-            return (!local || manutencao.local === local) &&
+            return (!data || formatDate(manutencao.data) === formatDate(data)) &&
+                   (!local || manutencao.local === local) &&
                    (!tipo || manutencao.tipo_manutencao === tipo) &&
-                   (!tecnico || manutencao.nome === tecnico);
+                   (!tecnico || manutencao.tecnico_responsavel === tecnico);
         });
         
         preencherTabela(dadosFiltrados);
@@ -122,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) throw new Error('Erro ao buscar técnicos');
             return response.json();
         })
-        .then(dados => popularSelect('tecnico-sidebar', dados, 'nome', 'cpf_tecnico'))
+        .then(dados => popularSelect('tecnico-sidebar', dados, 'nome', 'nome'))
         .catch(err => console.error('Erro ao buscar técnicos:', err));
 
     // Carregar os chamados inicialmente
