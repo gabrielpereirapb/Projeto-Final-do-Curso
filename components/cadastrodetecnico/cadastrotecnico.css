@@ -60,30 +60,41 @@ header nav ul li a:hover {
     text-decoration: underline; /* Estilo de hover para os links */
 }
 
+/* Estilo de hover para os links no header */
+header nav ul li:hover a {
+    color: #9dc7ee; /* Substitua pela cor desejada */
+    transition: color 0.3s ease; /* Transição suave */
+}
 
-/* Estilo do topo do site */
-section.topo-do-site {
+/*ESTILO DO TOPO DO SITE*/
+section.topo-do-site{
     padding: 40px 4%;
-    background-color: #e7e3e3;
-    color: black;
+}
+
+.titulo-pagina {
     text-align: center;
 }
 
-.topo-do-site h1 {
-    font-size: 34px;
-    margin-right: 14px;
-    margin-bottom: 10px;
-    font-weight: bold;
+/*ESTILO DO TOPO DO SITE*/
+section.topo-do-site{
+    padding: 40px 4%;
+    text-align: center;
 }
 
-.topo-do-site p {
-    font-size: 18px;
+.topo-do-site h1{
+    color: black;
+    font-size: 23px;
     margin-right: 14px;
-    margin-top: 12px;
-    margin-bottom: 2px;
-    font-weight:lighter;
+
 }
 
+/*Estilo dos cards*/
+a{
+    text-decoration: none;
+
+}
+
+/* Estilo do formulário */
 .formulario {
     width: 80%; /* Defina a largura do container */
     max-width: 700px; /* Largura máxima do container */
@@ -188,7 +199,7 @@ form span {
 }
 
 /* Estilo dos itens do rodapé */
-.sobre, .informacoes, .redes-sociais {
+.sobre, .informacoes, .redes-sociais, .informacoes2 {
     flex: 1; /* Faz com que todos os itens ocupem a mesma quantidade de espaço */
     margin: 0 10px; /* Espaçamento entre os itens */
     padding: 0 10px; /* Adiciona padding interno para melhor espaçamento */
@@ -199,10 +210,16 @@ form span {
     text-align: left;
 }
 
+.informacoes2{
+    text-align: left; /* Alinha o texto à esquerda */
+    padding-left: 300px;
+}
+
 .informacoes {
     text-align: left; /* Alinha o texto à esquerda */
     padding-left: 300px;
 }
+
 
 .redes-sociais {
     text-align: center;
