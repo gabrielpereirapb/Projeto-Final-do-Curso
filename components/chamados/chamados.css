@@ -59,6 +59,13 @@ header nav ul li a {
 header nav ul li a:hover {
     text-decoration: underline; /* Estilo de hover para os links */
 }
+
+/* Estilo de hover para os links no header */
+header nav ul li:hover a {
+    color: #9dc7ee; /* Substitua pela cor desejada */
+    transition: color 0.3s ease; /* Transição suave */
+}
+
 /* Estilo do menu */
 header a {
     color: aliceblue;
@@ -74,20 +81,24 @@ header nav ul li {
     padding: 0 40px;
 }
 
-/* Seção de topo (Título da página) */
-section.topo-do-site {
+/*ESTILO DO TOPO DO SITE*/
+section.topo-do-site{
     padding: 40px 4%;
-    background-color: #e7e3e3;
-    color: black;
     text-align: center;
 }
 
-.topo-do-site h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-    font-weight: bold;
+.topo-do-site h1{
+    color: black;
+    font-size: 25px;
+    margin-right: 14px;
+
 }
 
+/*Estilo dos cards*/
+a{
+    text-decoration: none;
+
+}
 /* Estilos da tabela de chamados */
 .container {
     width: 80%;
