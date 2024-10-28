@@ -60,6 +60,12 @@ header nav ul li a:hover {
     text-decoration: underline; /* Estilo de hover para os links */
 }
 
+/* Estilo de hover para os links no header */
+header nav ul li:hover a {
+    color: #9dc7ee; /* Substitua pela cor desejada */
+    transition: color 0.3s ease; /* Transição suave */
+}
+
 /*ESTILO DO TOPO DO SITE*/
 section.topo-do-site{
     padding: 40px 4%;
