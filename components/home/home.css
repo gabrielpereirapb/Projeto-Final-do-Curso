@@ -66,6 +66,7 @@ header nav ul li:hover a {
     transition: color 0.3s ease; /* Transição suave */
 }
 
+
 /*ESTILO DO TOPO DO SITE*/
 section.topo-do-site{
     padding: 40px 4%;
@@ -269,3 +270,4 @@ margin-top: 10px;
     border: transparent; /* Remove qualquer borda */
     outline: transparent; /* Remove contornos */
 }
+
