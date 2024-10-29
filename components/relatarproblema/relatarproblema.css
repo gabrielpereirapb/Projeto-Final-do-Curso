@@ -22,7 +22,6 @@ body{
 .interface{
     max-width: 1280px;
     margin: 0 auto;
-    
 }
 
 .flex{
@@ -55,21 +54,35 @@ header nav ul li a {
     padding: 10px;
 }
 
-
 header nav ul li a:hover {
     text-decoration: underline; /* Estilo de hover para os links */
 }
+
+/* Estilo de hover para os links no header */
+header nav ul li:hover a {
+    color: #9dc7ee; /* Substitua pela cor desejada */
+    transition: color 0.3s ease; /* Transição suave */
+}
+
+ /*ESTILO DO TOPO DO SITE*/
 section.topo-do-site {
     padding: 40px 4%;
-    background-color: #e7e3e3;
-    color: black;
+}
+
+.titulo-pagina {
     text-align: center;
 }
 
-.topo-do-site h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-    font-weight: bold;
+ /*ESTILO DO TOPO DO SITE*/
+section.topo-do-site {
+    padding: 40px 4%;
+    text-align: center;
+}
+
+.topo-do-site h1{
+    color: black;
+    font-size: 23px;
+    margin-right: 14px;
 }
 
 
@@ -88,37 +101,17 @@ section.topo-do-site {
 form {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
     margin: 0 auto;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-label {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-textarea {
-    resize: vertical; /* Permite que o usuário redimensione verticalmente */
-}
-
-form{
-    margin: 0 auto;
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 form label {
-    width: 100%;
-    height: 15px;
     display: block;
-    font-weight: bold;
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
 form textarea{
@@ -180,9 +173,6 @@ form span {
     text-align: left;
     margin-top: 10px;
 }
-
-
-
 
 /*Estrutura do rodapé*/
 .footer-rodapé{
