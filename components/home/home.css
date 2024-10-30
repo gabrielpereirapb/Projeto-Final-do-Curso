@@ -126,6 +126,7 @@ a{
     justify-content: center;
 }
 
+
 /*letras dos cards*/
 .cards-1 {
     width: 400px; /* Comprimento do card */
@@ -200,6 +201,12 @@ margin-top: 10px;
     font-weight: bold;
     }
 
+    /* Remove bordas da section e dos elementos filhos */
+.cards-do-site, .cards-do-site * {
+    border: transparent; /* Remove qualquer borda */
+    outline: transparent; /* Remove contornos */
+}
+
 
 /*Estrutura do rodapé*/
 
@@ -214,6 +221,8 @@ margin-top: 10px;
     width: 100%;
     bottom: 0;
 }
+
+
 
 .footer-content {
     text-align: center; /* Alinha o texto ao centro dentro do footer */
@@ -265,9 +274,4 @@ margin-top: 10px;
     text-decoration: none; /* Remove o sublinhado dos links, se houver */
 }
 
-/* Remove bordas da section e dos elementos filhos */
-.cards-do-site, .cards-do-site * {
-    border: transparent; /* Remove qualquer borda */
-    outline: transparent; /* Remove contornos */
-}
 
