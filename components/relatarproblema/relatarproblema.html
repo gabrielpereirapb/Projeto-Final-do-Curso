@@ -16,7 +16,7 @@
                 <li><a href="../home/home.html">PÁGINA INICIAL</a></li>
                 <li><a href="../relatarproblema/relatarproblema.html">RELATAR PROBLEMA</a></li>
                 <li><a href="../cadastrodetecnico/cadastrotecnico.html">CADASTRO DE TÉCNICO</a></li>
-                <li><a href="../cadastrodemanutencao/cadastrodemanutentencao.html">CADASTRO DE MANUTENÇÃO</a></li>
+                <li><a href="../cadastrodemanutencao/cadastrodemanutencao.html">CADASTRO DE MANUTENÇÃO</a></li>
                 <li><a href="../históricodemanutencao/historicodemanutencao.html">HISTÓRICO DE MANUTENÇÃO</a></li>
                 <li><a href="../chamados/chamados.html">CHAMADOS</a></li>
             </ul>
@@ -54,37 +54,37 @@
 <body>
     <section class="formulario">
         <form id="formChamado">
-            <label for="titulochamado">Título do chamado:<span>*</span></label>
-            <input type="text" id="titulochamado" name="titulochamado" placeholder="Insira o título do chamado"><br>
+            <label for="titulo_do_chamado">Título do chamado:<span>*</span></label>
+            <input type="text" id="titulo_do_chamado" name="titulo_do_chamado" placeholder="Insira o título do chamado"><br>
     
             <label for="local">Local:<span>*</span></label>
             <select id="local" name="local">
                 <option value="">Selecione o local</option>
-                <option value="sala1">Sala 1</option>
-                <option value="sala2">Sala 2</option>
-                <option value="sala3">Sala 3</option>
-                <option value="banheirosmasculinos">Banheiros Masculinos</option>
-                <option value="banheirosfemininos">Banheiros Femininos</option>
+                <option value="Sala 1">Sala 1</option>
+                <option value="Sala 2">Sala 2</option>
+                <option value="Sala 3">Sala 3</option>
+                <option value="Banheiros Masculinos">Banheiros Masculinos</option>
+                <option value="Banheiros Femininos">Banheiros Femininos</option>
             </select><br>
     
-            <label for="tipomanutencao">Tipo de Manutenção:<span>*</span></label>
-            <select id="tipomanutencao" name="tipomanutencao">
+            <label for="tipo_manutencao">Tipo de Manutenção:<span>*</span></label>
+            <select id="tipo_manutencao" name="tipo_manutencao">
                 <option value="">Selecione o tipo</option>
-                <option value="hidraulica">Hidráulica</option>
-                <option value="eletrica">Elétrica</option>
-                <option value="estrutural">Estrutural</option>
+                <option value="Hidráulica">Hidráulica</option>
+                <option value="Elétrica">Elétrica</option>
+                <option value="Estrutural">Estrutural</option>
             </select><br>
     
             <label for="urgencia">Urgência da Manutenção:<span>*</span></label>
             <select id="urgencia" name="urgencia">
                 <option value="">Selecione a urgência</option>
-                <option value="baixa">Baixa</option>
-                <option value="media">Média</option>
-                <option value="alta">Alta</option>
+                <option value="Baixa">Baixa</option>
+                <option value="Média">Média</option>
+                <option value="Alta">Alta</option>
             </select><br>
     
-            <label for="mensagem">Mensagem:<span>*</span></label>
-            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Insira uma mensagem sobre o problema a ser resolvido" required minlength="10" maxlength="5000"></textarea><br>
+            <label for="mensagem_problema">Mensagem:<span>*</span></label>
+            <textarea id="mensagem_problema" name="mensagem_problema" rows="4" placeholder="Insira uma mensagem sobre o problema a ser resolvido" required minlength="10" maxlength="5000"></textarea><br>
     
             <p class="campos-obrigatorios">*Campos obrigatórios.</p>
     
@@ -117,5 +117,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="relatarproblema.js"></script>
+
 </body>
 </html>
