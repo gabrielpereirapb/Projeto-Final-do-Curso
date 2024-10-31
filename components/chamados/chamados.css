@@ -33,10 +33,9 @@ body {
 /*Estilo menu*/
 header nav ul {
     display: flex; /* Alinha os itens horizontalmente */
-    justify-content: space-between; /* Espaçamento automático entre os itens */
+    justify-content:space-between; /* Espaçamento automático entre os itens */
     list-style-type: none;
     padding: 0;
-    margin: 0;
     margin-left: 40px;
     gap: 5px;
     white-space: nowrap;
@@ -76,10 +75,7 @@ header nav ul {
     list-style-type: none;
 }
 
-header nav ul li {
-    display: inline-block;
-    padding: 0 40px;
-}
+
 
 /*ESTILO DO TOPO DO SITE*/
 section.topo-do-site{
