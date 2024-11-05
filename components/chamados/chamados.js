@@ -56,9 +56,9 @@ function atualizarChamados(chamados) {
 // Função para abrir o modal
 function abrirModal(chamado) {
     const modal = document.getElementById('modal');
-    document.getElementById('modal-id').textContent = chamado.chamado_id;
+    /**document.getElementById('modal-id').textContent = chamado.chamado_id;
     document.getElementById('modal-data').textContent = new Date(chamado.data_abertura).toLocaleDateString('pt-BR');
-    document.getElementById('modal-tecnico').textContent = chamado.tipo_manutencao;
+    document.getElementById('modal-tecnico').textContent = chamado.tipo_manutencao;**/
     document.getElementById('modal-descricao').textContent = chamado.mensagem_problema;
     modal.classList.add('show');
 }
