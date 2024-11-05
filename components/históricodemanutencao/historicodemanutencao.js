@@ -50,11 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const year = date.getUTCFullYear();
 
         const months = [
-            "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
-            "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+            "1", "2", "3", "4", "5", "6",
+            "7", "8", "9", "10", "11", "12"
         ];
         
-        return `${day} - ${months[month]} - ${year}`;
+        return `${day}/${months[month]}/${year}`;
     }
 
     function fetchChamados() {
