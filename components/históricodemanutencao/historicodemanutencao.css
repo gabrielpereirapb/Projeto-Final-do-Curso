@@ -131,22 +131,27 @@ tr:hover {
 }
 
 /* Botão de busca */
-.open-sidebar-btn {
-    font-size: 18px;
-    position: absolute;
-    top: 8px;
-    right: 1px; /* Posiciona a lupa no canto superior direito da tabela */
-    padding: 5px 10px;
-    background-color: transparent;
-    color: white;
-    border: none;
-    cursor: pointer;
-    z-index: 1000;
+.container {
+    position: relative; /* Define a posição do botão em relação ao container */
 }
 
-.open-sidebar-btn:hover {
-    filter: drop-shadow(5px -3px 7px #000000);
+
+.open-sidebar-btn {
+    display: flex;
+    font-size: 18px;
+    align-items: center; /* Alinha o ícone e o texto verticalmente */
+    position: absolute; /* Define o posicionamento do botão como absoluto */
+    right: 220px; /* Define a distância da direita para o canto superior */
+    padding: 5px 10px;
+    background-color: transparent;
+    color: #064c8c;
+    border: none;
+    cursor: pointer; 
+    margin-left: 5px;
+   
 }
+
+
 
 /* Sidebar */
 .sidebar {
@@ -162,6 +167,19 @@ tr:hover {
     z-index: 999;
 }
 
+#filtro{
+    font-weight: bold;
+    padding-right: 5px; 
+}
+
+/* Sombra aplicada somente ao ícone da lupa */
+.lupa-icon {
+    margin-right: 5px; /* Espaço entre o ícone e o texto */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Aplica a sombra */
+    transform: translateZ(0); /* Garante que a sombra seja aplicada corretamente */
+    z-index: 10; /* Coloca a lupa acima de outros elementos */
+    position: relative; /* Garante que o ícone tenha um contexto para o z-index */
+}
 .sidebar-header {
     padding: 10px;
     text-align: center;
