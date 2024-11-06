@@ -28,7 +28,12 @@
     <section class="topo-do-site">
         <h1>HISTÓRICO DE MANUTENÇÃO</h1>
         <p>Histórico de manutenções realizadas</p>
+        <button id="openSidebarBtn" class="open-sidebar-btn">
+            <p id="filtro">Filtro</p>
+            <i class="bi bi-search"></i>
+        </button>        
     </section>
+    
 
     <div class="container">
         <!-- Tabela de manutenção -->
@@ -47,11 +52,10 @@
                     <!-- Dados Dinâmicos Aqui -->
                 </tbody>
             </table>
-            <button id="openSidebarBtn" class="open-sidebar-btn"><i class="bi bi-search"></i></button></div>
         </div>
-        
+         
     </div>
-   
+    
 
     <!-- Sidebar -->
     <div id="mySidebar" class="sidebar">
@@ -89,6 +93,7 @@
         <div class="sidebar-buttons">
             <button id="clearBtn">Limpar Filtros</button>
             <button id="confirmBtn">Confirmar</button>
+            
         </div>
     </div>
 
