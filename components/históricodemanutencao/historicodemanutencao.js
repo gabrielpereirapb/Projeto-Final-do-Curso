@@ -33,10 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td>${formatDate(manutencao.data)}</td>
+                <td>${manutencao.titulo_do_chamado}</td>
                 <td>${manutencao.local}</td>
                 <td>${manutencao.tipo_manutencao}</td>
                 <td>${manutencao.tecnico_responsavel}</td>
-                <td>${manutencao.mensagem_problema}</td>
                 <td>${manutencao.mensagem_solucao}</td>
             `;
             tableBody.appendChild(row);
