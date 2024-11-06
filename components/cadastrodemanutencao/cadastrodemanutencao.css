@@ -150,7 +150,6 @@ form span {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    margin: 10px;
 }
 
 .cancelar {
@@ -161,13 +160,14 @@ form span {
 .confirmar {
     background-color: #064C8C;
     color: white;
+    margin-inline-start: 10px;
 }
 
 .campos-obrigatorios {
     color: red;
     font-size: 14px;
     text-align: left;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 
