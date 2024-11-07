@@ -19,8 +19,6 @@ function carregarChamadosPendentes() {
     .catch(error => {
         console.error('Erro ao carregar os chamados pendentes:', error);
     });
-
-    console.log(document.getElementById('titulo_do_chamado'))
 }
 
 // Função para buscar e preencher os técnicos cadastrados
@@ -39,34 +37,42 @@ function carregarTecnicosCadastrados() {
     .catch(error => {
         console.error('Erro ao carregar os técnicos cadastrados:', error);
     });
+}
 
-    console.log(document.getElementById('tecnico_responsavel'))
+// Função para exibir o pop-up
+function mostrarPopup(mensagem, tipo) {
+    const popup = document.getElementById('popup');
+    const popupMessage = document.getElementById('popupMessage');
+    const popupIcon = document.getElementById('popupIcon');
 
+    popupMessage.textContent = mensagem;
+    if (tipo === 'success') {
+        popup.className = 'popup popup-success show';
+        popupIcon.textContent = '✔️';
+    } else if (tipo === 'error') {
+        popup.className = 'popup popup-error show';
+        popupIcon.textContent = '❌';
+    }
+
+    setTimeout(fecharPopup, 4000);
+}
+
+// Função para fechar o pop-up
+function fecharPopup() {
+    const popup = document.getElementById('popup');
+    popup.classList.remove('show');
 }
 
 // Função para validar e enviar o formulário
 function validarFormulario() {
-    // Obtém os valores dos campos
     let id = document.getElementById('titulo_do_chamado').value;
     let cpf_tecnico = document.getElementById('tecnico_responsavel').value;
     let mensagem_solucao = document.getElementById('mensagem_solucao').value.trim();
-    //let data_resolucao = new Date().toISOString().split('T')[0]; // Pega a data atual no formato YYYY-MM-DD
 
-    // Verifica se todos os campos estão preenchidos
-    if (id === "" || tecnico_responsavel === "" || mensagem_solucao === "") {
-        alert("Por favor, preencha todos os campos obrigatórios.");
+    if (id === "" || cpf_tecnico === "" || mensagem_solucao === "") {
+        mostrarPopup("Por favor, preencha todos os campos obrigatórios.", "error");
     } else {
-        // Monta o objeto com os dados do formulário
-        const dadosManutencao = {
-            id: id,
-            cpf_tecnico: cpf_tecnico, // Assumindo que 'cpf_tecnico' seja o nome do técnico por agora
-            mensagem_solucao: mensagem_solucao,
-            //data_resolucao: data_resolucao
-        };
-console.log(dadosManutencao)
-
-
-        // Envia os dados para o backend
+        const dadosManutencao = { id, cpf_tecnico, mensagem_solucao };
         enviarDados(dadosManutencao);
     }
 }
@@ -77,27 +83,24 @@ function enviarDados(dadosManutencao) {
 
     fetch(url, {
         method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(dadosManutencao)
     })
     .then(response => {
         if (response.ok) {
-            alert("Cadastro realizado com sucesso!");
-            window.location.href = "../home/home.html"; // Redireciona após sucesso
+            mostrarPopup("Cadastro realizado com sucesso!", "success");
+            setTimeout(() => window.location.href = "../home/home.html", 2000);
         } else {
             return response.text().then(text => { throw new Error(text); });
         }
     })
     .catch(error => {
         console.error('Erro ao cadastrar manutenção:', error);
-        alert("Ocorreu um erro ao enviar os dados. Tente novamente.");
+        mostrarPopup("Ocorreu um erro ao enviar os dados. Tente novamente.", "error");
     });
 }
 
 // Função para cancelar e redirecionar
 function cancelar() {
-    window.location.href = "../home/home.html"; // Redireciona ao cancelar
+    window.location.href = "../home/home.html";
 }
-
