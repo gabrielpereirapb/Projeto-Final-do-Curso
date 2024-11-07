@@ -1,6 +1,5 @@
 // Função para validar e capturar os dados do formulário
 function validarFormulario() {
-    // Obtém os valores dos campos
     let titulo_do_chamado = document.getElementById('titulo_do_chamado').value.trim();
     let local = document.getElementById('local').value;
     let tipo_manutencao = document.getElementById('tipo_manutencao').value;
@@ -9,27 +8,26 @@ function validarFormulario() {
 
     // Verifica se todos os campos obrigatórios estão preenchidos
     if (!titulo_do_chamado) {
-        alert("O campo 'Título do Chamado' é obrigatório.");
+        mostrarPopup("O campo 'Título do Chamado' é obrigatório.", 'error');
         return false;
     }
     if (!local) {
-        alert("O campo 'Local' é obrigatório.");
+        mostrarPopup("O campo 'Local' é obrigatório.", 'error');
         return false;
     }
     if (!tipo_manutencao) {
-        alert("O campo 'Tipo de Manutenção' é obrigatório.");
+        mostrarPopup("O campo 'Tipo de Manutenção' é obrigatório.", 'error');
         return false;
     }
     if (!urgencia) {
-        alert("O campo 'Urgência' é obrigatório.");
+        mostrarPopup("O campo 'Urgência' é obrigatório.", 'error');
         return false;
     }
     if (!mensagem_problema) {
-        alert("O campo 'Mensagem do Problema' é obrigatório.");
+        mostrarPopup("O campo 'Mensagem do Problema' é obrigatório.", 'error');
         return false;
     }
 
-    // Cria um objeto com os dados capturados
     const dadoschamado = {
         titulo_do_Chamado: titulo_do_chamado,
         local: local,
@@ -38,45 +36,67 @@ function validarFormulario() {
         mensagem_problema: mensagem_problema
     };
 
-    // Exibe os dados no console (para verificação)
     console.log(dadoschamado);
 
     // Envia os dados para o servidor
     enviarDados(dadoschamado);
 }
 
+// Função para exibir o pop-up
+function mostrarPopup(mensagem, tipo) {
+    const popup = document.getElementById('popup');
+    const popupMessage = document.getElementById('popupMessage');
+    const popupIcon = document.getElementById('popupIcon');
+
+    popupMessage.textContent = mensagem;
+    if (tipo === 'success') {
+        popup.className = 'popup popup-success show';
+        popupIcon.textContent = '✔️';
+    } else if (tipo === 'error') {
+        popup.className = 'popup popup-error show';
+        popupIcon.textContent = '❌';
+    }
+
+    setTimeout(fecharPopup, 4000);
+}
+
+// Função para fechar o pop-up
+function fecharPopup() {
+    const popup = document.getElementById('popup');
+    popup.classList.remove('show');
+}
+
 // Função para enviar os dados via fetch (AJAX)
 function enviarDados(dadoschamado) {
-    const url = 'http://localhost:3000/api/relatarProblema'; 
-
-
+    const url = 'http://localhost:3000/api/relatarProblema';
 
     fetch(url, {
-        method: 'POST', // Método HTTP
+        method: 'POST',
         headers: {
-            'Content-Type': 'application/json' // Tipo de conteúdo JSON
+            'Content-Type': 'application/json'
         },
-        body: JSON.stringify(dadoschamado) // Envia os dados como JSON
+        body: JSON.stringify(dadoschamado)
     })
     .then(response => {
         if (response.ok) {
             return response.json();
         }
-        // Se não for OK, lança um erro com o status
         throw new Error('Erro na requisição: ' + response.status);
     })
     .then(data => {
         console.log('Sucesso:', data);
-        alert("Cadastro realizado com sucesso!");
-        window.location.href = "../home/home.html"; // Redireciona para a página inicial após o sucesso
+        mostrarPopup("Cadastro realizado com sucesso!", 'success');
+        setTimeout(() => {
+            window.location.href = "../home/home.html";
+        }, 2000); // Redireciona após 2 segundos
     })
     .catch((error) => {
         console.error('Erro:', error);
-        alert("Ocorreu um erro ao enviar os dados. Tente novamente.");
+        mostrarPopup("Ocorreu um erro ao enviar os dados. Tente novamente.", 'error');
     });
 }
 
 // Função para cancelar e redirecionar para a página inicial
 function cancelar() {
-    window.location.href = "../home/home.html"; // Redireciona ao cancelar
+    window.location.href = "../home/home.html";
 }
