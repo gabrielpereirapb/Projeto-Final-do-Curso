@@ -227,6 +227,7 @@ td:nth-child(4) {
 .redes-sociais {
     text-align: center;
     display: flex;
+    padding-top: 5px;
 }
 
 /* Estilo adicional para os ícones sociais */
