@@ -7,6 +7,20 @@ document.querySelector("#registerForm").addEventListener("submit", function(even
     const senha = document.querySelector("input[name='senha']").value;
     const confirmPassword = document.querySelector("input[name='confirm_password']").value;
 
+    // Validações de formato usando regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const senhaRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/; // mínimo 8 caracteres, letras, números e especiais
+
+    if (!emailRegex.test(email)) {
+        alert("Por favor, insira um email válido.");
+        return;
+    }
+
+    if (!senhaRegex.test(senha)) {
+        alert("A senha deve ter pelo menos 8 caracteres, incluindo letras, números e caracteres especiais.");
+        return;
+    }
+
     // Valida se as senhas coincidem
     if (senha !== confirmPassword) {
         alert("As senhas não coincidem. Por favor, verifique.");
