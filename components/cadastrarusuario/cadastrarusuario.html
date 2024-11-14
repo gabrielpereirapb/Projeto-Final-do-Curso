@@ -15,24 +15,37 @@
             </div>
             <h2>Cadastro</h2>
             <form id="registerForm" method="post">
-                <div class="input-group">
-                    <i class="bi bi-person-fill"></i>
-                    <input type="text" placeholder="Nome" name="nome" required>
+                <div class="wrapperInput">
+                    <div class="input-group">
+                        <i class="bi bi-person-fill"></i>
+                        <input type="text" placeholder="Nome" name="nome" required>
+                    </div>
+                    <span class="error-message nome-error"></span>
                 </div>
+                <div class="wrapperInput">
                 <div class="input-group">
                     <i class="bi bi-envelope-fill"></i>
                     <input type="email" placeholder="Email" name="email" required>
                 </div>
+                <span class="error-message email-error"></span>
+                </div>
+                <div class="wrapperInput">
                 <div class="input-group">
                     <i class="bi bi-lock-fill"></i>
                     <input type="password" placeholder="Senha" name="senha" required>
                 </div>
+                <span class="error-message senha-error"></span>
+                </div>
+                <div class="wrapperInput">
                 <div class="input-group">
                     <i class="bi bi-lock-fill"></i>
                     <input type="password" placeholder="Confirmar Senha" name="confirm_password" required>
                 </div>
+                <span class="error-message confirm-password-error"></span>
+                </div>
                 <button type="submit" class="btn-register">Cadastrar-se</button>
             </form>
+            
             <div class="login-link">
                 <p>Já possui uma conta? <a href="../login/login.html">Faça login</a></p>
             </div>
