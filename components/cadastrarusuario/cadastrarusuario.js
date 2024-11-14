@@ -1,137 +1,88 @@
-/* Estilos Gerais */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-}
+document.addEventListener("DOMContentLoaded", function () {
+    const nomeInput = document.querySelector('input[name="nome"]');
+    const emailInput = document.querySelector('input[name="email"]');
+    const senhaInput = document.querySelector('input[name="senha"]');
+    const confirmPasswordInput = document.querySelector('input[name="confirm_password"]');
 
-body {
-    background-color: #064C8C;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
+    const nomeError = document.querySelector(".nome-error");
+    const emailError = document.querySelector(".email-error");
+    const senhaError = document.querySelector(".senha-error");
+    const confirmPasswordError = document.querySelector(".confirm-password-error");
 
-.register-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
+    // Função para validar nome
+    function validateNome() {
+        const nome = nomeInput.value.trim();
+        const nomeRegex = /^[a-zA-ZÀ-ÿ\s]+(?:\s[a-zA-ZÀ-ÿ\s]+)+$/;
+        if (!nomeRegex.test(nome)) {
+            nomeError.textContent = "O nome deve conter pelo menos 2 palavras e não pode conter números.";
+            nomeError.style.display = "block";
+        } else {
+            nomeError.textContent = "";
+            nomeError.style.display = "none";
+        }
+    }
 
-.register-box {
-    width: 100%;
-    max-width: 400px;
-    padding: 40px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    border: 2px solid #064C8C;
-}
+    // Função para validar e-mail
+    function validateEmail() {
+        const email = emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            emailError.textContent = "Por favor, insira um e-mail válido.";
+            emailError.style.display = "block";
+        } else {
+            emailError.textContent = "";
+            emailError.style.display = "none";
+        }
+    }
 
-.logo img {
-    margin-bottom: 20px;
-}
+    // Função para validar senha
+    function validateSenha() {
+        const senha = senhaInput.value.trim();
+        const senhaRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        if (!senhaRegex.test(senha)) {
+            senhaError.textContent =
+                "A senha deve ter pelo menos 8 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial.";
+            senhaError.style.display = "block";
+        } else {
+            senhaError.textContent = "";
+            senhaError.style.display = "none";
+        }
+    }
 
-h2 {
-    color: #064C8C;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
+    // Função para validar confirmação de senha
+    function validateConfirmPassword() {
+        const senha = senhaInput.value.trim();
+        const confirmPassword = confirmPasswordInput.value.trim();
+        if (senha !== confirmPassword) {
+            confirmPasswordError.textContent = "As senhas não coincidem.";
+            confirmPasswordError.style.display = "block";
+        } else {
+            confirmPasswordError.textContent = "";
+            confirmPasswordError.style.display = "none";
+        }
+    }
 
-.wrapperInput{
-    margin-top: -6px;
-    margin-bottom: 16px;  
-}
+    // Adiciona o evento blur aos campos
+    nomeInput.addEventListener("blur", validateNome);
+    emailInput.addEventListener("blur", validateEmail);
+    senhaInput.addEventListener("blur", validateSenha);
+    confirmPasswordInput.addEventListener("blur", validateConfirmPassword);
 
-.error-message.nome-error{
-    margin-bottom: 16px;
-    display: block;
-    text-align: start;
-}
+    // Validação final ao enviar o formulário
+    document.getElementById("registerForm").addEventListener("submit", function (e) {
+        validateNome();
+        validateEmail();
+        validateSenha();
+        validateConfirmPassword();
 
-.error-message.email-error{
-    margin-bottom: 16px;
-    display: block;
-    text-align: start;
-}
-
-.error-message.senha-error {
-    margin-bottom: 16px;
-    display: block;
-    text-align: start;
-}
-
-.error-message.confirm-password-error{
-    margin-bottom: 16px;
-    display: block;
-    text-align: start;
-}
-
-.error-message {
-    color: red; /* Mensagem de erro em vermelho */
-    font-size: 0.675em; /* Texto menor */
-    margin-top: 5px; /* Espaço entre o campo e a mensagem */
-    display: none; /* Esconde por padrão */
-;
-}
-
-.input-group {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 5px;
-    width: 300px;
-    background-color: #f5f5f5;
-    position: relative;
-}
-
-.input-group i {
-    font-size: 18px;
-    color: #064C8C;
-    margin-right: 10px;
-}
-
-.input-group input {
-    width: 100%;
-    border: none;
-    background: none;
-    outline: none;
-    color: #333;
-    font-size: 16px;
-}
-
-.btn-register {
-    width: 100%;
-    padding: 10px;
-    background-color: #064C8C;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn-register:hover {
-    background-color: #052e5a;
-}
-
-.login-link {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #333;
-}
-
-.login-link a {
-    color: #064C8C;
-    text-decoration: none;
-}
-
-.login-link a:hover {
-    text-decoration: underline;
-}
+        // Impede o envio se houver mensagens de erro
+        if (
+            nomeError.textContent ||
+            emailError.textContent ||
+            senhaError.textContent ||
+            confirmPasswordError.textContent
+        ) {
+            e.preventDefault();
+        }
+    });
+});
