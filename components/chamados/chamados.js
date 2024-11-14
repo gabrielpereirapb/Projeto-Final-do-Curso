@@ -31,8 +31,7 @@ function atualizarChamados(chamados) {
             ? chamado.mensagem_problema.substring(0, MAX_DESC_LENGTH) + '...' 
             : chamado.mensagem_problema;
 
-        row.innerHTML = `
-            <td>${chamado.chamado_id} </td>     
+        row.innerHTML = `    
             <td>${chamado.titulo_do_chamado} </td>
             <td>${dataFormatada}</td>
             <td>${chamado.tipo_manutencao}</td>
@@ -40,7 +39,6 @@ function atualizarChamados(chamados) {
         `;
         
         row.classList.add('chamado');
-        row.dataset.id = chamado.chamado_id;
         row.dataset.titulo = chamado.titulo_do_chamado;
         row.dataset.data = dataFormatada;
         row.dataset.tecnico = chamado.tipo_manutencao;
