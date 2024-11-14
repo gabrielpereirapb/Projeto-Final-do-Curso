@@ -42,15 +42,52 @@ h2 {
     margin-bottom: 20px;
 }
 
+.wrapperInput{
+    margin-top: -6px;
+    margin-bottom: 16px;  
+}
+
+.error-message.nome-error{
+    margin-bottom: 16px;
+    display: block;
+    text-align: start;
+}
+
+.error-message.email-error{
+    margin-bottom: 16px;
+    display: block;
+    text-align: start;
+}
+
+.error-message.senha-error {
+    margin-bottom: 16px;
+    display: block;
+    text-align: start;
+}
+
+.error-message.confirm-password-error{
+    margin-bottom: 16px;
+    display: block;
+    text-align: start;
+}
+
+.error-message {
+    color: red; /* Mensagem de erro em vermelho */
+    font-size: 0.675em; /* Texto menor */
+    margin-top: 5px; /* Espaço entre o campo e a mensagem */
+    display: none; /* Esconde por padrão */
+;
+}
+
 .input-group {
     display: flex;
     align-items: center;
-    margin-bottom: 16px;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 5px;
     width: 300px;
     background-color: #f5f5f5;
+    position: relative;
 }
 
 .input-group i {
