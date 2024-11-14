@@ -42,15 +42,40 @@ h2 {
     margin-bottom: 20px;
 }
 
+.wrapperInput{
+    margin-top: -6px;
+    margin-bottom: 16px;  
+}
+
+.error-message.email-error{
+    margin-bottom: 16px;
+    display: block;
+    text-align: start;
+}
+
+.error-message.password-error {
+    margin-bottom: 16px;
+    display: block;
+    text-align: start;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.675em; /* Tamanho menor para o texto */
+    margin-top: 5px;
+    display: none; /* Esconde por padrão */
+}
+
+
 .input-group {
     display: flex;
     align-items: center;
-    margin-bottom: 16px;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 5px;
     width: 300px;
     background-color: #f5f5f5;
+    position: relative;
 }
 
 .input-group i {
