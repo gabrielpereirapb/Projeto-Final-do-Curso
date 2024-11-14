@@ -1,57 +1,137 @@
-document.querySelector("#registerForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Impede o envio tradicional do formulário
+/* Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
 
-    // Obtém os valores dos campos
-    const nome = document.querySelector("input[name='nome']").value;
-    const email = document.querySelector("input[name='email']").value;
-    const senha = document.querySelector("input[name='senha']").value;
-    const confirmPassword = document.querySelector("input[name='confirm_password']").value;
+body {
+    background-color: #064C8C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
 
-    // Validações de formato usando regex
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const senhaRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/; // mínimo 8 caracteres, letras, números e especiais
+.register-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
 
-    if (!emailRegex.test(email)) {
-        alert("Por favor, insira um email válido.");
-        return;
-    }
+.register-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 2px solid #064C8C;
+}
 
-    if (!senhaRegex.test(senha)) {
-        alert("A senha deve ter pelo menos 8 caracteres, incluindo letras, números e caracteres especiais.");
-        return;
-    }
+.logo img {
+    margin-bottom: 20px;
+}
 
-    // Valida se as senhas coincidem
-    if (senha !== confirmPassword) {
-        alert("As senhas não coincidem. Por favor, verifique.");
-        return;
-    }
+h2 {
+    color: #064C8C;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
 
-    // Envia os dados para o servidor via fetch
-    const data = {
-        nome: nome,
-        email: email,
-        senha: senha
-    };
+.wrapperInput{
+    margin-top: -6px;
+    margin-bottom: 16px;  
+}
 
-    fetch("http://localhost:3000/api/cadastrarusuario", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.error) {
-            alert(data.error);
-        } else {
-            alert(data.message);
-            window.location.href = "../login/login.html"; // Redireciona para a página de login após o cadastro
-        }
-    })
-    .catch(error => {
-        console.error("Erro ao cadastrar:", error);
-        alert("Ocorreu um erro. Tente novamente mais tarde.");
-    });
-});
+.error-message.nome-error{
+    margin-bottom: 16px;
+    display: block;
+    text-align: start;
+}
+
+.error-message.email-error{
+    margin-bottom: 16px;
+    display: block;
+    text-align: start;
+}
+
+.error-message.senha-error {
+    margin-bottom: 16px;
+    display: block;
+    text-align: start;
+}
+
+.error-message.confirm-password-error{
+    margin-bottom: 16px;
+    display: block;
+    text-align: start;
+}
+
+.error-message {
+    color: red; /* Mensagem de erro em vermelho */
+    font-size: 0.675em; /* Texto menor */
+    margin-top: 5px; /* Espaço entre o campo e a mensagem */
+    display: none; /* Esconde por padrão */
+;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    width: 300px;
+    background-color: #f5f5f5;
+    position: relative;
+}
+
+.input-group i {
+    font-size: 18px;
+    color: #064C8C;
+    margin-right: 10px;
+}
+
+.input-group input {
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.btn-register {
+    width: 100%;
+    padding: 10px;
+    background-color: #064C8C;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-register:hover {
+    background-color: #052e5a;
+}
+
+.login-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.login-link a {
+    color: #064C8C;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
