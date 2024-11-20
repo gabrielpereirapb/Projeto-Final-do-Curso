@@ -8,34 +8,49 @@
     <title>Login</title>
 </head>
 <body>
+    <!-- Pop-up para mensagens -->
+    <div id="popup" class="popup">
+        <span id="popupIcon" class="popup-icon"></span>
+        <span id="popupMessage" class="popup-message"></span>
+        <button id="popupClose" class="popup-close" onclick="fecharPopup()">&times;</button>
+    </div>
+
     <main class="login-container">
         <section class="login-box">
             <div class="logo">
                 <img src="../../assets/Imagens/logo_azul.png" alt="Logo" width="120px">
             </div>
             <h2>Login</h2>
-            <form action="login_submit.html" method="post">
+            <form id="loginForm" method="post">
+                <!-- Campo de email -->
                 <div class="wrapperInput">
-                <div class="input-group">
-                    <i class="bi bi-envelope-fill"></i>
-                    <input type="email" placeholder="Email" name="email" required>
+                    <div class="input-group">
+                        <i class="bi bi-envelope-fill"></i>
+                        <input type="email" placeholder="Email" name="email" required>
+                    </div>
+                    <span class="error-message email-error"></span> <!-- Mensagem de erro -->
                 </div>
-                <span class="error-message email-error"></span> <!-- Mensagem fora do campo -->
-                </div>
+
+                <!-- Campo de senha -->
                 <div class="wrapperInput">
-                <div class="input-group">
-                    <i class="bi bi-lock-fill"></i>
-                    <input type="password" placeholder="Senha" name="password" required>
+                    <div class="input-group">
+                        <i class="bi bi-lock-fill"></i>
+                        <input type="password" placeholder="Senha" name="password" required>
+                    </div>
+                    <span class="error-message password-error"></span> <!-- Mensagem de erro -->
                 </div>
-                <span class="error-message password-error"></span> <!-- Mensagem fora do campo -->
-                </div>
+
+                <!-- Botão de envio -->
                 <button type="submit" class="btn-login">Entrar</button>
-            </form>            
+            </form>
+
             <div class="register-link">
                 <p>Não possui uma conta? <a href="../cadastrarusuario/cadastrarusuario.html">Cadastre-se</a></p>
             </div>
         </section>
     </main>
+
+    <!-- Script -->
     <script src="login.js"></script>
 </body>
 </html>
