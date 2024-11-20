@@ -8,6 +8,13 @@
     <title>Cadastro</title>
 </head>
 <body>
+    <!-- Popup para mensagens -->
+    <div id="popup" class="popup">
+        <span id="popupIcon" class="popup-icon"></span>
+        <span id="popupMessage" class="popup-message"></span>
+        <span id="popupClose" class="popup-close" onclick="fecharPopup()">&times;</span>
+    </div>
+
     <main class="register-container">
         <section class="register-box">
             <div class="logo">
@@ -15,6 +22,7 @@
             </div>
             <h2>Cadastro</h2>
             <form id="registerForm" method="post">
+                <!-- Campo Nome -->
                 <div class="wrapperInput">
                     <div class="input-group">
                         <i class="bi bi-person-fill"></i>
@@ -22,36 +30,46 @@
                     </div>
                     <span class="error-message nome-error"></span>
                 </div>
+
+                <!-- Campo Email -->
                 <div class="wrapperInput">
-                <div class="input-group">
-                    <i class="bi bi-envelope-fill"></i>
-                    <input type="email" placeholder="Email" name="email" required>
+                    <div class="input-group">
+                        <i class="bi bi-envelope-fill"></i>
+                        <input type="email" placeholder="Email" name="email" required>
+                    </div>
+                    <span class="error-message email-error"></span>
                 </div>
-                <span class="error-message email-error"></span>
-                </div>
+
+                <!-- Campo Senha -->
                 <div class="wrapperInput">
-                <div class="input-group">
-                    <i class="bi bi-lock-fill"></i>
-                    <input type="password" placeholder="Senha" name="senha" required>
+                    <div class="input-group">
+                        <i class="bi bi-lock-fill"></i>
+                        <input type="password" placeholder="Senha" name="senha" required>
+                    </div>
+                    <span class="error-message senha-error"></span>
                 </div>
-                <span class="error-message senha-error"></span>
-                </div>
+
+                <!-- Campo Confirmar Senha -->
                 <div class="wrapperInput">
-                <div class="input-group">
-                    <i class="bi bi-lock-fill"></i>
-                    <input type="password" placeholder="Confirmar Senha" name="confirm_password" required>
+                    <div class="input-group">
+                        <i class="bi bi-lock-fill"></i>
+                        <input type="password" placeholder="Confirmar Senha" name="confirm_password" required>
+                    </div>
+                    <span class="error-message confirm-password-error"></span>
                 </div>
-                <span class="error-message confirm-password-error"></span>
-                </div>
+
+                <!-- Botão de Cadastro -->
                 <button type="submit" class="btn-register">Cadastrar-se</button>
             </form>
-            
+
+            <!-- Link para login -->
             <div class="login-link">
                 <p>Já possui uma conta? <a href="../login/login.html">Faça login</a></p>
             </div>
         </section>
     </main>
 
+    <!-- Script de validação e funcionalidades -->
     <script src="cadastrarusuario.js"></script>
 </body>
 </html>
