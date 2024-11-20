@@ -1,4 +1,18 @@
+import validarToken from "../auth/auth.js";
+
+
 document.addEventListener('DOMContentLoaded', () => {
+   
+    const valido = validarToken();
+
+    console.log(valido)
+
+
+    if(!valido){
+        window.location.href = "/components/exceptions/NaoAutorizadoException.html";
+
+    }
+
     const openSidebarBtn = document.getElementById('openSidebarBtn');
     const closeSidebarBtn = document.getElementById('closeSidebarBtn');
     const mySidebar = document.getElementById('mySidebar');
@@ -58,18 +72,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function fetchChamados() {
-        fetch('http://localhost:3000/api/historicoManutencao')
-            .then(response => {
-                if (!response.ok) throw new Error('Erro ao carregar dados');
-                return response.json();
-            })
-            .then(data => {
-                dadosChamados = data;
-                console.log(dadosChamados)
-                preencherTabela(data);
-            })
-            .catch(err => console.error('Erro ao carregar dados:', err));
+        fetch('http://localhost:3000/api/historicoManutencao', {
+            method: 'GET', // Altere para GET, POST ou outro método, se necessário
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            }
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('Erro ao carregar dados');
+            return response.json();
+        })
+        .then(data => {
+            dadosChamados = data;
+            console.log(dadosChamados);
+            preencherTabela(data); // Atualiza a tabela com os dados recebidos
+        })
+        .catch(err => console.error('Erro ao carregar dados:', err));
     }
+    
 
     function fetchChamadosFiltrados() {
         const data = document.getElementById('data-sidebar').value;
@@ -107,30 +128,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Preencher listas suspensas
-    fetch('http://localhost:3000/api/historicoManutencao/locais')
-        .then(response => {
-            if (!response.ok) throw new Error('Erro ao buscar locais');
-            return response.json();
-        })
-        .then(dados => popularSelect('local-sidebar', dados, 'local', 'local'))
-        .catch(err => console.error('Erro ao buscar locais:', err));
+    // Fetch para preencher os dados de locais
+fetch('http://localhost:3000/api/historicoManutencao/locais', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+    }
+})
+    .then(response => {
+        if (!response.ok) throw new Error('Erro ao buscar locais');
+        return response.json();
+    })
+    .then(dados => popularSelect('local-sidebar', dados, 'local', 'local'))
+    .catch(err => console.error('Erro ao buscar locais:', err));
 
-    fetch('http://localhost:3000/api/historicoManutencao/tipos-manutencao')
-        .then(response => {
-            if (!response.ok) throw new Error('Erro ao buscar tipos de manutenção');
-            return response.json();
-        })
-        .then(dados => popularSelect('tipo-sidebar', dados, 'tipo_manutencao', 'tipo_manutencao'))
-        .catch(err => console.error('Erro ao buscar tipos de manutenção:', err));
+// Fetch para preencher os dados de tipos de manutenção
+fetch('http://localhost:3000/api/historicoManutencao/tipos-manutencao', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+    }
+})
+    .then(response => {
+        if (!response.ok) throw new Error('Erro ao buscar tipos de manutenção');
+        return response.json();
+    })
+    .then(dados => popularSelect('tipo-sidebar', dados, 'tipo_manutencao', 'tipo_manutencao'))
+    .catch(err => console.error('Erro ao buscar tipos de manutenção:', err));
 
-    fetch('http://localhost:3000/api/historicoManutencao/tecnicos')
-        .then(response => {
-            if (!response.ok) throw new Error('Erro ao buscar técnicos');
-            return response.json();
-        })
-        .then(dados => popularSelect('tecnico-sidebar', dados, 'nome', 'nome'))
-        .catch(err => console.error('Erro ao buscar técnicos:', err));
+// Fetch para preencher os dados de técnicos
+fetch('http://localhost:3000/api/historicoManutencao/tecnicos', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+    }
+})
+    .then(response => {
+        if (!response.ok) throw new Error('Erro ao buscar técnicos');
+        return response.json();
+    })
+    .then(dados => popularSelect('tecnico-sidebar', dados, 'nome', 'nome'))
+    .catch(err => console.error('Erro ao buscar técnicos:', err));
 
     // Carregar os chamados inicialmente
     fetchChamados();
