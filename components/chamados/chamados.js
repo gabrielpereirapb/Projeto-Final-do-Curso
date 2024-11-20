@@ -1,21 +1,48 @@
+import validarToken from "../auth/auth.js";
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const valido = validarToken();
+
+    console.log(valido)
+
+
+    if(!valido){
+        window.location.href = "/components/exceptions/NaoAutorizadoException.html";
+
+    }
+
+});
+
 // Constante para limitar o tamanho da descrição
 const MAX_DESC_LENGTH = 50;
 
 // Função para buscar os chamados do servidor
 async function buscarChamados() {
     try {
-        const response = await fetch('http://localhost:3000/api/novoChamado'); // URL do seu back-end
+        const response = await fetch('http://localhost:3000/api/novoChamado', {
+            method: 'GET', // Ajuste o método conforme necessário (GET, POST, etc.)
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            }
+        });
 
         if (!response.ok) {
-            throw new Error('Erro ao buscar chamados');
+            // Redireciona para página de não autorizado se a resposta não for ok
+            window.location.href = "/components/exceptions/NaoAutorizadoException.html";
+            return; // Finaliza a execução para evitar erros posteriores
         }
-        const data = await response.json();
 
+        const data = await response.json();
         atualizarChamados(data); // Atualiza a tabela com os dados do back-end
     } catch (error) {
-        console.error('Erro:', error);
+        console.error('Erro ao buscar chamados:', error);
     }
 }
+
 
 // Atualiza os chamados no DOM com os dados recebidos do back-end
 function atualizarChamados(chamados) {
@@ -31,7 +58,7 @@ function atualizarChamados(chamados) {
             ? chamado.mensagem_problema.substring(0, MAX_DESC_LENGTH) + '...' 
             : chamado.mensagem_problema;
 
-        row.innerHTML = `    
+        row.innerHTML = `   
             <td>${chamado.titulo_do_chamado} </td>
             <td>${dataFormatada}</td>
             <td>${chamado.tipo_manutencao}</td>
