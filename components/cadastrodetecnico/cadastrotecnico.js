@@ -1,3 +1,22 @@
+import validarToken from "../auth/auth.js";
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const valido = validarToken();
+
+    console.log(valido)
+
+
+    if(!valido){
+        window.location.href = "/components/exceptions/NaoAutorizadoException.html";
+
+    }
+
+});
+
+
 // Função para formatar o CPF (xxx.xxx.xxx-xx)
 function formatarCPF(cpf) {
     cpf.value = cpf.value
@@ -64,9 +83,10 @@ async function cadastrarTecnico(nome, cpf, telefone) {
         const response = await fetch('http://localhost:3000/api/cadastroTecnico', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`  // Adiciona o token no header Authorization
             },
-            body: JSON.stringify({ nome, cpf, telefone })
+            body: JSON.stringify({ nome, cpf, telefone }),
         });
 
         if (!response.ok) {
