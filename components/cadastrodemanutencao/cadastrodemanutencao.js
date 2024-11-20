@@ -1,11 +1,31 @@
+import validarToken from "../auth/auth.js";
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
+    const valido = validarToken();
+
+    console.log(valido)
+
+
+    if(!valido){
+        window.location.href = "/components/exceptions/NaoAutorizadoException.html";
+
+    }
     carregarChamadosPendentes();
     carregarTecnicosCadastrados();
 });
 
 // Função para buscar e preencher os chamados pendentes
 function carregarChamadosPendentes() {
-    fetch('http://localhost:3000/api/cadastroManutencao/pendente')
+    fetch('http://localhost:3000/api/cadastroManutencao/pendente', {
+        method: 'GET',  // O método que você deseja (GET, POST, PUT, etc.)
+        headers: {
+            'Content-Type': 'application/json',  // Define o tipo de conteúdo como JSON
+            'Authorization': `Bearer ${localStorage.getItem('token')}`  // Adiciona o token no header Authorization
+        }
+    })
     .then(response => response.json())
     .then(data => {
         const selectChamado = document.getElementById('titulo_do_chamado');
@@ -23,7 +43,13 @@ function carregarChamadosPendentes() {
 
 // Função para buscar e preencher os técnicos cadastrados
 function carregarTecnicosCadastrados() {
-    fetch('http://localhost:3000/api/cadastroManutencao/tecnicocadastrado')
+    fetch('http://localhost:3000/api/cadastroManutencao/tecnicocadastrado', {
+        method: 'GET',  // O método que você deseja (GET, POST, PUT, etc.)
+        headers: {
+            'Content-Type': 'application/json',  // Define o tipo de conteúdo como JSON
+            'Authorization': `Bearer ${localStorage.getItem('token')}`  // Adiciona o token no header Authorization
+        }
+    })
     .then(response => response.json())
     .then(data => {
         const selectTecnico = document.getElementById('tecnico_responsavel');
@@ -83,8 +109,10 @@ function enviarDados(dadosManutencao) {
 
     fetch(url, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(dadosManutencao)
+        headers: { 'Content-Type': 'application/json' ,
+                     'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify(dadosManutencao),
     })
     .then(response => {
         if (response.ok) {
@@ -99,6 +127,9 @@ function enviarDados(dadosManutencao) {
         mostrarPopup("Ocorreu um erro ao enviar os dados. Tente novamente.", "error");
     });
 }
+// Expondo as funções para o HTML
+window.validarFormulario = validarFormulario;
+window.cancelar = cancelar;
 
 // Função para cancelar e redirecionar
 function cancelar() {
