@@ -1,4 +1,4 @@
-/* Estilos Gerais */
+/* Reset e Estilos Globais */
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +14,7 @@ body {
     height: 100vh;
 }
 
+/* Container Principal */
 .login-container {
     display: flex;
     align-items: center;
@@ -21,6 +22,7 @@ body {
     height: 100%;
 }
 
+/* Caixa de Login */
 .login-box {
     width: 100%;
     max-width: 400px;
@@ -42,34 +44,16 @@ h2 {
     margin-bottom: 20px;
 }
 
-.wrapperInput{
+/* Grupo de Inputs */
+.wrapperInput {
     margin-top: -6px;
-    margin-bottom: 16px;  
-}
-
-.error-message.email-error{
     margin-bottom: 16px;
-    display: block;
-    text-align: start;
 }
-
-.error-message.password-error {
-    margin-bottom: 16px;
-    display: block;
-    text-align: start;
-}
-
-.error-message {
-    color: red;
-    font-size: 0.675em; /* Tamanho menor para o texto */
-    margin-top: 5px;
-    display: none; /* Esconde por padrão */
-}
-
 
 .input-group {
     display: flex;
     align-items: center;
+    margin-bottom: 16px;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 5px;
@@ -93,6 +77,20 @@ h2 {
     font-size: 16px;
 }
 
+/* Mensagens de Erro */
+.error-message {
+    color: red;
+    font-size: 0.675em;
+    margin-top: 5px;
+    display: none; /* Esconde por padrão */
+    text-align: start;
+}
+
+.error-message.visible {
+    display: block; /* Mostra a mensagem quando visível */
+}
+
+/* Botão de Login */
 .btn-login {
     width: 100%;
     padding: 10px;
@@ -109,6 +107,7 @@ h2 {
     background-color: #052e5a;
 }
 
+/* Link de Cadastro */
 .register-link {
     margin-top: 20px;
     font-size: 14px;
@@ -122,4 +121,52 @@ h2 {
 
 .register-link a:hover {
     text-decoration: underline;
+}
+
+/* Pop-up de Notificações */
+.popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    min-width: 250px;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 1000;
+}
+
+.popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-icon {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.popup-message {
+    flex: 1;
+}
+
+.popup-close {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: inherit;
+}
+
+.popup-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.popup-error {
+    background-color: #f8d7da;
+    color: #721c24;
 }
