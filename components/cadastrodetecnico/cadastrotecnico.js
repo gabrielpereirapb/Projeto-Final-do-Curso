@@ -13,6 +13,18 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = "/components/exceptions/NaoAutorizadoException.html";
 
     }
+     
+    // Adiciona eventos de formatação aos campos
+     const cpf = document.getElementById('cpf');
+     const telefone = document.getElementById('telefone');
+ 
+     if (cpf) {
+         cpf.addEventListener('input', () => formatarCPF(cpf));
+     }
+ 
+     if (telefone) {
+         telefone.addEventListener('input', () => formatarTelefone(telefone));
+     }
 
 });
 
@@ -86,7 +98,7 @@ async function cadastrarTecnico(nome, cpf, telefone) {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${localStorage.getItem('token')}`  // Adiciona o token no header Authorization
             },
-            body: JSON.stringify({ nome, cpf, telefone }),
+            body: JSON.stringify({ nome, cpf, telefone })
         });
 
         if (!response.ok) {
