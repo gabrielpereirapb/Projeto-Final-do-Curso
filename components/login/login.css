@@ -77,19 +77,6 @@ h2 {
     font-size: 16px;
 }
 
-/* Mensagens de Erro */
-.error-message {
-    color: red;
-    font-size: 0.675em;
-    margin-top: 5px;
-    display: none; /* Esconde por padrão */
-    text-align: start;
-}
-
-.error-message.visible {
-    display: block; /* Mostra a mensagem quando visível */
-}
-
 /* Botão de Login */
 .btn-login {
     width: 100%;
