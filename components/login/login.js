@@ -5,37 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const emailError = document.querySelector(".email-error");
     const passwordError = document.querySelector(".password-error");
 
-    // Função para validar e-mail
-    function validateEmail() {
-        const email = emailInput.value.trim();
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (!emailRegex.test(email)) {
-            emailError.textContent = "Por favor, insira um e-mail válido.";
-            emailError.style.display = "block";
-            return false;
-        }
-        emailError.textContent = "";
-        emailError.style.display = "none";
-        return true;
-    }
-
-    // Função para validar senha
-    function validatePassword() {
-        const password = passwordInput.value.trim();
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
-        if (!passwordRegex.test(password)) {
-            passwordError.textContent =
-                "A senha deve ter pelo menos 8 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial.";
-            passwordError.style.display = "block";
-            return false;
-        }
-        passwordError.textContent = "";
-        passwordError.style.display = "none";
-        return true;
-    }
-
     // Adiciona validação em tempo real
     emailInput.addEventListener("input", validateEmail);
     passwordInput.addEventListener("input", validatePassword);
