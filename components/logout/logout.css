@@ -1,173 +1,68 @@
-/* Reset e Estilos Globais */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+/* Estilo do menu de perfil */
+#profileMenuContainer {
+    position: absolute; /* Para fixar no canto superior direito */
+    top: 10px; /* Distância do topo */
+    right: 10px; /* Distância do lado direito */
+    display: inline-block;
+    z-index: 1000; /* Certifique-se de que o menu fique acima de outros elementos */
 }
 
-body {
-    background-color: #064C8C;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-/* Container Principal */
-.login-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
-/* Caixa de Login */
-.login-box {
-    width: 100%;
-    max-width: 400px;
-    padding: 40px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    border: 2px solid #064C8C;
-}
-
-.logo img {
-    margin-bottom: 20px;
-}
-
-h2 {
-    color: #064C8C;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-/* Grupo de Inputs */
-.wrapperInput {
-    margin-top: -6px;
-    margin-bottom: 16px;
-}
-
-.input-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 5px;
-    width: 300px;
-    background-color: #f5f5f5;
-    position: relative;
-}
-
-.input-group i {
-    font-size: 18px;
-    color: #064C8C;
-    margin-right: 10px;
-}
-
-.input-group input {
-    width: 100%;
+#profileMenuButton {
+    background-color:transparent;
+    color: white;
     border: none;
-    background: none;
-    outline: none;
-    color: #333;
-    font-size: 16px;
-}
-
-/* Mensagens de Erro */
-.error-message {
-    color: red;
-    font-size: 0.675em;
-    margin-top: 5px;
-    display: none; /* Esconde por padrão */
-    text-align: start;
-}
-
-.error-message.visible {
-    display: block; /* Mostra a mensagem quando visível */
-}
-
-/* Botão de Login */
-.btn-login {
-    width: 100%;
     padding: 10px;
-    background-color: #064C8C;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
+    border-radius: 50%; /* Torna o botão redondo */
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn-login:hover {
-    background-color: #052e5a;
-}
-
-/* Link de Cadastro */
-.register-link {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #333;
-}
-
-.register-link a {
-    color: #064C8C;
-    text-decoration: none;
-}
-
-.register-link a:hover {
-    text-decoration: underline;
-}
-
-/* Pop-up de Notificações */
-.popup {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    min-width: 250px;
-    padding: 15px;
-    border-radius: 5px;
+    font-size: 18px; /* Tamanho do ícone */
     display: flex;
     align-items: center;
-    gap: 10px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
-    z-index: 1000;
+    justify-content: center;
+    width: 45px; /* Largura fixa */
+    height: 45px; /* Altura fixa */
 }
 
-.popup.show {
-    opacity: 1;
-    visibility: visible;
+#profileMenuButton i {
+    margin: 0; /* Remove espaçamento do ícone */
 }
 
-.popup-icon {
-    font-size: 20px;
-    font-weight: bold;
+#profileDropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+    right: 0;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: left;
 }
 
-.popup-message {
-    flex: 1;
+#profileDropdown p {
+    margin: 5px 0;
+    color: #333;
+    font-size: 14px;
 }
 
-.popup-close {
+#profileDropdown button {
+    width: 100%;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    color: inherit;
+    font-size: 14px;
+    margin-top: 10px;
 }
 
-.popup-success {
-    background-color: #d4edda;
-    color: #155724;
+#profileDropdown button:hover {
+    background-color: #d32f2f;
 }
 
-.popup-error {
-    background-color: #f8d7da;
-    color: #721c24;
+/* Exibe o menu quando ativo */
+#profileMenuContainer.active #profileDropdown {
+    display: block;
 }
-
