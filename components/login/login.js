@@ -1,9 +1,42 @@
+// public/js/login.js
+
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector("#loginForm");
     const emailInput = document.querySelector('input[name="email"]');
     const passwordInput = document.querySelector('input[name="password"]');
     const emailError = document.querySelector(".email-error");
     const passwordError = document.querySelector(".password-error");
+
+    // Função para validar e-mail
+    function validateEmail() {
+        const email = emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(email)) {
+            emailError.textContent = "Por favor, insira um e-mail válido.";
+            emailError.style.display = "block";
+            return false;
+        }
+        emailError.textContent = "";
+        emailError.style.display = "none";
+        return true;
+    }
+
+    // Função para validar senha
+    function validatePassword() {
+        const password = passwordInput.value.trim();
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+        if (!passwordRegex.test(password)) {
+            passwordError.textContent =
+                "A senha deve ter pelo menos 8 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial.";
+            passwordError.style.display = "block";
+            return false;
+        }
+        passwordError.textContent = "";
+        passwordError.style.display = "none";
+        return true;
+    }
 
     // Adiciona validação em tempo real
     emailInput.addEventListener("input", validateEmail);
@@ -45,6 +78,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     } else {
                         exibirPopup(data.message, "success");
                         localStorage.setItem("token", data.token); // Armazena token
+                        localStorage.setItem("username", data.nome); // Armazena o nome do usuário
+                        localStorage.setItem("email", data.email); // Armazena o e-mail do usuário
                         setTimeout(() => {
                             window.location.href = "../home/home.html"; // Redireciona
                         }, 3000);
@@ -77,7 +112,6 @@ function exibirPopup(mensagem, tipo) {
         popupIcon.textContent = "❌";
     }
 
-    // Fecha o pop-up automaticamente após 3 segundos
     setTimeout(fecharPopup, 3000);
 }
 
