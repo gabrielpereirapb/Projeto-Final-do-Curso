@@ -1,5 +1,3 @@
-// public/js/login.js
-
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector("#loginForm");
     const emailInput = document.querySelector('input[name="email"]');
@@ -28,13 +26,28 @@ document.addEventListener("DOMContentLoaded", function () {
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
         if (!passwordRegex.test(password)) {
-            passwordError.textContent =
-                "A senha deve ter pelo menos 8 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial.";
+            passwordError.textContent =""
             passwordError.style.display = "block";
             return false;
         }
         passwordError.textContent = "";
         passwordError.style.display = "none";
+        return true;
+    }
+
+    // Função para garantir que os campos não estão vazios
+    function validateEmptyFields() {
+        if (emailInput.value.trim() === "" || passwordInput.value.trim() === "") {
+            if (emailInput.value.trim() === "") {
+                emailError.textContent = "Este campo é obrigatório.";
+                emailError.style.display = "block";
+            }
+            if (passwordInput.value.trim() === "") {
+                passwordError.textContent = "Este campo é obrigatório.";
+                passwordError.style.display = "block";
+            }
+            return false;
+        }
         return true;
     }
 
@@ -50,8 +63,9 @@ document.addEventListener("DOMContentLoaded", function () {
             // Validação final
             const isEmailValid = validateEmail();
             const isPasswordValid = validatePassword();
+            const isFieldsValid = validateEmptyFields();
 
-            if (!isEmailValid || !isPasswordValid) {
+            if (!isEmailValid || !isPasswordValid || !isFieldsValid) {
                 return; // Para se houver erros de validação
             }
 
