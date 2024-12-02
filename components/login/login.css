@@ -50,6 +50,30 @@ h2 {
     margin-bottom: 16px;
 }
 
+.error-message {
+    color: red; /* Mensagem de erro em vermelho */
+    font-size: 0.675em; /* Texto menor */
+    margin-top: 5px; /* Espaço entre o campo e a mensagem */
+    display: none; /* Esconde por padrão */
+    text-align: start;
+}
+
+.error-message.nome-error {
+    margin-bottom: 16px;
+}
+
+.error-message.email-error {
+    margin-bottom: 16px;
+}
+
+.error-message.senha-error {
+    margin-bottom: 16px;
+}
+
+.error-message.confirm-password-error {
+    margin-bottom: 16px;
+}
+
 .input-group {
     display: flex;
     align-items: center;
@@ -128,6 +152,7 @@ h2 {
 }
 
 .popup.show {
+    display: block; /* Exibe o pop-up */
     opacity: 1;
     visibility: visible;
 }
