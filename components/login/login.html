@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- Pop-up para mensagens -->
-    <div id="popup" class="popup" style="display: none;">
+    <div id="popup" class="popup">
         <span id="popupIcon" class="popup-icon"></span>
         <span id="popupMessage" class="popup-message"></span>
         <button id="popupClose" class="popup-close" onclick="fecharPopup()">&times;</button>
@@ -30,7 +30,7 @@
                         <input type="email" placeholder="Email" name="email" required>
                     </div>
                     <!-- Exibição da mensagem de erro para email -->
-                    <span class="email-error" style="display: none; color: red;"></span>
+                    <span class="error-message email-error"></span>
                 </div>
 
                 <!-- Campo de senha -->
@@ -38,9 +38,9 @@
                     <div class="input-group">
                         <i class="bi bi-lock-fill"></i>
                         <input type="password" placeholder="Senha" name="password" required>
+                        <span class="error-message password-error"></span>
                     </div>
                     <!-- Exibição da mensagem de erro para senha -->
-                    <span class="password-error" style="display: none; color: red;"></span>
                 </div>
 
                 <!-- Botão de envio -->
