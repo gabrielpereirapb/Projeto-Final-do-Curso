@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../logout/logout.css">
+    <title>Login</title>
+</head>
+<body>
+    <!-- Pop-up para mensagens -->
+    <div id="popup" class="popup">
+        <span id="popupIcon" class="popup-icon"></span>
+        <span id="popupMessage" class="popup-message"></span>
+        <button id="popupClose" class="popup-close" onclick="fecharPopup()">&times;</button>
+    </div>
+
+    <main class="login-container">
+        <section class="login-box">
+            <div class="logo">
+                <img src="../../assets/Imagens/logo_azul.png" alt="Logo" width="120px">
+            </div>
+            <h2>Login</h2>
+            <form id="loginForm" method="post">
+                <!-- Campo de email -->
+                <div class="wrapperInput">
+                    <div class="input-group">
+                        <i class="bi bi-envelope-fill"></i>
+                        <input type="email" placeholder="Email" name="email" required>
+                    </div>
+                    <!-- Exibição da mensagem de erro para email -->
+                    <span class="error-message email-error"></span>
+                </div>
+
+                <!-- Campo de senha -->
+                <div class="wrapperInput">
+                    <div class="input-group">
+                        <i class="bi bi-lock-fill"></i>
+                        <input type="password" placeholder="Senha" name="password" required>
+                        <span class="error-message password-error"></span>
+                    </div>
+                    <!-- Exibição da mensagem de erro para senha -->
+                </div>
+
+                <!-- Botão de envio -->
+                <button type="submit" class="btn-login">Entrar</button>
+            </form>
+
+            <div class="register-link">
+                <p>Não possui uma conta? <a href="../cadastrarusuario/cadastrarusuario.html">Cadastre-se</a></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Script -->
+    <script src="login.js"></script>
+</body>
+</html>

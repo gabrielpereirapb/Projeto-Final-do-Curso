@@ -5,58 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Técnico</title>
     <link rel="stylesheet" href="cadastrotecnico.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../logout/logout.css">
 </head>
 <body>
-    <header>
-        <div class="interface flex">
-            <img src="logo.png" alt="Logo" class="logo">
-            <nav>
-                <ul>
-                    <li><a href="menu.html">Página Inicial</a></li>
-                    <li><a href="#">Histórico de manutenção</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+
+    <header class="interface1">
+        <div><img src="../../assets/Imagens/logo.png" alt="Logo" width="80px"></div>
+        <nav class="menu">
+            <ul>
+                <li><a href="../home/home.html">PÁGINA INICIAL</a></li>
+                <li><a href="../relatarproblema/relatarproblema.html">RELATAR PROBLEMA</a></li>
+                <li><a href="../cadastrodetecnico/cadastrotecnico.html">CADASTRO DE TÉCNICO</a></li>
+                <li><a href="../cadastrodemanutencao/cadastrodemanutencao.html">CADASTRO DE MANUTENÇÃO</a></li>
+                <li><a href="../históricodemanutencao/historicodemanutencao.html">HISTÓRICO DE MANUTENÇÃO</a></li>
+                <li><a href="../chamados/chamados.html">CHAMADOS PENDENTES</a></li>
+            </ul>
+        </nav>
+    </header>  
 
     <section class="topo-do-site">
-        <h1>Cadastro de técnico</h1>
+        <h1>CADASTRO DE TÉCNICO</h1>
         <p>Cadastrar novo técnico</p>
     </section>
 
+    <div id="popup" class="popup">
+        <span id="popupIcon" class="popup-icon"></span>
+        <span id="popupMessage" class="popup-message"></span>
+        <span id="popupClose" class="popup-close" onclick="fecharPopup()">&times;</span>
+    </div>
+    
     <section class="formulario">
-        <form>
+        <form id="cadastroForm">
             <label for="nome">Nome:<span>*</span></label>
-            <input type="text" id="nome" name="nome" placeholder="Nome completo">
+            <input type="text" id="nome" name="nome" placeholder="Nome completo" required>
 
             <label for="cpf">CPF:<span>*</span></label>
-            <input type="text" id="cpf" name="cpf" placeholder="Insira seu CPF">
+            <input type="text" id="cpf" name="cpf" placeholder="Insira seu CPF" required maxlength="14" oninput="formatarCPF(this)">
 
             <label for="telefone">Telefone:<span>*</span></label>
-            <input type="text" id="telefone" name="telefone" placeholder="Insira seu telefone">
+            <input type="text" id="telefone" name="telefone" placeholder="Insira seu telefone" required maxlength="15" oninput="formatarTelefone(this)">
+
+            <p class="campos-obrigatorios">*Campos obrigatórios.</p>
 
             <div class="botoes">
-                <button type="button" class="cancelar">Cancelar</button>
+                <button type="button" class="cancelar" onclick="window.location.href='../home/home.html'">Cancelar</button>
                 <button type="submit" class="confirmar">Confirmar</button>
             </div>
         </form>
-        <p class="campos-obrigatorios">*Campos obrigatórios.</p>
     </section>
 
-    <footer class="footer-rodapé">
-        <div class="footer-left">
-            <p>Sobre</p>
-            <p>Há mais de 65 anos. A tradição que não parou no tempo.</p>
-            <div class="redes-sociais">
-                <i class="icon-instagram"></i>
-                <i class="icon-whatsapp"></i>
+    <footer> 
+            <div class="footer-rodapé">
+            <div class="texto-direita">
+                <div class="sobre">
+                    <h3>Sobre</h3>
+                    <p>Há mais de 65 anos.<br> A tradição que não parou no tempo.</p>
+                </div>
+                <div class="redes-sociais">
+                    <a class="icones-footer" href="https://www.instagram.com/lourdinascg/" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a class="icones-footer" href="https://api.whatsapp.com/send?phone=558331823600&text=Ol%C3%A1,%20desejo%20mais%20informa%C3%A7%C3%B5es%20sobre%20matr%C3%ADculas%202024." target="_blank"><i class="bi bi-whatsapp"></i></a>
+                    <a class="icones-footer" href="" target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a class="icones-footer" href="https://www.youtube.com/user/evlcg" target="_blank"><i class="bi bi-youtube"></i></a>
+                    <a class="icones-footer" href="https://www.google.com/maps/place/Col%C3%A9gio+Nossa+Senhora+de+Lourdes/@-7.211834,-35.8748341,15z/data=!4m6!3m5!1s0x7ac1fabb95c42ef:0x6c80cb4b44fe60b!8m2!3d-7.2121889!4d-35.8751523!16s%2Fg%2F1ydkbdd2g?entry=ttu&g_ep=EgoyMDI0MDkxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank"><i class="bi bi-geo-alt-fill"></i></a>
+                </div><!-- redes-sociais -->
             </div>
-        </div>
-        <div class="footer-right">
-            <p>Informações de Contato</p>
-            <p>R. Nossa Sra. de Lourdes, 193 - Jardim Tavares, Campina Grande - PB, 58402-045</p>
-            <p>83 3182-3600</p>
-        </div>
+            
+             <div class="informacoes2">
+                    <h3>Somos todos Lourdinas</h3>
+                    <p>Educação sempre presente</p>
+             </div>
+
+            <div class="texto-esquerda">          
+                <div class="informacoes">
+                    <h3>Informações de Contato</h3>
+                    <p>R. Nossa Sra. de Lourdes, 193 - <br> Jardim Tavares, Campina Grande - PB<br>58402-045 <br> 83 3182-3600</p>
+                </div>
+            </div>
+        </div><!-- footer-rodapé -->
     </footer>
+
+    <script type="module" src="cadastrotecnico.js"></script> 
+    <script  src="../logout/logout.js" defer></script>
 </body>
 </html>

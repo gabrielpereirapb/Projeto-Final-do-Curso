@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Manutenção</title>
+    <link rel="stylesheet" href="historicodemanutencao.css">
+    <link rel="stylesheet" href="../logout/logout.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <header class="interface1">
+        <div>
+            <img src="../../assets/Imagens/logo.png" alt="Logo" width="80px">
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="../home/home.html">PÁGINA INICIAL</a></li>
+                <li><a href="../relatarproblema/relatarproblema.html">RELATAR PROBLEMA</a></li>
+                <li><a href="../cadastrodetecnico/cadastrotecnico.html">CADASTRO DE TÉCNICO</a></li>
+                <li><a href="../cadastrodemanutencao/cadastrodemanutencao.html">CADASTRO DE MANUTENÇÃO</a></li>
+                <li><a href="../históricodemanutencao/historicodemanutencao.html">HISTÓRICO DE MANUTENÇÃO</a></li>
+                <li><a href="../chamados/chamados.html">CHAMADOS PENDENTES</a></li>
+            </ul>
+        </nav>
+    </header>  
+
+    <section class="topo-do-site">
+        <h1>HISTÓRICO DE MANUTENÇÃO</h1>
+        <p>Histórico de manutenções realizadas</p>
+        <button id="openSidebarBtn" class="open-sidebar-btn">
+            <p id="filtro">Filtro</p>
+            <i class="bi bi-search"></i>
+        </button>        
+    </section>
+    
+
+    <div class="container">
+        <!-- Tabela de manutenção -->
+        <div class="table-container">
+            <table id="maintenance-table">
+                <thead>
+                    <tr class="linha-da-tabela">
+                        <th class="table-dt">Data</th>
+                        <th>Título</th>
+                        <th>Local</th>
+                        <th>Tipo de Manutenção</th>
+                        <th>Técnico Responsável</th>
+                        <th>Solução</th>
+                </thead>
+                <tbody>
+                    <!-- Dados Dinâmicos Aqui -->
+                </tbody>
+            </table>
+        </div>
+         
+    </div>
+    
+
+    <!-- Sidebar -->
+    <div id="mySidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h2>Filtrar Manutenções</h2>
+            <button id="closeSidebarBtn" class="close-sidebar-btn">&times;</button> <!-- Botão de "X" -->
+        </div>
+
+        <label class="mensagem-filtro" for="data-sidebar">Data:</label>
+        <input type="date" id="data-sidebar">
+
+        <label class="mensagem-filtro" for="local-sidebar">Local:</label>
+        <select id="local-sidebar">
+            <option ></option>
+            <option ></option>
+            <option ></option>
+            <option ></option>
+        </select>
+
+        <label class="mensagem-filtro" for="tipo-sidebar">Tipo de Manutenção:</label>
+        <select id="tipo-sidebar">
+            <option ></option>
+            <option ></option>
+            <option ></option>
+        </select>
+
+        <label class="mensagem-filtro" for="tecnico-sidebar">Técnico Responsável:</label>
+        <select id="tecnico-sidebar">
+            <option ></option>
+            <option ></option>
+            <option ></option>
+            <option ></option>
+        </select>
+
+        <div class="sidebar-buttons">
+            <button id="clearBtn">Limpar Filtros</button>
+            <button id="confirmBtn">Confirmar</button>
+            
+        </div>
+    </div>
+
+    <script type = "module" src="historicodemanutencao.js"></script>
+    <script  src="../logout/logout.js" defer></script>
+    
+    <footer>
+        <div class="footer-rodapé">
+            <div class="texto-direita">
+                <div class="sobre">
+                    <h3>Sobre</h3>
+                    <p>Há mais de 65 anos.<br> A tradição que não parou no tempo.</p>
+                </div>
+                <div class="redes-sociais">
+                    <a class="icones-footer" href="https://www.instagram.com/lourdinascg/" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a class="icones-footer" href="https://api.whatsapp.com/send?phone=558331823600&text=Ol%C3%A1,%20desejo%20mais%20informa%C3%A7%C3%B5es%20sobre%20matr%C3%ADculas%202024." target="_blank"><i class="bi bi-whatsapp"></i></a>
+                    <a class="icones-footer" href="" target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a class="icones-footer" href="https://www.youtube.com/user/evlcg" target="_blank"><i class="bi bi-youtube"></i></a>
+                    <a class="icones-footer" href="https://www.google.com/maps/place/Col%C3%A9gio+Nossa+Senhora+de+Lourdes/@-7.211834,-35.8748341,15z/data=!4m6!3m5!1s0x7ac1fabb95c42ef:0x6c80cb4b44fe60b!8m2!3d-7.2121889!4d-35.8751523!16s%2Fg%2F1ydkbdd2g?entry=ttu&g_ep=EgoyMDI0MDkxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank"><i class="bi bi-geo-alt-fill"></i></a>
+                </div><!-- redes-sociais -->
+            </div>
+            
+             <div class="informacoes2">
+                    <h3>Somos todos Lourdinas</h3>
+                    <p>Educação sempre presente</p>
+             </div>
+
+            <div class="texto-esquerda">          
+                <div class="informacoes">
+                    <h3>Informações de Contato</h3>
+                    <p>R. Nossa Sra. de Lourdes, 193 - <br> Jardim Tavares, Campina Grande - PB<br>58402-045 <br> 83 3182-3600</p>
+                </div>
+            </div>
+        </div><!-- footer-rodapé -->
+    </footer>
+</body>
+</html>
+
+</header>
+
+

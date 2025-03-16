@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastrodemanutencao.css">
+    <link rel="stylesheet" href="../logout/logout.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Cadastro de Manutenção</title>
+</head>
+<body>
+    <header class="interface1">
+        <div>
+            <img src="../../assets/Imagens/logo.png" alt="Logo" width="80px">
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="../home/home.html">PÁGINA INICIAL</a></li>
+                <li><a href="../relatarproblema/relatarproblema.html">RELATAR PROBLEMA</a></li>
+                <li><a href="../cadastrodetecnico/cadastrotecnico.html">CADASTRO DE TÉCNICO</a></li>
+                <li><a href="../cadastrodemanutencao/cadastrodemanutencao.html">CADASTRO DE MANUTENÇÃO</a></li>
+                <li><a href="../históricodemanutencao/historicodemanutencao.html">HISTÓRICO DE MANUTENÇÃO</a></li>
+                <li><a href="../chamados/chamados.html">CHAMADOS PENDENTES</a></li>
+            </ul>
+        </nav>
+    </header>  
+
+
+    <section class="topo-do-site">
+        <h1>CADASTRO DE MANUTENÇÃO</h1>
+        <p>Cadastrar manutenção realizada</p>
+    </section>
+
+</head>
+<body>
+    <div id="popup" class="popup">
+        <span id="popupIcon" class="popup-icon"></span>
+        <span id="popupMessage" class="popup-message"></span>
+        <span id="popupClose" class="popup-close" onclick="fecharPopup()">&times;</span>
+    </div>
+    
+    <section class="formulario">
+        <form id="formChamado">
+            <label for="titulo_do_chamado">Título do chamado:<span>*</span></label>
+            <select id="titulo_do_chamado" name="titulo_do_chamado">
+                <option value="">Selecione o chamado</option>
+            </select><br>
+    
+            <label for="tecnico_responsavel">Técnico Responsável:<span>*</span></label>
+            <select id="tecnico_responsavel" name="tecnico_responsavel">
+                <option value="">Selecione o técnico</option>
+            </select><br>
+    
+            <label for="mensagem_solucao">Mensagem:<span>*</span></label>
+            <textarea id="mensagem_solucao" name="mensagem_solucao" rows="4" placeholder="Insira uma mensagem sobre a manutenção realizada" required minlength="10" maxlength="5000"></textarea><br>
+    
+            <p class="campos-obrigatorios">*Campos obrigatórios.</p>
+    
+            <div class="botoes">
+                <button type="button" class="cancelar" onclick="cancelar()">Cancelar</button>
+                <button type="button" class="confirmar" onclick="validarFormulario()">Confirmar</button>
+            </div>
+        </form>
+    </section>
+    <footer>
+        <div class="footer-rodapé">
+            <div class="texto-direita">
+                <div class="sobre">
+                    <h3>Sobre</h3>
+                    <p>Há mais de 65 anos.<br> A tradição que não parou no tempo.</p>
+                </div>
+                <div class="redes-sociais">
+                    <a class="icones-footer" href="https://www.instagram.com/lourdinascg/" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a class="icones-footer" href="https://api.whatsapp.com/send?phone=558331823600&text=Ol%C3%A1,%20desejo%20mais%20informa%C3%A7%C3%B5es%20sobre%20matr%C3%ADculas%202024." target="_blank"><i class="bi bi-whatsapp"></i></a>
+                    <a class="icones-footer" href="" target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a class="icones-footer" href="https://www.youtube.com/user/evlcg" target="_blank"><i class="bi bi-youtube"></i></a>
+                    <a class="icones-footer" href="https://www.google.com/maps/place/Col%C3%A9gio+Nossa+Senhora+de+Lourdes/@-7.211834,-35.8748341,15z/data=!4m6!3m5!1s0x7ac1fabb95c42ef:0x6c80cb4b44fe60b!8m2!3d-7.2121889!4d-35.8751523!16s%2Fg%2F1ydkbdd2g?entry=ttu&g_ep=EgoyMDI0MDkxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank"><i class="bi bi-geo-alt-fill"></i></a>
+                </div><!-- redes-sociais -->
+            </div>
+            
+             <div class="informacoes2">
+                    <h3>Somos todos Lourdinas</h3>
+                    <p>Educação sempre presente</p>
+             </div>
+
+            <div class="texto-esquerda">          
+                <div class="informacoes">
+                    <h3>Informações de Contato</h3>
+                    <p>R. Nossa Sra. de Lourdes, 193 - <br> Jardim Tavares, Campina Grande - PB<br>58402-045 <br> 83 3182-3600</p>
+                </div>
+            </div>
+        </div><!-- footer-rodapé -->
+    </footer>
+        <script type="module" src="cadastrodemanutencao.js"></script>
+        <script  src="../logout/logout.js" defer></script>
+</body>
+</html>

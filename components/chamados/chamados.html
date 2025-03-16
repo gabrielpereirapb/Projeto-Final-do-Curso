@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- BOOTSTRAP ICONS --> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- FIM BOOTSTRAP ICONS -->
-    <link rel="stylesheet" href="home.css">
+    <title>Novos Chamados</title>
+    <link rel="stylesheet" href="chamados.css">
     <link rel="stylesheet" href="../logout/logout.css">
-    <title>Página Inicial</title>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Chamados</title>
 </head>
 <body>
     <header class="interface1">
@@ -28,62 +27,45 @@
         </nav>
     </header>  
 
-    <main>
-        <section class="topo-do-site">
-            <div class="interface">
-                <div class="flex">
-                    <div class="titulo-pagina">
-                        <h1>PÁGINA INICIAL</h1>
-                        <p>Bem-vindos ao Sistema de Manutenção Escolar</p>
-                    </div><!-- txt topo site -->
-                </div><!-- flex -->
-            </div><!-- interface -->
-        </section><!-- topo-do-site -->
 
-        <section class="cards-do-site">
-            <div class="cards-line"> 
-                <button>
-                    <a href="../relatarproblema/relatarproblema.html">
-                        <div class="cards-1">
-                            <i class="bi bi-exclamation-triangle-fill"></i>
-                            <h2>Relatar Problema</h2>
-                            <p>Relatar problema para a equipe de manutenção</p>
-                        </div>
-                    </a>
-                </button>
-                <button>
-                    <a href="../chamados/chamados.html">
-                        <div class="cards-1">
-                            <i class="bi bi-telephone-fill"></i>
-                            <h2>Chamados Pendentes</h2>
-                            <p>Visualizar chamados não resolvidos</p>
-                        </div>
-                    </a>  
-                </button>
-            </div>
-            <div class="cards-line"> 
-                <button>
-                    <a href="../cadastrodemanutencao/cadastrodemanutencao.html">
-                        <div class="cards-1">
-                            <i class="bi bi-tools"></i>
-                            <h2>Cadastro de Manutenção</h2>
-                            <p>Cadastrar manutenção executada</p>
-                        </div>
-                    </a>
-                </button>
-                <button>
-                    <a href="../históricodemanutencao/historicodemanutencao.html">
-                        <div class="cards-1">
-                            <i class="bi bi-graph-up"></i>
-                            <h2>Histórico de Manutenção</h2>
-                            <p>Atividades das manutenções executadas</p>
-                        </div>
-                    </a>
-                </button>
-            </div>
-        </section><!-- cards-do-site -->          
-    </main>
+    <section class="topo-do-site">
+        <h1>CHAMADOS PENDENTES</h1>
+        <p>Visualizar chamados não resolvidos</p>
+    </section>
 
+    <!-- Tabela de Chamados -->
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <!--<th>ID</th>-->
+                    <th>Titulo</th>
+                    <th>Data</th>
+                    <th>Tipo de Manutenção</th>
+                    <th>Mensagem</th>
+                </tr>
+            </thead>
+            <tbody id="chamados-tabela">
+                <!-- Linhas de chamados geradas via JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal para exibir detalhes do chamado -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="fechar">&times;</span>
+            <h2>Detalhes do Chamado</h2>
+            <!-- <p><strong>ID:</strong> <span id="modal-id"></span></p>
+            <p><strong>Data:</strong> <span id="modal-data"></span></p>
+            <p><strong>Técnico:</strong> <span id="modal-tecnico"></span></p> -->
+            <p><strong>Descrição:</strong> <span id="modal-descricao"></span></p>
+        </div>
+    </div>
+
+    <script type="module" src="chamados.js"></script>
+    <script  src="../logout/logout.js" defer></script>
+    
     <footer>
         <div class="footer-rodapé">
             <div class="texto-direita">
@@ -113,11 +95,7 @@
             </div>
         </div><!-- footer-rodapé -->
     </footer>
-    <script type = "module" src="home.js"></script>
-    <script  src="../logout/logout.js" defer></script>
 </body>
 </html>
 
 </header>
-
-
